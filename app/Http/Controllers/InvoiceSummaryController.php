@@ -35,7 +35,7 @@ class InvoiceSummaryController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    
+
 
     public function getIndex(Request $request = null)
     {
@@ -46,15 +46,15 @@ class InvoiceSummaryController extends Controller
       if(isset($request->newid)) {
           $newid = $request->newid ;
       }
-      
+
        $nowdt =  Carbon::now('Asia/Kolkata')->toDateTimeString();
        $nowdt_ymd =  Carbon::now('Asia/Kolkata')->format('Y-m-d');
 
-            
+
        $nowdt1 =  Carbon::now()->toDateTimeString();
        $nowdt_ymd1 =  Carbon::now()->format('Y-m-d');
 
-   
+
       $user1 = Auth::user()->name;
       //dd($user1);die;
       $user = User::where('name', '=', $user1)->first();
@@ -68,13 +68,13 @@ class InvoiceSummaryController extends Controller
                   # code...
                      $roleid[] = $key->role_id ;
                 }
-                
+
                 //dd($roleid);
 
                 if(empty($roleid)) {
                       return view('errors.403');
                 }
-              
+
         //  }
 
             $roleusers = DB::table('role_user')
@@ -84,22 +84,22 @@ class InvoiceSummaryController extends Controller
 
                 foreach($roleusers as $rv)
                 {
-                   $designer[] = $rv->user_id ; 
+                   $designer[] = $rv->user_id ;
                 }
                 //dd($designer);die;
                  $users = DB::table('designer')->pluck( 'name' , 'id');
                  $user_names = DB::table('designer')->pluck( 'name' , 'name');
-                 
-              
-      
-      if (Auth::user()->hasOnePermission(['order.create','order.update','order.delete','order.view'])) 
-        
+
+
+
+      if (Auth::user()->hasOnePermission(['order.create','order.update','order.delete','order.view']))
+
 
 
           {
             // dd("hello permission granted");
             $rolePermissions =[];
-             
+
                     $rolePermissions = Permission::join("permission_role","permission_role.permission_id","=","permissions.id")
 
                     ->whereIn("permission_role.role_id",$roleid)
@@ -107,9 +107,9 @@ class InvoiceSummaryController extends Controller
                     ->get();
                     $rolePermissions = $rolePermissions->toArray();
 
-                    
+
                    // dd($rolePermissions);
-    
+
 
           $perms = DB::table('permissions')
                     ->join('permission_user', 'permissions.id', '=', 'permission_user.permission_id')
@@ -119,7 +119,7 @@ class InvoiceSummaryController extends Controller
                         ->where('users.id', '=', Auth::user()->id);
                       })
                       ->select('permissions.slug')
-                      ->get()->toArray();  
+                      ->get()->toArray();
 
              // dd($perms);die;  Below Code change on 31/03/18 for Laravel 5.6 permission
               $rights1= [];
@@ -127,19 +127,19 @@ class InvoiceSummaryController extends Controller
               foreach ($perms as $key ) {
                       # code...
                       $rights1[] =$key->slug;
-                    }    
-                    
+                    }
+
                     //dd($rights1);
 
                     if(!empty($rolePermissions))  {
                     foreach ($rolePermissions as $key=>$value ) {
                       # code...
                       $rights2[] = $value["slug"];
-                    }    
+                    }
                   }
 
                   // dd($rights2); Above Code change on 31/03/18 for Laravel 5.6 permission
-                
+
                 if(!empty($rights2)) {
                     $rights = array_merge($rights1, $rights2);
                    }
@@ -148,109 +148,109 @@ class InvoiceSummaryController extends Controller
                    }
 
                 // dd($rights);
-               
-               
-       
+
+
+
                 $order=Invoice::first();
-               
+
                 //dd($order);
 
-                $status = Order_Status::pluck('status', 'status');  
+                $status = Order_Status::pluck('status', 'status');
                 $vendors = Vendor::pluck('name', 'name');
-        
+
                 return view('invoices.index',compact('order','users',  'status','perms','rights','vendors', 'newid' , 'user_names' ));
-              
+
             }
 
       else {
               # code...
                          return view('errors.403');
-            }      
-        
+            }
+
     }
 
 //  script added for  invoice summary on 01-nov-2018
-// public function SummarygetIndex(Request $request = null, $yrmn) changed on  15-nov-18 for  
+// public function SummarygetIndex(Request $request = null, $yrmn) changed on  15-nov-18 for
  //public function SummarygetIndex($yrmn) not working with parameters as are stuck in datatables queries
 
 public function SummarygetIndex(Request $request,$id = null)
     {
-      
+
       $newid = 10;
        $nowdt =  Carbon::now('Asia/Kolkata')->toDateTimeString();
        $nowdt_ymd =  Carbon::now('Asia/Kolkata')->format('Y-m-d');
 
-            
+
        $nowdt1 =  Carbon::now()->toDateTimeString();
        $nowdt_ymd1 =  Carbon::now()->format('Y-m-d');
 
-   
+
       $user1 = Auth::user()->name;
       //dd($user1);die;
       $user = User::where('name', '=', $user1)->first();
 
-    
+
       $roleid = [] ;
 
-     
-        if ($request->ajax()) {    
+
+        if ($request->ajax()) {
                   return Datatables::of(InvoiceSummary::query())
            ->addColumn('action', function ($user) {
-            
+
                    $edit= route('invoice-summary.edit',['id'=> $user->id ]);
 
                    return "<a href='{$edit}' class='glyphicon fa fa-edit' ></a> ";
-                   
-                       
+
+
             })
               ->addColumn('file1', function ($user) {
-               
+
               return  '<a href="' .$user->yr_month .'/' .$user->file_url.'" > '. $user->file_url .' </a>';
-                   
+
                  // \Form::open(array('method'=>'DELETE', 'route' => array('clients.destroy',".$user->client_id."))) .
                  //        \Form::submit('Delete', array('class'=>'btn')) .
-                 //        \Form::close() ;             
+                 //        \Form::close() ;
             })
                ->addColumn('file2', function ($user) {
-            
+
                    $edit= route('invoice.print',['company_id'=> $user->company_id ,'yr_month'=>$user->yr_month]);
 
                    return "<a href='{$edit}' class='glyphicon fa fa-edit' ></a> ";
-                   
-                       
+
+
             })
                ->addColumn('sendemail', function ($user) {
-            
+
                    $edit= route('invoice.sendemail',['company_id'=> $user->company_id ,'yr_month'=>$user->yr_month]);
 
                    return "<a href='{$edit}' class='glyphicon fa fa-edit' ></a> ";
-                   
-                       
-            })   
+
+
+            })
             //       ->addColumn('status', function ($user) {
-            
+
             //        $pay= route('invoice.pay',['company_id'=> $user->company_id ,'yr_month'=>$user->yr_month]);
-                   
+
             //        if ($user->status=='Paid'){
-            //               return "<a href='{$pay}' class='fa fa-paypal' ><img class='paidclass' src='img/paid.jpg' id ='pimg'></a> ";  
+            //               return "<a href='{$pay}' class='fa fa-paypal' ><img class='paidclass' src='img/paid.jpg' id ='pimg'></a> ";
             //        }
             //        else {
             //              return "<a href='{$pay}'  ><img class='paidclass' src='img/unpaid.jpg' id ='pimg'></a> ";
             //        }
-                  
-                   
-                       
-            // })   
-                 
+
+
+
+            // })
+
                            ->addColumn('addpay', function ($user) {
-            
+
                    $pay= route('invoices-summary.addpay',['id'=> $user->id ]);
-                   
-                  
-                          return "<a href='{$pay}' class='fa fa-plus' ></a> ";  
-                                     
-                       
-            })   
+
+
+                          return "<a href='{$pay}' class='fa fa-plus' ></a> ";
+
+
+            })
             ->escapeColumns([])
             ->make(true);
 
@@ -259,38 +259,38 @@ public function SummarygetIndex(Request $request,$id = null)
           else {
 
                 return view('invoices_summary.index',compact('id'));
-              
-          }
-               
-      
 
-        
+          }
+
+
+
+
     }
 
 
 public function SummarygetIndex1(Request $request)
 {
 
- 
+
 
    if ($request->ajax()) {
         $query = DB::table('invoice_summary')->select('yr_month', DB::raw(' count(*) as tot_inv, sum(inv_amount) as tot_inv_amt, sum(amt_paid_usd) as tot_rec, sum(net_amt) as pend_amt'))->groupBy('yr_month');
-          
-        
+
+
 
      //   dd($query);
 
 
       return Datatables::of($query)
             ->addColumn('yrmon', function ($user) {
-               
-              return  '<a href="invoice-summary/'.$user->yr_month.'" > '. $user->yr_month .' </a>';
-                   
+
+              return  '<a href="invoice-summary"</a>';
+
                  // \Form::open(array('method'=>'DELETE', 'route' => array('clients.destroy',".$user->client_id."))) .
                  //        \Form::submit('Delete', array('class'=>'btn')) .
-                 //        \Form::close() ;             
+                 //        \Form::close() ;
             })
-           
+
              ->escapeColumns([])
             ->make(true);
 
@@ -319,7 +319,7 @@ public function SummarygetIndex1(Request $request)
                 $dname =  Auth::user()->name ;  // old logic
                 $allotedid = [];
                 array_push($allotedid, Auth::user()->id );    // New logic of laravel 5.6
-                
+
                 $dname = '%'. $dname . '%' ;
                //dd($name);die;
                // $name1 =  '%' . $name . '%' ;
@@ -333,14 +333,14 @@ public function SummarygetIndex1(Request $request)
                 // return  view('partials.datatablesorders', ['id' => $user->id])->render();
 
                     return  view('partials.invoicecheckbox', ['id' => $user->id, 'status' => $user->status])->render();
-                   
+
                  // \Form::open(array('method'=>'DELETE', 'route' => array('clients.destroy',".$user->client_id."))) .
                  //        \Form::submit('Delete', array('class'=>'btn')) .
-                 //        \Form::close() ;             
+                 //        \Form::close() ;
             })
              ->addColumn('order_id', function ($user) {
                  $vendors = Vendor::pluck('name', 'name');
-                  
+
                 return  view('partials.datatableseditorder', ['id' => $user->id, 'orderid' =>$user->order_id, 'status'=> $user->status, 'file_count' => $user->file_count,  'vendors'=> $vendors])->render();
             })
             ->addColumn('order_dt', function($model){
@@ -350,7 +350,7 @@ public function SummarygetIndex1(Request $request)
                  $dname =  Auth::user()->name ;  // old logic
                 $allotedid = [];
                 array_push($allotedid, Auth::user()->id );    // New logic of laravel 5.6
-                
+
                 $dname = '%'. $dname . '%' ;
                 $query->wherein('alloc_id' , $allotedid)
                       ->orWhere('allocation', 'like', $dname);
@@ -360,11 +360,11 @@ public function SummarygetIndex1(Request $request)
 
 
           }
-     
+
       else  {
-          
+
           dd('ok admin');die;
-          
+
          return Datatables::of(Invoice::query())
           ->addColumn('action1', function ($user) {
                 return  view('partials.datatablesstatus', ['id' => $user->id, 'status' => $user->status])->render();
@@ -379,26 +379,26 @@ public function SummarygetIndex1(Request $request)
                 // return  view('partials.datatablesorders', ['id' => $user->id, 'vendors'=> $vendors])->render();
                  // \Form::open(array('method'=>'DELETE', 'route' => array('clients.destroy',".$user->client_id."))) .
                  //        \Form::submit('Delete', array('class'=>'btn')) .
-                 //        \Form::close() ;             
+                 //        \Form::close() ;
             })
               ->addColumn('order_id', function ($user) {
                  $vendors = Vendor::pluck('name', 'name');
-                  
+
                 return  view('partials.datatableseditorder', ['id' => $user->id, 'orderid' =>$user->order_id, 'status'=> $user->status, 'file_count' => $user->file_count,  'vendors'=> $vendors])->render();
             })
            ->addColumn('order_dt', function($model){
                 return date('j-M-Y', strtotime($model->order_dt));
               })
-           
-          
-         
+
+
+
             ->make(true);
 
         }
 
    }
 
-//  SUMMARY INVOICE TABLES DATA  
+//  SUMMARY INVOICE TABLES DATA
  /**
      * Process datatables ajax request.
      *
@@ -410,22 +410,22 @@ public function SummarygetIndex1(Request $request)
         // dd('ok');die;
       return Datatables::of(InvoiceSummary::query())
            ->addColumn('action', function ($user) {
-            
+
           //  return  view('partials.datatablesinvoicesummary', ['id' => $user->id, 'status' => $user->status])->render();
 
-          
+
 
            $edit= route('invoice-summary.edit',['id'=> $user->id ]);
 
            return "<a href='{$edit}' class='glyphicon fa fa-edit' ></a> ";
-                   
-                       
+
+
             })
             ->escapeColumns([])
             ->make(true);
 
- 
-   }   
+
+   }
 
 
  public function SummaryanyData1()
@@ -433,33 +433,33 @@ public function SummarygetIndex1(Request $request)
        // return Datatables::of(Customer::query())->make(true);
         // dd('ok');die;
         $query = DB::table('invoice_summary')->select('yr_month', DB::raw(' count(*) as tot_inv, sum(inv_amount) as tot_inv_amt, sum(amt_paid_usd) as tot_rec, sum(net_amt) as pend_amt'))->groupBy('yr_month')->get();
-          
-        
+
+
 
      //   dd($query);
 
 
       return Datatables::of($query)
             ->addColumn('yrmon', function ($user) {
-               
+
               return  '<a href="invoice-summary/'.$user->yr_month.'" > '. $user->yr_month .' </a>';
-                   
+
                  // \Form::open(array('method'=>'DELETE', 'route' => array('clients.destroy',".$user->client_id."))) .
                  //        \Form::submit('Delete', array('class'=>'btn')) .
-                 //        \Form::close() ;             
+                 //        \Form::close() ;
             })
              ->escapeColumns([])
             ->make(true);
 
- 
-   }   
+
+   }
 
 
 public  function editdtl($id)
 {
        //dd($id);
       $summary = InvoiceSummary::find($id);
-      
+
       $sum1  =  array( 'id'=> $summary->id,  'client_company' =>$summary->client_company , 'yr_month' => $summary->yr_month,
         'inv_amount' => $summary->inv_amount,
         'paid_amt' => $summary->paid_amt,
@@ -478,11 +478,11 @@ public  function editdtl($id)
 public function AddPay(Request $request, $id)
 {
 
-   
+
 
       $invoice =  InvoiceSummary::find($id);
 
-  
+
        $invoice_no = $invoice->invoice_no;
        $company_id = $invoice->company_id;
        $inv_amount =  $invoice->inv_amount;
@@ -492,9 +492,9 @@ public function AddPay(Request $request, $id)
   // dd($invoice);
   //validation
 
-  
+
        $diffamt = $inv_amount- $discount- $inv_paidamt;
- 
+
        if ($diffamt - $request['amt_paid_usd'] < 0)
        {
 
@@ -504,9 +504,9 @@ public function AddPay(Request $request, $id)
    //validation above
 
 
-  $result = DB::transaction(function() use ($request, $id) {    
+  $result = DB::transaction(function() use ($request, $id) {
    try {
-         
+
 
   $input = $request->all();
 
@@ -526,7 +526,7 @@ public function AddPay(Request $request, $id)
        $inv_paidamt = $key->amt_paid_usd;
 
   }
- 
+
     $netamt  =  $inv_amount - $discount;
  $diffamt = $inv_amount- $discount- $inv_paidamt;
 
@@ -536,40 +536,40 @@ public function AddPay(Request $request, $id)
 
 
 //  dd($maxorderid);
-      
+
        if( is_null($maxorderid)) {
           $max_id = 0;
-          
+
          }
         else
             {
                     $max_id = $maxorderid;
-                    $max_id = substr($max_id, -4);    
+                    $max_id = substr($max_id, -4);
             }
 
-     
+
            $max_id = (int)($max_id + 1) ;
-     
-          
+
+
            $input['tran_id'] = 'PY' .  str_pad($max_id, 4, "0", STR_PAD_LEFT);
 
            $input['payment_date'] = Carbon::parse($input['payment_date'])->format('Y-m-d');
-      
+
            $invoices='';
 
-      
+
 
 
          $input['invoices']=  $invoice_no ;
          $input['company_id']  = $company_id;
 
-        
+
 
      //  dd($input);
-       
+
        CompanyPaid::create($input);
-      
-     
+
+
        //dd($amtpaid1->amt_paid_usd);
       // dd($diffamt);
 
@@ -583,7 +583,7 @@ public function AddPay(Request $request, $id)
       // echo 'Caught //exception: ',  $e->getMessage(), "\n";
 }
 
-           
+
 }); // result output
 
 
@@ -609,29 +609,29 @@ public function UpdatePay(Request $request, $id)
    // dd($invoice_no);
 
   $maxorderid = DB::table('company_paid')->max('tran_id');
-      
+
        if( is_null($maxorderid)) {
           $max_id = 0;
-          
+
          }
         else
             {
                     $max_id = $maxorderid;
-                    $max_id = substr($max_id, -4);    
+                    $max_id = substr($max_id, -4);
             }
 
       $max_id = (int)($max_id + 1) ;
       //$new_dt  = $us_time2 ;
-          
+
       $input['tran_id'] = 'PY' .  str_pad($max_id, 4, "0", STR_PAD_LEFT);
 
       $ord_id1 =  'PY'  . str_pad($max_id, 4, "0", STR_PAD_LEFT);
-     
+
       // if(is_array($input['allocation'])) {
       //       $input['allocation'] =  join(',', $input['allocation']);
       //     }
          $input['payment_date'] = Carbon::parse($input['payment_date'])->format('Y-m-d');
-      
+
         $invoices='';
 
         // if ($input['pay_option']<>'Direct')
@@ -642,23 +642,23 @@ public function UpdatePay(Request $request, $id)
 
         // if (is_array($invoices)) {
         //      $input['invoices']= implode(',', $invoices);
-        // }  
+        // }
 
 
-        // } 
-         
+        // }
 
-        
+
+
 
          //dd($input);()
         $amt_paid_usd = 0;
-            
+
             $amt_paid =  CompanyPaid::where('company_id', '=',  $company_id)->select('amt_paid_usd')->get();
 
             foreach ($amt_paid as $key ) {
              $amt_paid_usd = $key->amt_paid_usd;
             }
-    
+
           if ($amt_paid_usd == 0){
                    //   CompanyPaid::where('company_id', '=',  $company_id)->where('invoice_no', '=', $invoice_no)->create([$input]);
           }
@@ -667,16 +667,16 @@ public function UpdatePay(Request $request, $id)
            ->update([$input]);
 
           }
-         
+
 
           // DB::table('invoices_summary')->where('id', $request->id)->update([$input]);
       return redirect()->action('InvoiceSummaryController@SummarygetIndex', ['newid'=>$id]);
 
-     
-    
+
+
 }
 
-public function UpdateDtls(Request $request, $id) 
+public function UpdateDtls(Request $request, $id)
 {
    //dd($request->all());
   $updated_val =  $request->all();
@@ -687,10 +687,10 @@ public function UpdateDtls(Request $request, $id)
 
   $this->validate($request, [
           //'client_company' => 'bail|alpha_spaces|required|max:255',
-         
+
           // 'amt_received_inr'    => 'required',
           // 'paid_dt'  => 'required'
-           
+
     ]);
 
   //$id = $request->id ;
@@ -701,7 +701,7 @@ public function UpdateDtls(Request $request, $id)
 
   $discount =  $request->discount;
 
-  
+
   if ($discount >0 ){
      $netamt  =   ($request->inv_amount - $discount);
   }
@@ -709,7 +709,7 @@ public function UpdateDtls(Request $request, $id)
   {
     $netamt = $request->inv_amount;
   }
- 
+
 
 
   $updated = array('discount'=> $discount, 'discount_reason'=> $request->discount_reason,
@@ -718,7 +718,7 @@ public function UpdateDtls(Request $request, $id)
 
   // $updated = array('pay_channel'=> $request->pay_channel,'amt_received_inr'=> $request->amt_received_inr,am
   //        'net_amt'=> $remain_amt,'amt_paid_usd'=> $request->amt_paid_usd, 'bank_charges'=>$request->bank_charges,
-  //    'conv_rate'=> $request->conv_rate,  'paid_dt'=> $paid_dt, 'tran_id' => $request->tran_id, 
+  //    'conv_rate'=> $request->conv_rate,  'paid_dt'=> $paid_dt, 'tran_id' => $request->tran_id,
   //     'remarks' => $request->remarks);
 
   DB::table('invoice_summary')->where('id', $id)->update($updated);
@@ -728,9 +728,9 @@ public function UpdateDtls(Request $request, $id)
 
   $input = $request->all();
 
- 
 
-       
+
+
   // return view('invoice_summary.index');
   return redirect()->action('InvoiceSummaryController@SummarygetIndex', ['newid'=>$id]);
 
@@ -752,7 +752,7 @@ public function CreateInvoice()
 
             return view('reports.create_invoice', compact( 'status'));
 
-}   
+}
 
 public function InvoiceProcess(Request $request) {
 
@@ -773,12 +773,12 @@ public function InvoiceProcess(Request $request) {
 
                 return redirect()->back();
             }
-            
+
             $P_status  = "'" . implode( "','", $stat ) . "'" ;
             //$param2    = " and orders.status IN" . " (" . $P_status . ")";  removed on  260318 as not  working in server 30 php 7.1
 
-            $param2    = " and status IN" . " (" . $P_status . ")";   
-            $param2    =  '"' . $param2 . '"' ;    
+            $param2    = " and status IN" . " (" . $P_status . ")";
+            $param2    =  '"' . $param2 . '"' ;
             $param2    =  stripslashes($param2);
 
 
@@ -827,16 +827,16 @@ public function InvoiceProcess(Request $request) {
         $invoice_order['note'] = $order_copy[$key]->note;
         $invoice_order['unit_price'] = $order_copy[$key]->unit_price;
         $invoice_order['order_us_date'] = $order_copy[$key]->order_us_date;
-          
+
           DB::table('invoice')->insert($invoice_order);
        }
-             
-   
+
+
            //DB::table('invoice')->insert($order_copy);
-               
-            //dd($logy);   
+
+            //dd($logy);
             //DB::table('invoice')->insert($logy[0]);
-            //return \Redirect::route('invoices');   
+            //return \Redirect::route('invoices');
           //  self::getIndex();
             return view('invoices.index');
 }
@@ -845,59 +845,59 @@ public function InvoiceProcess(Request $request) {
 
 //public function edit1(Order $order, Request $request = null)
 public function edit1($id)
-      {  
+      {
            // dd($id);
 
           //dd($request->input('id'));die;
             //dd($request->input('order_id')); exit;
-          //  abort(403, 'Unauthorized action.'); 
-           
-            $users = User::pluck('name', 'name');
-            $status = Order_Status::pluck('status', 'status'); 
+          //  abort(403, 'Unauthorized action.');
 
-            
+            $users = User::pluck('name', 'name');
+            $status = Order_Status::pluck('status', 'status');
+
+
             //$order=Invoice::find($request->input('id'));
             $order=Invoice::find($id);
 
              ///return view('customers.edit',compact('customer'));
             //dd($order);
-             
+
             $created_by  = $order->created_by;
             $updated_by = $order->updated_by ;
             $cby_name =  User::find($created_by);
             $uby_name =  User::find($updated_by);
              //dd($cby_name);
-            
+
             $created_byname =  $cby_name->name ;
             $updated_byname =  $uby_name->name ;
-           
+
       $logusers =  DB::table('user_logs')->where('order_id' ,'=', $order->order_id)->orderby('id','desc')
                     ->limit(2)->get();
-       
+
 
       foreach($logusers as $key=>$value) {
           $logy[] = collect($logusers[$key])->toArray();
        }
-      
+
       $diffcolumns = "" ;
 
       if( count($logy)> 1)
       {
             $diffcol =  array_diff($logy[1], $logy[0]);
             $diffcol =array_slice($diffcol, 0, 2);
-            
-            foreach($diffcol as $key=>$value)  
+
+            foreach($diffcol as $key=>$value)
             {
                 $diffcolumns .= $key .":" . $value  . ",";
             }
 
 
-            
+
       }
       //dd($diffcolumns);
 
- 
-      
+
+
 
       // $logusers1 = collect($logusers[1]);
       // $result    = array_diff($logusers , $logusers1);
@@ -909,12 +909,12 @@ public function edit1($id)
 
   if ($request->ajax()) {
                 // $alloc =  explode(',', $order->allocation);
-                 $breaks = array("<br />","<br>","<br/>");  
+                 $breaks = array("<br />","<br>","<br/>");
            $note = str_ireplace($breaks, "\r\n", $order->note );
            $client_note = str_ireplace($breaks, "\r\n", $order->client_note );
 
           // dd($order->allocation);
-                 
+
     $response = array(
            'id'  => $order->id,
            'order_id'  => $order->order_id,
@@ -950,15 +950,15 @@ public function edit1($id)
            'status1'        => $status1
 
                      );
-                
-             
+
+
                   //return response()->json([$response]);
                   return view('orderdtls.edit',compact('order','users','status'));
             }
-                
+
             else
             {
-                 
+
                   return view('invoices.index',compact('order','users','status'));
             }
 
@@ -967,39 +967,39 @@ public function edit1($id)
   }
 
 
-// order details edit mode   above 
+// order details edit mode   above
 public function edit($id)
-      {  
-        
+      {
+
 
             $invoicesummary=InvoiceSummary::find($id);
-                 
+
                   return view('invoices_summary.edit',compact('invoicesummary'));
-        
+
 
 
   }
 
   public function InvoiceEditPay($id)
-      {  
-        
+      {
+
 
             $invoicesummary=InvoiceSummary::find($id);
-                 
+
                   return view('invoices_summary.editpay',compact('invoicesummary'));
-        
+
 
 
   }
 
    public function InvoiceAddPay($id)
-      {  
-        
+      {
+
 
             $invoicesummary=InvoiceSummary::find($id);
-                 
+
                   return view('invoices_summary.addpay',compact('invoicesummary'));
-        
+
 
 
   }
@@ -1009,7 +1009,7 @@ public function edit($id)
             //dd("hello");die;
               $yr = Carbon::now();
             $yr = $yr->year;
-           
+
            // $year[0] = $yr;
             for($i=0; $i<10; $i++) {
                 $year[$yr] = $yr;

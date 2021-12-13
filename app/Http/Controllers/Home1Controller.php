@@ -50,7 +50,7 @@ public function index()
       //dd('hello');
 
        // auth()->login(User::first()); to log as first user
-        
+
         $user = User::orderBy('name', 'asc')->get();
         //return view('home', compact('user'));
         return view('welcome', compact('user'));
@@ -67,7 +67,7 @@ public function index()
         // $stat_data=DB::select($stat_sql);
         // //echo "<pre>",print_r($stat_data),"</pre>";die;
 
-      
+
 
         $company_list = Client::where('created_at', '>=', '2019-01-01')->pluck('client_company', 'company_id')->toArray();
 
@@ -78,7 +78,7 @@ public function index()
              $to_date=date('Y-m-d H:i',strtotime($req_data['to_date']));
         }
 
-        
+
           $wheredate=" where orders.bill_dt >= '".$from_date."' AND orders.bill_dt <= '".$to_date."' ";
         //dd($company_list);
 
@@ -100,14 +100,14 @@ public function index()
 
 
              $topfivefranchises_sql="SELECT  SUM(file_price) as total_amount,COUNT(orders.order_id) as total_order,clients.client_company FROM orders  inner join clients on clients.company_id=orders.company_id ".$wheredate." GROUP BY clients.client_company ORDER BY total_amount DESC LIMIT 5";
-      
+
 
         $topfivefranchises_data=DB::select($topfivefranchises_sql);
 
        // dd($topfivefranchises_data);
 
         $franchises_sql="SELECT COUNT('orders.order_id') as total_order, file_type FROM orders  where bill_dt >='2019-01-01' group by file_type";
-      
+
         $franchises_data=DB::select($franchises_sql);
         $new_chart_array = [];
         $statuts_string = "";
@@ -123,7 +123,7 @@ public function index()
         $order_chart['chart_data'] = $chart_data;
 
         ///  added below for chart
-        
+
 
        //echo "<pre>",print_r($series),print_r($nseries),print_r($main_series);die;
       $ordercnt=0; // inserted by prashant
@@ -152,7 +152,7 @@ public function index()
             $series2[2]["name"] = "Digitizing" ;
 
 
-         
+
             foreach ($orders as $value) {
               $orders1[$j]["data"] = $value->yrmonth ;
               $r['month']   =   $value->yrmonth ;
@@ -161,8 +161,8 @@ public function index()
               $cat =   $value->yrmonth ;
               $yr  =   substr($cat,0,4);
               $mn  =   substr($cat,4);
-              
-             
+
+
                          $o1 = DB::table('orders')
                             ->select(DB::raw('sum(file_price) as fileprice'))
                             ->whereYear('bill_dt', '=', $yr)
@@ -173,14 +173,14 @@ public function index()
 
                   $o1 = collect($o1);
 
-               
+
 
                   foreach ($o1 as  $value) {
                     $orders2[$j]["data"] = $value->fileprice ;
                      $r['Vector']       =  $value->fileprice ;
-                                 
-                  } 
-  
+
+                  }
+
                           $o2 = DB::table('orders')
                             ->select(DB::raw('sum(file_price) as fileprice'))
                             ->whereYear('bill_dt', '=', $yr)
@@ -188,17 +188,17 @@ public function index()
                             ->where('status',    '=', 'Completed')
                             ->where('file_type', '=', 'Digitizing')
                             ->get();
-                          
-                   
-                          $o2 = collect($o2); 
+
+
+                          $o2 = collect($o2);
                           foreach ($o2 as  $value) {
                                  $orders3[$j]["data"] = $value->fileprice ;
                                   $r['Digitizing']   =  $value->fileprice ;
-                                                  
+
                           }
 
                           $series1['data'][] = $r['Vector'];
-                          $series2['data'][] = $r['Digitizing'];  
+                          $series2['data'][] = $r['Digitizing'];
 
                             $o2 = DB::table('orders')
                             ->select(DB::raw('sum(file_price) as fileprice'))
@@ -207,25 +207,25 @@ public function index()
                             ->where('status',    '=', 'Completed')
                             ->where('file_type', '=', 'Photoshop')
                             ->get();
-                          
-                   
-                          $o2 = collect($o2); 
+
+
+                          $o2 = collect($o2);
                           foreach ($o2 as  $value) {
                                  $orders4[$j]["data"] = $value->fileprice ;
-                                  
-                                                  
-                          }
-              
 
-                    
+
+                          }
+
+
+
                       $j++;
                  }
 
-                 $orders1 = array_column($orders1, 'data');  
-                 $orders2 = array_column($orders2, 'data'); 
-                 $orders3 = array_column($orders3, 'data'); 
+                 $orders1 = array_column($orders1, 'data');
+                 $orders2 = array_column($orders2, 'data');
+                 $orders3 = array_column($orders3, 'data');
                  $orders4 = array_column($orders4, 'data');
-                
+
 
      // return view('Admin.dashboard',compact('hourswithmddate','hours','series','req_data','franchise_list','stat_data','topfiveagent_data','topfivefranchises_data','topfivecustomer_data','sales_data','order_chart','pendingOrders','ordercnt'));
         return view('Admin.dashboard', compact('from_date', 'to_date', 'company_list',  'stat_data', 'topfivefranchises_data', 'sales_data', 'req_data', 'order_chart', 'pendingOrders', 'ordercnt'))->with('orders1', json_encode($orders1,JSON_NUMERIC_CHECK) )->with('orders2', json_encode($orders2,JSON_NUMERIC_CHECK) )->with('orders3', json_encode($orders3,JSON_NUMERIC_CHECK))->with('orders4', json_encode($orders4,JSON_NUMERIC_CHECK) );
@@ -243,7 +243,7 @@ public function index()
 
     }
 
-  
+
 
     /**
 
@@ -293,7 +293,7 @@ $user = User::find(1);
         ];
 
        // $details = 'GOOD MORNING  , HELLOW HOW ARE YOU?';
-  
+
      // Notification::send($user, new OrderStatusNotification($details));  working
 
        Notification::send($user, new ClientStatusNotification($details));
@@ -318,20 +318,20 @@ $user = User::find(1);
         $firebaseToken = User::whereNotNull('device_token')->pluck('device_token')->all();
 
         if($request->has('touser')) {
-              $touser =  $request->touser ;  
+              $touser =  $request->touser ;
           $firebaseToken = User::whereIN('id',  $touser)->pluck('device_token')->all();
 
                   //dd($firebaseToken);
         }
-        
 
-      
 
-          
 
-        $SERVER_API_KEY = 'AAAAjC_uzxk:APA91bEr7nYV5WAfEmRZsd5wo68kONFfyIXpZ9VbFW5lC8VrRx57VFHtoaLCvv5cR4yBOs8A6OgwFQrJ3j-PZEmhbnxLXWURBPUElVszkpX8P0otvQ7z3k1Cu5NVU0peAX0J2AQxZYWH';
 
-  
+
+
+        $SERVER_API_KEY = '';
+
+
 
         $data = [
 
@@ -341,7 +341,7 @@ $user = User::find(1);
 
                 "title" => $request->title,
 
-                "body" => $request->body,  
+                "body" => $request->body,
 
             ]
 
@@ -349,7 +349,7 @@ $user = User::find(1);
 
         $dataString = json_encode($data);
 
-    
+
 
         $headers = [
 
@@ -359,11 +359,11 @@ $user = User::find(1);
 
         ];
 
-    
+
 
         $ch = curl_init();
 
-      
+
 
         curl_setopt($ch, CURLOPT_URL, 'https://fcm.googleapis.com/fcm/send');
 
@@ -377,11 +377,11 @@ $user = User::find(1);
 
         curl_setopt($ch, CURLOPT_POSTFIELDS, $dataString);
 
-               
+
 
         $response = curl_exec($ch);
 
-  
+
 
       //  dd($response);
 
@@ -390,7 +390,7 @@ $user = User::find(1);
 
 
 
-   
-      
-    
+
+
+
 }
