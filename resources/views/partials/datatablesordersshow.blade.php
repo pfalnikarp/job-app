@@ -1,0 +1,1 @@
+<a href="{!! route('orders.show',$id ) !!}" class="btn btn-sm"><span><i class="glyphicon glyphicon-pencil"></i></span></a>
