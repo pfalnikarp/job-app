@@ -12,7 +12,10 @@ li {
 @endsection
 
 @section('content')
-
+    @php
+        $grouppage="true";
+        $grouppageedit="true";
+    @endphp
 
 <div class="container">
                        <div class="row"><h2>Group Notification</h2></div>
@@ -29,25 +32,25 @@ li {
       </tr>
    </thead>
    <tbody></tbody>
-                          
-</table>      
-</div>                     
-  
-</div>   
+
+</table>
+</div>
+
+</div>
 
 @endsection
 
 @section('script')
 
 <script type="text/javascript">
- 
+
    $(function () {
      var table = $('#notificatonrecords').DataTable({
         processing: true,
         serverSide: true,
         async: true,
         responsive: true,
-        scrollCollapse: true, 
+        scrollCollapse: true,
         stateSave: true,
        // stateDuration: -1,
        // bStateSave: true,
@@ -84,7 +87,7 @@ li {
         type: "get",
         data: function (d) {
               d.user_info ="Activeuser";
-           
+
         },
           },
         "preDrawCallback": function (settings) {
@@ -104,9 +107,9 @@ li {
                  // { width: 20, targets: 2 },
                  // { width: 10, targets: 3 },
                  // { width:15, targets: 4 },
-               
+
           ],
-          columns: [ 
+          columns: [
                // {data: null, name: null,width:'5%'},
                {data: 'groupid', name: 'groupid', class:"fooid dt-center"},
                {data:'groupname', name:'groupname',width:'150px', class:"username dt-left"},
@@ -135,9 +138,9 @@ li {
 
                },
                { data:'edit',name:'edit'}
-               
-               
-           ], 
+
+
+           ],
            order: [[1, 'desc']]
       });
       table.on( 'draw.dt', function () {
@@ -151,20 +154,21 @@ li {
 //refresh data table
 $(document).ready(function () {
 
+
  $("#delsession").click(function(event) {
-       
+
       event.preventDefault ;
       var table = $('#notificatonrecords').DataTable();
       table.state.clear();
 
-    
+
       window.location.reload();
 
     });
 
 });
-  
-</script>           
+
+</script>
 
 @endsection
 
