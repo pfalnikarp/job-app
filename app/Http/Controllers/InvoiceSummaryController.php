@@ -173,9 +173,9 @@ class InvoiceSummaryController extends Controller
 // public function SummarygetIndex(Request $request = null, $yrmn) changed on  15-nov-18 for
  //public function SummarygetIndex($yrmn) not working with parameters as are stuck in datatables queries
 
-public function SummarygetIndex(Request $request,$id = null)
+public function SummarygetIndex(Request $request, $yr_month=null)
     {
-
+       // dd($yr_month);
       $newid = 10;
        $nowdt =  Carbon::now('Asia/Kolkata')->toDateTimeString();
        $nowdt_ymd =  Carbon::now('Asia/Kolkata')->format('Y-m-d');
@@ -192,9 +192,9 @@ public function SummarygetIndex(Request $request,$id = null)
 
       $roleid = [] ;
 
-
+                    $query = InvoiceSummary::where('yr_month', $yr_month);
         if ($request->ajax()) {
-                  return Datatables::of(InvoiceSummary::query())
+                  return Datatables::of($query)
            ->addColumn('action', function ($user) {
 
                    $edit= route('invoice-summary.edit',['id'=> $user->id ]);
@@ -258,7 +258,7 @@ public function SummarygetIndex(Request $request,$id = null)
           }
           else {
 
-                return view('invoices_summary.index',compact('id'));
+                return view('invoices_summary.index', compact('yr_month'));
 
           }
 
@@ -284,7 +284,9 @@ public function SummarygetIndex1(Request $request)
       return Datatables::of($query)
             ->addColumn('yrmon', function ($user) {
 
-              return  '<a href="invoice-summary"</a>';
+
+
+              return view("payments.summary" , [ 'yr_month' => $user->yr_month]);
 
                  // \Form::open(array('method'=>'DELETE', 'route' => array('clients.destroy',".$user->client_id."))) .
                  //        \Form::submit('Delete', array('class'=>'btn')) .

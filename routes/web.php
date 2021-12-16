@@ -23,7 +23,7 @@ Route::get('/t', function () {
 });
 
 // Route::get('group', function () {
-//     return view('app'); 
+//     return view('app');
 //   });
 
   Route::get('groupmenu', function(){
@@ -37,10 +37,10 @@ Route::get('/t', function () {
 
  Route::PUT('groupnotification/{id}', 'GroupNotificationController@update')->name('groupnotification.update');
 
-//group notification  
+//group notification
 
 Route::get('jobinvoice', function () {
-    return view('invoices.invoiceyrmonth'); 
+    return view('invoices.invoiceyrmonth');
   });
 
 //search compeany  for given month checkbox company criteria
@@ -78,53 +78,53 @@ Auth::routes();
         Route::post('orders/{id}/editdtl',  'OrderController@editdtl')->name('orders.editdtl');
         Route::get('orders/create', 'OrderController@create')->name('orders.create');
 		Route::post('orders/updatenotes', 'OrderController@updatenotes')
-                ->name('orders.updatenotes');  
-    Route::post('orders/delete_child', 'OrderController@delete_child');  
+                ->name('orders.updatenotes');
+    Route::post('orders/delete_child', 'OrderController@delete_child');
 
 Route::patch('orders/updatedtl', 'OrderController@updatedtl');Route::post('orders/orderdtlstatus', 'OrderController@orderdtlstatus');
-             
+
 
 // individual order alloc
 Route::post('orders/updatealloc', 'OrderController@updatealloc')
-                ->name('orders.updatealloc');   
+                ->name('orders.updatealloc');
 
 // multiple order allocation on 28/08/17
 Route::post('orders/multipleorderalloc', 'OrderController@multipleorderalloc')
-                ->name('orders.multipleorderalloc');   
-Route::get('orders/search', 'OrderController@search');   
+                ->name('orders.multipleorderalloc');
+Route::get('orders/search', 'OrderController@search');
 // added below on 31-05-20
 //Route::get('orders/getfile/{orders}', 'OrderController@GetFile')->name('orders.getfile');
   Route::post('orders/updatechildfile', 'OrderController@UpdateChildFile');
-               // ->name('orders.updatenotes');  
+               // ->name('orders.updatenotes');
 
 
-//  added below on 26-05-20				
+//  added below on 26-05-20
 
 
-Route::get('orders/getnotes', 'OrderController@getnotes');     
+Route::get('orders/getnotes', 'OrderController@getnotes');
 
-Route::get('orders/getdesign', 'OrderController@getdesign'); 
+Route::get('orders/getdesign', 'OrderController@getdesign');
 
 
 Route::post('orders/updateorderstatus', 'OrderController@updateorderstatus');
 
-Route::get('/delayedordersv', 'OrderController@DelayedOrdersv');Route::get('/delayedordersd','OrderController@DelayedOrdersd');Route::get('/delayedordersp', 'OrderController@DelayedOrdersp'); Route::get('/todayordcomp', 'OrderController@TodayOrdComp');Route::post('/searchordcomp', 'OrderController@SearchOrdComp');  
+Route::get('/delayedordersv', 'OrderController@DelayedOrdersv');Route::get('/delayedordersd','OrderController@DelayedOrdersd');Route::get('/delayedordersp', 'OrderController@DelayedOrdersp'); Route::get('/todayordcomp', 'OrderController@TodayOrdComp');Route::post('/searchordcomp', 'OrderController@SearchOrdComp');
 
-  //  timer routes            
+  //  timer routes
   Route::post('orders/updatetimer', 'OrderController@updatetimer')
-                ->name('orders.updatetimer');   
+                ->name('orders.updatetimer');
   Route::post('orders/stoptimer', 'OrderController@stoptimer')
-                ->name('orders.stoptimer');   
+                ->name('orders.stoptimer');
 
-  
+
 
 Route::get('orders/getfiles', 'OrderController@getfiles');
-Route::get('getdelayvalue', 'OrderController@getdelayvalue')->name('order.getdelayvalue');     
-Route::post('orders/updateordermisc', 'OrderController@updateordermisc')->name('orders.updateordermisc');    
-  // timer routes    
+Route::get('getdelayvalue', 'OrderController@getdelayvalue')->name('order.getdelayvalue');
+Route::post('orders/updateordermisc', 'OrderController@updateordermisc')->name('orders.updateordermisc');
+  // timer routes
 
 //  above code added on 26-05-20
-Route::resource('orders', 'OrderController');		
+Route::resource('orders', 'OrderController');
 
 
 //orders
@@ -137,7 +137,7 @@ Route::post('postinvyrmonth', 'InvoiceController@GenInvoice_new');
 
 //  invoice summary
 
-Route::get('invoice-summary', array('middleware' => 'auth', 'uses' => 'InvoiceSummaryController@SummarygetIndex'))->name('invoice-summary.summarygetindex');
+Route::get('invoice-summary/{yr_month}', array('middleware' => 'auth', 'uses' => 'InvoiceSummaryController@SummarygetIndex'))->name('invoice-summary.summarygetindex');
 
 // new route for testing direct editing
 // added on 12-11-18
@@ -207,14 +207,14 @@ Route::post('updatepass', 'UserController@updatepassword')->name('users.changepa
 
 
 //show profile
-Route::get('showprofile',['uses'=>'UserController@showprofile','as'=>'user.showprofile']); 
-Route::post('updateprofile',['uses'=>'UserController@updateprofile','as'=>'user.updateprofile']); 
+Route::get('showprofile',['uses'=>'UserController@showprofile','as'=>'user.showprofile']);
+Route::post('updateprofile',['uses'=>'UserController@updateprofile','as'=>'user.updateprofile']);
 
 
 //users
 
 //company clients routes
-Route::get('clients/data/{id}', 'ClientController@anyData')->name('clients.data');   
+Route::get('clients/data/{id}', 'ClientController@anyData')->name('clients.data');
 Route::get('clients',  'ClientController@getIndex')->name('clients.index')->middleware('permission:client.create');
 
 

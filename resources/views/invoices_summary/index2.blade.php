@@ -12,7 +12,7 @@
 
 .dt-button {
   background: #bbdefb !important;
-    
+
 }
 
 .paybutton {
@@ -68,7 +68,7 @@ select.selectalloc {
   margin: 5px 1px 3px 0px;
   border: 1px solid #DDDDDD;
 }*/
- 
+
 /*input[type=text]:focus, textarea:focus {
   box-shadow: 0 0 5px rgba(81, 203, 238, 1);
   padding: 3px 0px 3px 3px;
@@ -218,38 +218,38 @@ th.dt-center.btn-success {
 }
 
 .fstat   {
-   /*background: #00695c; 
+   /*background: #00695c;
    background:  #9c9391;
-  color: white !important; removed as background now white on 02/05/17 
+  color: white !important; removed as background now white on 02/05/17
    text-align: center; */
    /*border: 0px;  removed for paralled testing on 08/02/17
    padding: 0px !important;*/
    background-color: transparent;
-           
+
   }
 
 .fstatprice   {
-  background: #00695c; 
-  
+  background: #00695c;
+
   /* color: white !important; removed as background now white on 02/05/17 */
    text-align: center;
    /*border: 0px;  removed for paralled testing on 08/02/17
    padding: 0px !important;*/
-           
-  }  
+
+  }
 
 div.DTFC_RightHeadBlocker {
- /* background: #00695c !important;   removed as background now white on 02/05/17 
+ /* background: #00695c !important;   removed as background now white on 02/05/17
    background:  #9c9391 !important; */
 }
 
 .fhead   {
    /*background: #00bfa5  !important;
-   background: transparent !important;  
+   background: transparent !important;
    color: white !important;  */
    /*text-align: center;
    vertical-align: middle;
-   
+
    font-weight: 900;
    overflow-x: hidden;*/
 
@@ -258,7 +258,7 @@ div.DTFC_RightHeadBlocker {
 
 /* removed on 13/09/17 due to clash with bootswatch .test  {
   color: blue !important;
-}*/ 
+}*/
 
 .fbody tr  {
  /* height: 5px !important ;  */
@@ -274,7 +274,7 @@ div.DTFC_RightHeadBlocker {
    background: #00bfa5  !important;color: #01579b !important;*/
    text-align: center;
    vertical-align: middle;
- 
+
 }
 
 input {
@@ -288,7 +288,7 @@ input {
 
 
 /*button#stat .fmy .ui-button .ui-corner-all .ui-widget .btn .btn-small .btn-primary .navbar-btn  {
-*/ 
+*/
 /*.fmy {
   margin: 20px 0 !important;
   display: block !important;
@@ -303,7 +303,7 @@ input {
 }
 
 .ui-dialog-titlebar {
-    background: #D984DA !important;  
+    background: #D984DA !important;
 }
 
 #statusdialog .ui-widget select {
@@ -343,12 +343,12 @@ span.error {
 }*/
 
 .modal-header {
-/*  background: #2196f3; removed on 12/04/17  */ 
+/*  background: #2196f3; removed on 12/04/17  */
     background:  #9c9391;
 
 }
 
-  
+
 .modal-dialog{
     overflow-y: initial !important;
 }
@@ -357,7 +357,7 @@ span.error {
     max-height: calc(100vh - 200px) !important;
     overflow-y: auto  !important;
     /*background: #00bfa5 ;
-    background:    #44703c   ; removed on 12/04/17  
+    background:    #44703c   ; removed on 12/04/17
     background: transparent !important ;  */
     scrollbar-face-color: #414340;
             scrollbar-shadow-color: #cccccc;
@@ -391,11 +391,11 @@ span.error {
         background: transparent !important;
         margin-left: 5px !important ;
         padding-left: 10px !important ;
-}  */ 
+}  */
 
 /*table#invoices-sum-table tbody tr td.FirstCol {
         background: transparent !important ;
-}  
+}
 */
 
 
@@ -406,7 +406,7 @@ span.error {
     empty-cells: hide;
 }*/
 
- 
+
 table#invoices-sum-table tbody  tr.odd {
  /*  height: 2px !important ;*/
 }
@@ -416,22 +416,22 @@ table#invoices-sum-table tbody  tr {
        max-height:  5px !important;*/
 
         background: transparent ;
-     
-}  
+
+}
 
 table#invoices-sum-table td, th {
   position: relative;
-  background: transparent ; 
+  background: transparent ;
   vertical-align: middle;
-  
+
   font-size: 14px;
   clear: both;
   border-collapse: collapse;
   padding: 10px 10px;
-  
-  white-space: nowrap !important;  
- 
-  
+
+  white-space: nowrap !important;
+
+
 }
 
 h1, h2, h3 ,h4 {
@@ -518,11 +518,11 @@ table#invoices-sum-table th:hover::after {
 table#invoices-sum-table thead th.sorting_asc {
     background: #66A9BD url('images/sort_asc.png') no-repeat right center;
 }
- 
+
 table#invoices-sum-table thead th.sorting_desc {
     background: #66A9BD url('images/sort_desc.png') no-repeat right center;
 }
- 
+
 table#invoices-sum-table thead th.sorting {
     background: #66A9BD url('images/sort_both.png') no-repeat right center;
 }*/
@@ -541,7 +541,7 @@ h1 {
 
 table#dtltable tr:hover {
   cursor: pointer;
-  /*background-color: #ffab40 !important; 
+  /*background-color: #ffab40 !important;
   color: #311b92 !important;
    color: #FFF !important;*/
 }
@@ -578,7 +578,7 @@ table#editclienthelp tr:hover{
 }
 
 p {
-  margin: 20px 0; 
+  margin: 20px 0;
 }
 
 /*
@@ -626,20 +626,20 @@ select.editvend {
 
 .foo {
      color: #FF5722;
-   }   
+   }
 
   #store_type {
      color: #FF5722;
-   }   
+   }
 
   #status {
      color: #FF5722;
-   } 
+   }
 
    .finalstatus {
      color: #FF5722   !important;
      background: #FFFACD !important;
-   } 
+   }
 
   /* label {
      color: #212121;
@@ -653,13 +653,13 @@ select.editvend {
     color: blue;
   }
 
-/* Ensure that the demo table scrolls 
+/* Ensure that the demo table scrolls
     th, td { white-space: nowrap; }
     div.dataTables_wrapper {
         width: 1200px;
         margin: 0 auto;
     }
-   
+
 */
 
 /*.table-responsive {
@@ -670,9 +670,9 @@ select.editvend {
   -ms-overflow-style: -ms-autohiding-scrollbar;
    margin-left: 15px !important ;
 }*/
- 
 
-/* added below code for full size  on 02/11/18 */ 
+
+/* added below code for full size  on 02/11/18 */
 .container {
   padding-left: 15px !important;
   padding-right: 15px !important;
@@ -683,7 +683,7 @@ div.dataTables_wrapper {
   width: 100% !important;
 }
 
-/* added above code for full size  on 02/11/18 */ 
+/* added above code for full size  on 02/11/18 */
 
 /*element.style {
   height: 1px !important;
@@ -696,7 +696,7 @@ div.dataTables_wrapper {
 }
 
 table.dataTable span.column_highlight {
- 
+
   background:  #e8f8f5;
   border-radius: 0.28571429rem;
 }
@@ -729,17 +729,17 @@ select[name='invoices-sum-table_length'] {
 @endsection
 @section('content')
 @if(isset($rights))
-   
-  
+
+
 
   @foreach ($rights as $key)
-         
-    <?php 
-   
-        $var[] = $key; 
-      
+
+    <?php
+
+        $var[] = $key;
+
     ?>
-   
+
 
   @endforeach
 
@@ -764,29 +764,29 @@ select[name='invoices-sum-table_length'] {
 
 
 
-   
+
 
 <div class="row">
 
-   
-    <div class ="col-md-5"> 
+
+    <div class ="col-md-5">
            <h4>Monthwise Payment Summary</h4>
-            <input type="hidden" name="orddelete" id="orddelete" /> 
-    <input type="hidden" name="createdrowid" id="createdrowid" /> 
+            <input type="hidden" name="orddelete" id="orddelete" />
+    <input type="hidden" name="createdrowid" id="createdrowid" />
     </div>
-   
+
     <div class="col-md-1">
      <a href="javascript:void(0);" class="btn btn-sm btn-outline btn-danger clearsession mt-4"  id="delsession" data-toggle="tooltip" data-placement="top" title="Refresh Table"><i class="fa fa-refresh" aria-hidden="true"></i></a>
-         
+
     </div>
-    
-     <div class ="col-md-1"> 
+
+     <div class ="col-md-1">
              <a   class="btn btn-sm btn-primary mt-4" href="{{ action('OrderController@index') }}"><i class="fa fa-arrow-left"></i></a>
     </div>
-  
 
-   
-   
+
+
+
 
 </div>
 
@@ -795,7 +795,7 @@ select[name='invoices-sum-table_length'] {
 
     <thead class = "fhead">
         <tr class="firstrow">
-           
+
             <th>Year Month</th>
             <th>Total Invoices</th>
             <th>Total Amount</th>
@@ -803,32 +803,32 @@ select[name='invoices-sum-table_length'] {
             <th>Amount Pending</th>
             <th>Invoices Cleared</th>
             <th>Amount Remaining</th>
-           
-            
+
+
         </tr>
         <!--  <tr class="secondrow">
-            <th class="select-checkbox"><input type="checkbox" 
+            <th class="select-checkbox"><input type="checkbox"
             id = "selectAll" name="select_all"></th>
              <th>Company Name</th>
              <th>Invoice No</th>
             <th>File Type</th>
             <th>Year Month</th>
-           
+
             <th >Invoice Amount</th>
             <th>Paid Amount</th>
             <th>Out Amount</th>
             <th>Bank Charges</th>
             <th>Paid Date</th>
             <th>Remarks</th>
-           
-            
+
+
         </tr> -->
 
     </thead>
     <tbody class="fbody"></tbody>
     <tfoot>
           <tr>
-            
+
           </tr>
         </tfoot>
 </table>
@@ -870,21 +870,21 @@ var tot2 = 0 ;
         serverSide: true,
         async: true,
         //scrollX: true,
-        //scrollY: ($(window).height() - 280), 
-        scrollCollapse: true, 
+        //scrollY: ($(window).height() - 280),
+        scrollCollapse: true,
         stateSave: true,
         stateDuration: -1,
         bStateSave: true,
         fixedColumns:   false,
         select:         true,
         autowidth: false,
-       
-       
+
+
         scroller: {
            rowHeight: 1
-        }, 
+        },
 
-      
+
         ajax: '{!! route('invoice-summary.summarygetindex1') !!}',
          stateSaveCallback: function(settings,data) {
                localStorage.setItem( 'DataTables1_' + settings.sInstance, JSON.stringify(data) )
@@ -892,25 +892,25 @@ var tot2 = 0 ;
             stateLoadCallback: function(settings) {
                    return JSON.parse( localStorage.getItem( 'DataTables1_' + settings.sInstance ) )
             },
-           
+
       columnDefs: [
-             
+
               ],
-            
+
         columns: [
-         
-             { data: 'yrmon', name: 'yrmon', class: 'dt-center ' 
-          
+
+             { data: 'yrmon', name: 'yrmon', class: 'dt-center '
+
              },
             { data: 'tot_inv', name: 'tot_inv', class: 'dt-body-right ', width: '50px'
              },
-           
+
 
             { data: 'tot_inv_amt', name: 'tot_inv_amt' ,  class: 'dt-body-right ',width: '40px'
-                       
+
 
              },
-          
+
             { data: 'tot_rec', name: 'tot_rec' , class: 'dt-body-right ',width: '40px'
 
             },
@@ -924,24 +924,24 @@ var tot2 = 0 ;
 
              },
 
-     
+
             ]
              ,
               pageLength: "25",
               pagination: true,
               responsive: true,
               order: [[ 1, "desc" ]]
-                 
+
     });
 
-   
-  
+
+
 function blinker() {
     //$('.blink_me').fadeOut(1200);
     //$('.blink_me').fadeIn(200);
     $( ".blink_me" ).animate({backgroundColor: "#3B3605"}, 300 );
     $( ".blink_me" ).animate({backgroundColor: "#4B515D"}, 300 );
-    
+
 }
 
 function blinker1() {
@@ -955,10 +955,10 @@ function blinker1() {
 setInterval(blinker1, 300);
 setInterval(blinker, 600);
 
-    
 
-  function rowgroup(){ 
-    
+
+  function rowgroup(){
+
         $("#invoices-sum-table").dataTable().rowGrouping({iGroupingColumnIndex:1,sGroupingColumnSortDirection: 'desc'});
    // Order by the grouping
     //$('#invoices-sum-table tbody').on( 'click', 'td.group', function (e) {
@@ -976,13 +976,13 @@ setInterval(blinker, 600);
     //} );
 
 
-   } 
+   }
 
-  
+
    var table = $('#invoices-sum-table').DataTable();
    // Handle click on "Select all" control
  var table = $('#invoices-sum-table').DataTable();
- 
+
    $('thead input[name="select_all"]', table.table().container()).on('click', function(e){
       if(this.checked){
          $('#invoices-sum-table tbody input[type="checkbox"]:not(:checked)').trigger('click');
@@ -1000,8 +1000,8 @@ setInterval(blinker, 600);
      // Handle table draw event
    table.on('draw', function(){
       // Update state of "Select all" control
-      
-   
+
+
      // updateDataTableSelectAllCtrl(table);
    });
 
@@ -1009,11 +1009,11 @@ setInterval(blinker, 600);
    // var table = $('#dataTable').DataTable();
    // table
    //      .columns( 4 )
-   //      
+   //
    //      .draw();
    //  ABOVE CODE REMOVED FOR  FIXED SEARCH ON 15/11/18 .SEARCH(NO)
     //});
-   
+
 
 
 // new code for select all checkbox
@@ -1024,7 +1024,7 @@ setInterval(blinker, 600);
    //      console.log( 'Data in index: '+index+' is: '+value );
    //  } );
 
-   
+
 
    $('#invoices-sum-table tbody').on('click', 'input[type="checkbox"]', function(e){
       var $row = $(this).closest('tr');
@@ -1067,11 +1067,11 @@ setInterval(blinker, 600);
       //var key = $(this).closest('tr').find('td.fooid').text();
       //alert(key);
        var tot2 = 0 ;
-      
-                
+
+
        // alert('total' + tot2);
       // $(".topay").text('Total to Pay: ' + tot2);
-      
+
       //updateTotal(rows_selected_total);
 
       // Prevent click event from propagating to parent
@@ -1103,7 +1103,7 @@ $.each(rows_selected_total, function(index, tot1){
  if (rows_selected_total.length)
 {
     sum = rows_selected_total.reduce(function(a, b) { return a.toFixed(2) + b.toFixed(2); });
-   
+
 }
    var  sum1 =  sum.toFixed(2);
   //alert(sum1);
@@ -1111,9 +1111,9 @@ $.each(rows_selected_total, function(index, tot1){
 }
 
 
-  
 
-    
+
+
 
    $("#invoices-sum-table .fhead").on("click", "th.select-checkbox", function() {
            //  alert('hello');
@@ -1122,7 +1122,7 @@ $.each(rows_selected_total, function(index, tot1){
         for(var i=0;i<rows.length;i++)
         {
             // Get HTML of 3rd column (for example)
-            cells.push($(rows[i]).find("td:eq(2)").html()); 
+            cells.push($(rows[i]).find("td:eq(2)").html());
         }
         console.log(cells);
        // alert(cells);
@@ -1167,43 +1167,43 @@ $.each(rows_selected_total, function(index, tot1){
    });
 
   // $('#invoices-sum-table tbody').on( 'click', 'tr', function () {
-       
+
   //       var $rowid = table.row( this ).index() ;
   //       var currentPageIndex = table.page.info().page;
-      
+
   //       var key = $(this).closest('tr').find('td.fooid').text();
   //       if ( $(this).hasClass('selected') ) {
-           
+
   //       }
   //       else {
-          
+
   //           $(this).addClass('selected');
   //           $("#orddelete").val(key);
   //       }
   //   });
 
    // $('#invoices-sum-table tbody').on( 'dblclick', 'tr', function () {
-       
+
    //      var $rowid = table.row( this ).index() ;
    //      var currentPageIndex = table.page.info().page;
-     
+
    //      var key = $(this).closest('tr').find('td.fooid').text();
    //      if ( $(this).hasClass('selected') ) {
-   //           $(this).removeClass('selected'); 
+   //           $(this).removeClass('selected');
    //      }
    //      else {
-   //          table.$('tr.selected').removeClass('selected'); 
+   //          table.$('tr.selected').removeClass('selected');
    //          $(this).addClass('selected');
    //          $("#orddelete").val(key);
    //      }
    //  });
 
-   
 
 
 
 
- 
+
+
 
 
 function normalrow() {
@@ -1217,73 +1217,73 @@ function normalrow() {
     }
 
     oSettings.aaSortingFixed = null;
-  
+
 
    }
-  
+
   $('#invoices-sum-table').on('draw.dt', function () {
-                    $('[data-toggle="tooltip"]').tooltip(); 
+                    $('[data-toggle="tooltip"]').tooltip();
   });
 
-   
-  
+
+
 
    // table.MakeCellsEditable({
    //      "onUpdate": myCallbackFunction,
    //      "inputCss":'my-input-class',
    //      "columns": [5,6,7] ,
-        
-   //      "confirmationButton": { 
+
+   //      "confirmationButton": {
    //          "confirmCss": 'my-confirm-class',
    //          "cancelCss": 'my-cancel-class'
    //      },
    //      "inputTypes": [
-           
+
    //          {
    //              "column": 5,
    //              "type": "numeric"
-        
+
    //          },
-            
+
    //          {
    //              "column": 6,
    //              "type": "numeric"
-        
+
    //          },
    //           {
    //              "column": 7,
    //              "type": "numeric"
-        
+
    //          },
    //          {
    //              "column": 9,
    //              "class": 'change_dt',
    //               "type": "datepicker", // requires jQuery UI: http://http://jqueryui.com/download/
    //              "options": {
-   //                  "icon": "http://jqueryui.com/resources/demos/datepicker/images/calendar.gif" 
+   //                  "icon": "http://jqueryui.com/resources/demos/datepicker/images/calendar.gif"
 
    //              }
-   //          }         
+   //          }
 
    //          ]
-        
-        
+
+
    //  });
-  
 
- 
-       
 
-    function myCallbackFunction (updatedCell, updatedRow, oldValue,id1, columnIndex) 
+
+
+
+    function myCallbackFunction (updatedCell, updatedRow, oldValue,id1, columnIndex)
     {
         console.log("The new value for the cell is: " + updatedCell.data());
         console.log("The old value for that cell was: " + oldValue);
         console.log("The values for each cell in that row are: " + updatedRow.data());
-              
+
         //var id1 = $(this).closest('tr').find('td:eq(0)').text();
         //alert(id1);
        //alert(updatedRow.html());
-      
+
             //alert(columnIndex);
         var table = $('#invoices-sum-table').DataTable();
         var currentPageIndex = table.page.info().page;
@@ -1294,7 +1294,7 @@ function normalrow() {
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
             }
-        }); 
+        });
 
          if (columnIndex === 5) {
 
@@ -1307,10 +1307,10 @@ function normalrow() {
 
 
     }
-    
-    
+
+
 $('#invoices-sum-table tbody').on('dblclick', 'td', function () {
-        
+
          //var id1 = $(this).closest('tr');
          //  alert(id1.html());
      // debugger;
@@ -1319,8 +1319,8 @@ $('#invoices-sum-table tbody').on('dblclick', 'td', function () {
 
         //table.$('tr').addClass('selected');
        // $(this).closest('tr').addClass('selected');
-       
-     
+
+
       //alert(table.cell( this ).index().columnVisible);
       //var key = $(this).closest('tr').find('td:eq(20)').text();
       var key = $(this).closest('tr').find('td.fooid').text();
@@ -1330,8 +1330,8 @@ $('#invoices-sum-table tbody').on('dblclick', 'td', function () {
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
                         }
-              });  
-                     
+              });
+
 
     //  if (table.cell( this ).index().columnVisible ==8 ){
   if ($('#invoices-sum-table thead tr.secondrow th').eq($(this).index()).text().trim() == 'File Note') {
@@ -1342,7 +1342,7 @@ $('#invoices-sum-table tbody').on('dblclick', 'td', function () {
             var re = /<br *\/?>/gi;
             var oldnotes1 = oldnotes.replace(re,"\n");
             var currentPageIndex = table.page.info().page;
-           
+
             //alert($rowid);
             @if (isset($var))
               @if (!in_array('file-note.modify', $var))
@@ -1350,10 +1350,10 @@ $('#invoices-sum-table tbody').on('dblclick', 'td', function () {
               //     return false;
               @endif
             @endif
-                
+
              //alert(oldnotes);
             $( "#notedialog" ).dialog({
-               
+
             title : "Enter Notes This field is required",
             resizable: true,
             modal: true,
@@ -1373,28 +1373,28 @@ $('#invoices-sum-table tbody').on('dblclick', 'td', function () {
 
             buttons: [
                 {
-   
+
               text: "Submit",
               title: "Submit",
               id: 'notes',
               tabindex: '3',
               // form: "client_form_submit",
               click: function() {
-   
+
               var oldnotes = $('#notedialog .oldnotes').val();
               var newnotes = $('#notedialog .newnotes').val();
               var _token   = $("#notedialog .token").val();
-                       
+
 
                         // alert( oldnotes + newnotes+ _token);
 
               var formData = {
-                            id:  key, 
+                            id:  key,
                             oldnotes: oldnotes,
                             newnotes: newnotes,
                             _token: _token
                         }
-                            
+
                //alert(dataString);
                 $.ajax({
                             type:"POST",
@@ -1403,11 +1403,11 @@ $('#invoices-sum-table tbody').on('dblclick', 'td', function () {
                             url:"orders/updatenotes",
                             data: formData,
                             success: function(result)
-                            { 
-                            console.log(result[0].msg) ; 
-                             //$( "#notedialog .success" ).html("Data Updated Successfully");  
+                            {
+                            console.log(result[0].msg) ;
+                             //$( "#notedialog .success" ).html("Data Updated Successfully");
                              $('#notedialog .newnotes').val("");
-                              
+
                               table.page(currentPageIndex).draw(false);
                               table.row( $rowid ).scrollTo();
                                 // table.ajax.reload();
@@ -1416,40 +1416,40 @@ $('#invoices-sum-table tbody').on('dblclick', 'td', function () {
                         });
 
                      setTimeout(function(){
-                               $('#notedialog').dialog('close');                
-                                }, 300); 
+                               $('#notedialog').dialog('close');
+                                }, 300);
                                // table.ajax.reload();
                               //table.page(currentPageIndex).draw(false);
                               //table.row( $rowid ).scrollTo();
-                               
+
                           //return false ;
 
               },
- 
-    
+
+
               },
-      
+
               ],
 
           close : function() {
-    
-      
+
+
           },
           open: function(event, ui) {
             var dialog = $(event.target).parents(".ui-dialog.ui-widget");
             var buttons = dialog.find(".ui-dialog-buttonpane").find("button");
-        
+
             var AddButton = buttons[0];
-        
+
             $(AddButton).addClass("btn btn-small btn-primary");
-            
+
             //$(AddButton).blur();
             $(AddButton).html("<i class='icon-plus-sign'></i>   Submit");
             $("#notedialog .newnotes").focus();
-           
+
             //$(this).find('.ui-dialog-titlebar-close').blur();
-           
-        
+
+
             },
 
                 });
@@ -1458,18 +1458,18 @@ $('#invoices-sum-table tbody').on('dblclick', 'td', function () {
                 $( "#oldnotes" ).text( oldnotes1 );
                 // alert(id1);
                 $( "#notedialog .noteid" ).val( key );
-                // table.ajax.reload(); 
+                // table.ajax.reload();
          }
 
     // if(table.cell( this ).index().columnVisible == 12) {
-   //   alert($('#invoices-sum-table thead tr.secondrow th').eq($(this).index()).text().trim()); changed on 21/06/17 
+   //   alert($('#invoices-sum-table thead tr.secondrow th').eq($(this).index()).text().trim()); changed on 21/06/17
             // as logic changed
 
 if ($('#invoices-sum-table thead tr.secondrow th').eq($(this).index()).text().trim() == 'Allocation') {
       //alert(table.cell( this ).index().name);
              //alert("Do you want to change allocation");
             // return false;
-            if (($(this).closest('tr').has('td.donothing').length) > 0 ) { 
+            if (($(this).closest('tr').has('td.donothing').length) > 0 ) {
                   alert("No Rights to Modify Allocation, Contact Admin");
                   return false;
 
@@ -1485,10 +1485,10 @@ if ($('#invoices-sum-table thead tr.secondrow th').eq($(this).index()).text().tr
             var alloc = $(this).closest('tr').find('td.editalloc').text();
             //alert(alloc);
             //$('#dropDownId').val('harish');
-            
+
 
             $( "#allocdialog" ).dialog({
-               
+
                     title : "Change Allocation",
                     resizable: false,
                     modal: true,
@@ -1504,17 +1504,17 @@ if ($('#invoices-sum-table thead tr.secondrow th').eq($(this).index()).text().tr
                        of: target
                               },
 
-                    
+
                     buttons: [
                                 {
-   
+
                         text: "Submit",
                         title: "Submit",
                         id: 'allocs',
                         // form: "client_form_submit",
                         click: function() {
-     
-                        
+
+
                         var newalloc = $('#dropDownId').val();
                         var _token   = $("#allocdialog .token").val();
                         var selText1 = "";
@@ -1530,19 +1530,19 @@ if ($('#invoices-sum-table thead tr.secondrow th').eq($(this).index()).text().tr
                                       input.val(input.val() + selText+', ');
                                   }
                         });
-                        
+
                         //alert($("#allocdialog .allocname").val());
                         var newallocnm = $("#allocdialog .allocname").val();
 
                          //alert( newalloc + _token);
 
                         var formData = {
-                            id:  id1, 
+                            id:  id1,
                             newalloc: newalloc,
                             newallocnm: newallocnm,
                             _token: _token
                         }
-                            
+
                          //alert(dataString);
                         $.ajax({
                             type:"POST",
@@ -1551,9 +1551,9 @@ if ($('#invoices-sum-table thead tr.secondrow th').eq($(this).index()).text().tr
                             url:"orders/updatealloc",
                             data: formData,
                             success: function(result)
-                            { 
-                            console.log(result[0].msg) ; 
-                            // $( "#allocdialog .success" ).html("Data Updated Successfully");  
+                            {
+                            console.log(result[0].msg) ;
+                            // $( "#allocdialog .success" ).html("Data Updated Successfully");
                              var res = result[0].msg ;
                             $(".delmsg").html(res).fadeOut('slow');
                             if (result[0].status == 'Error')
@@ -1572,49 +1572,49 @@ if ($('#invoices-sum-table thead tr.secondrow th').eq($(this).index()).text().tr
                         });
 
                      setTimeout(function(){
-                               $('#allocdialog').dialog('close');                
-                                }, 300); 
+                               $('#allocdialog').dialog('close');
+                                }, 300);
 
-                               
-                   
+
+
                             //return false ;
 
                      },
- 
-        
+
+
                 },
-            
+
                 ],
 
 
                     close : function() {
-            
-            
+
+
                     },
                     open: function(event, ui) {
-                        
+
                         //$('.allocid').val(id1);
                      //  $("#dropDownId  option:selected").text("harish");
-                    // $("#dropDownId").find("option[text='harish']").attr("selected", true); 
+                    // $("#dropDownId").find("option[text='harish']").attr("selected", true);
                     //$('#strings').val(values.split(','));
                     $('#dropDownId').val(alloc.split(','));
                     var dialog = $(event.target).parents(".ui-dialog.ui-widget");
                     var buttons = dialog.find(".ui-dialog-buttonpane").find("button");
-            
+
                     var AddButton = buttons[0];
-            
+
                     $(AddButton).addClass("btn btn-small btn-primary");
                     $(AddButton).html("<i class='icon-plus-sign'></i>   Submit");
-                   
-                   
-            
+
+
+
                     },
 
                 });
 
-           
+
              $( "#allocdialog" ).dialog("open");
-             //table.ajax.reload(); 
+             //table.ajax.reload();
          }
 
 
@@ -1622,8 +1622,8 @@ if ($('#invoices-sum-table thead tr.secondrow th').eq($(this).index()).text().tr
   // if (table.cell( this ).index().columnVisible == 21 ) {
 //file count edit
 
-if ($('#invoices-sum-table thead tr.secondrow th').eq($(this).index()).text().trim() == 'File Count') {             
-    
+if ($('#invoices-sum-table thead tr.secondrow th').eq($(this).index()).text().trim() == 'File Count') {
+
     var target = $(this);
     var file_count = $(this).closest('tr').find('td.cfilecount').text();
     var key = $(this).closest('tr').find('td.fooid').text();
@@ -1638,7 +1638,7 @@ if ($('#invoices-sum-table thead tr.secondrow th').eq($(this).index()).text().tr
     @endif
 
     $( "#filecountdialog" ).dialog({
-               
+
                     title : "Change File Count[Click on Time to Exit]",
                     resizable: false,
                     modal: true,
@@ -1657,14 +1657,14 @@ if ($('#invoices-sum-table thead tr.secondrow th').eq($(this).index()).text().tr
 
                     buttons: [
                                 {
-   
+
                         text: "Submit",
                         title: "Submit",
                         id: 'filecount',
                         // form: "client_form_submit",
                         click: function() {
-     
-                        
+
+
                         var newfilecount = $('.fcountval').val();
                         //alert(newfilecount);
                         var _token   = $("#filecountdialog .token").val();
@@ -1673,11 +1673,11 @@ if ($('#invoices-sum-table thead tr.secondrow th').eq($(this).index()).text().tr
                          //alert( newalloc + _token);
 
                         var formData = {
-                            id:  key, 
+                            id:  key,
                             newfilecount: newfilecount,
                             _token: _token
                         }
-                            
+
                          //alert(dataString);
                         $.ajax({
                             type:"POST",
@@ -1686,12 +1686,12 @@ if ($('#invoices-sum-table thead tr.secondrow th').eq($(this).index()).text().tr
                             url:"orders/updatefilecount",
                             data: formData,
                             success: function(result)
-                            { 
-                            console.log(result[0].msg) ; 
-                             //$( "#filecountdialog .success" ).html("Data Updated Successfully");  
+                            {
+                            console.log(result[0].msg) ;
+                             //$( "#filecountdialog .success" ).html("Data Updated Successfully");
                               alert("File Count updated successfully");
                               //table.ajax.reload();
-                               //$('#invoices-sum-table').DataTable().ajax.reload(); tried on 21/08/17 for reload 
+                               //$('#invoices-sum-table').DataTable().ajax.reload(); tried on 21/08/17 for reload
                               table.page(currentPageIndex).draw(false);
                               //table.api().ajax.reload(null, false);
                               table.row( $rowid ).scrollTo();
@@ -1699,54 +1699,54 @@ if ($('#invoices-sum-table thead tr.secondrow th').eq($(this).index()).text().tr
                             }
 
                         });
-                     
-                      
-                     setTimeout(function(){
-                               $('#filecountdialog').dialog('close');                
-                                }, 20); 
-                     
 
-                         
-    
-                   
+
+                     setTimeout(function(){
+                               $('#filecountdialog').dialog('close');
+                                }, 20);
+
+
+
+
+
                     //return false ;
 
                      },
- 
-        
+
+
                 },
-            
+
                 ],
 
 
                     close : function() {
-            
-            
+
+
                     },
                     open: function(event, ui) {
-                        
+
                         //$('.allocid').val(id1);
                      //  $("#dropDownId  option:selected").text("harish");
-                    // $("#dropDownId").find("option[text='harish']").attr("selected", true); 
+                    // $("#dropDownId").find("option[text='harish']").attr("selected", true);
                     //$('#strings').val(values.split(','));
                     $('.fcountval').val(file_count);
                     var dialog = $(event.target).parents(".ui-dialog.ui-widget");
                     var buttons = dialog.find(".ui-dialog-buttonpane").find("button");
-            
+
                     var AddButton = buttons[0];
-            
+
                     $(AddButton).addClass("btn btn-small btn-primary");
                     $(AddButton).html("<i class='icon-plus-sign'></i>   Submit");
-             
-            
+
+
                     },
 
                 });
 
-             $( "#filecountdialog" ).dialog("open");     
+             $( "#filecountdialog" ).dialog("open");
              //var table = $('#invoices-sum-table').DataTable();
-                            
-                            
+
+
 
           }
 
@@ -1755,8 +1755,8 @@ if ($('#invoices-sum-table thead tr.secondrow th').eq($(this).index()).text().tr
 
 
  //if (table.cell( this ).index().columnVisible == 10 ){
-if ($('#invoices-sum-table thead tr.secondrow th').eq($(this).index()).text().trim() == 'Order Date & Time') {             
-    
+if ($('#invoices-sum-table thead tr.secondrow th').eq($(this).index()).text().trim() == 'Order Date & Time') {
+
     var target = $(this);
     var ord_dt = $(this).closest('tr').find('td.ord_dt_tm').text();
     var key = $(this).closest('tr').find('td.fooid').text();
@@ -1774,7 +1774,7 @@ if ($('#invoices-sum-table thead tr.secondrow th').eq($(this).index()).text().tr
     @endif
 
     $( "#orderdatedialog" ).dialog({
-               
+
                     title : "Change Order Date[Click on Time to Exit]",
                     resizable: false,
                     modal: true,
@@ -1793,27 +1793,27 @@ if ($('#invoices-sum-table thead tr.secondrow th').eq($(this).index()).text().tr
 
                     buttons: [
                                 {
-   
+
                         text: "Submit",
                         title: "Submit",
                         id: 'orddt',
                         // form: "client_form_submit",
                         click: function() {
-     
-                        
+
+
                         var neworderdt = $('#order_date').val();
                         //alert(neworderdt);
                         var _token   = $("#orderdatedialog .token").val();
-                       
+
 
                          //alert( newalloc + _token);
 
                         var formData = {
-                            id:  key, 
+                            id:  key,
                             neworderdt: neworderdt,
                             _token: _token
                         }
-                            
+
                          //alert(dataString);
                         $.ajax({
                             type:"POST",
@@ -1822,71 +1822,71 @@ if ($('#invoices-sum-table thead tr.secondrow th').eq($(this).index()).text().tr
                             url:"orders/updateorderdt",
                             data: formData,
                             success: function(result)
-                            { 
-                            console.log(result[0].msg) ; 
-                             $( "#orderdatedialog .success" ).html("Data Updated Successfully");  
-                              
+                            {
+                            console.log(result[0].msg) ;
+                             $( "#orderdatedialog .success" ).html("Data Updated Successfully");
+
                               table.page(currentPageIndex).draw(false);
                               table.row( $rowid ).scrollTo();
 
                             }
                         });
-                     
-                         
+
+
                      setTimeout(function(){
-                               $('#orderdatedialog').dialog('close');                
-                                }, 300); 
+                               $('#orderdatedialog').dialog('close');
+                                }, 300);
                     // table.ajax.reload();
 
-                         
-    
-                   
+
+
+
                     //return false ;
 
                      },
- 
-        
+
+
                 },
-            
+
                 ],
 
 
                     close : function() {
-            
-            
+
+
                     },
                     open: function(event, ui) {
-                        
+
                         //$('.allocid').val(id1);
                      //  $("#dropDownId  option:selected").text("harish");
-                    // $("#dropDownId").find("option[text='harish']").attr("selected", true); 
+                    // $("#dropDownId").find("option[text='harish']").attr("selected", true);
                     //$('#strings').val(values.split(','));
                     $('#order_date').val(ord_dt);
                     var dialog = $(event.target).parents(".ui-dialog.ui-widget");
                     var buttons = dialog.find(".ui-dialog-buttonpane").find("button");
-            
+
                     var AddButton = buttons[0];
-            
+
                     $(AddButton).addClass("btn btn-small btn-primary");
                     $(AddButton).html("<i class='icon-plus-sign'></i>   Submit");
-             
-            
+
+
                     },
 
                 });
 
 
-             $( "#orderdatedialog" ).dialog("open");     
+             $( "#orderdatedialog" ).dialog("open");
 
           }
-    
+
 //if (table.cell( this ).index().columnVisible == 11 ){
-if ($('#invoices-sum-table thead tr.secondrow th').eq($(this).index()).text().trim() == 'Order Comp.Date')  {   
+if ($('#invoices-sum-table thead tr.secondrow th').eq($(this).index()).text().trim() == 'Order Comp.Date')  {
    // alert('hi ok');
     var target = $(this);
     var ord_comp_dt = $(this).closest('tr').find('td.ord-comp-dt-tm').text();
     var key = $(this).closest('tr').find('td.fooid').text();
-   
+
     var table = $('#invoices-sum-table').DataTable();
     var currentPageIndex = table.page.info().page;
 
@@ -1901,7 +1901,7 @@ if ($('#invoices-sum-table thead tr.secondrow th').eq($(this).index()).text().tr
     @endif
 
     $( "#ordercompdatedialog" ).dialog({
-               
+
                     title : "Change Order Comp Date[Click on Time to Exit]",
                     resizable: false,
                     modal: true,
@@ -1920,26 +1920,26 @@ if ($('#invoices-sum-table thead tr.secondrow th').eq($(this).index()).text().tr
 
                     buttons: [
                                 {
-   
+
                         text: "Submit",
                         title: "Submit",
                         id: 'corddt',
                         // form: "client_form_submit",
                         click: function() {
-     
-                        
+
+
                         var neworderdt = $('#ord_comp_date').val();
                         var _token   = $("#orderdatedialog .token").val();
-                       
+
 
                          //alert( newalloc + _token);
 
                         var formData = {
-                            id:  key, 
+                            id:  key,
                             neworderdt: neworderdt,
                             _token: _token
                         }
-                            
+
                          //alert(dataString);
                         $.ajax({
                             type:"POST",
@@ -1948,64 +1948,64 @@ if ($('#invoices-sum-table thead tr.secondrow th').eq($(this).index()).text().tr
                             url:"orders/updateordercompdt",
                             data: formData,
                             success: function(result)
-                            { 
-                            console.log(result[0].msg) ; 
-                             $( "#ordercompdatedialog .success" ).html("Data Updated Successfully");  
+                            {
+                            console.log(result[0].msg) ;
+                             $( "#ordercompdatedialog .success" ).html("Data Updated Successfully");
                                //table.ajax.reload();
                                 table.page(currentPageIndex).draw(false);
                                 table.row( $rowid ).scrollTo();
 
                             }
                         });
-                        // table.ajax.reload();  
+                        // table.ajax.reload();
                      setTimeout(function(){
-                               $('#ordercompdatedialog').dialog('close');                
-                                }, 30); 
+                               $('#ordercompdatedialog').dialog('close');
+                                }, 30);
 
-                             
-                   
+
+
                     //return false ;
 
                      },
- 
-        
+
+
                 },
-            
+
                 ],
 
 
                     close : function() {
-            
-            
+
+
                     },
                     open: function(event, ui) {
-                        
+
                         //$('.allocid').val(id1);
                      //  $("#dropDownId  option:selected").text("harish");
-                    // $("#dropDownId").find("option[text='harish']").attr("selected", true); 
+                    // $("#dropDownId").find("option[text='harish']").attr("selected", true);
                     //$('#strings').val(values.split(','));
                     $('#ord_comp_date').val(ord_comp_dt);
                     var dialog = $(event.target).parents(".ui-dialog.ui-widget");
                     var buttons = dialog.find(".ui-dialog-buttonpane").find("button");
-            
+
                     var AddButton = buttons[0];
-            
+
                     $(AddButton).addClass("btn btn-small btn-primary");
                     $(AddButton).html("<i class='icon-plus-sign'></i>   Submit");
-             
-            
+
+
                     },
 
                 });
 
 
-             $( "#ordercompdatedialog" ).dialog("open");     
+             $( "#ordercompdatedialog" ).dialog("open");
 
    }
 
 
 if ($('#invoices-sum-table thead tr.secondrow th').eq($(this).index()).text().trim() == 'V.Emb.Rate') {
-     
+
             var table = $('#invoices-sum-table').DataTable();
             var target = $(this);
 
@@ -2017,10 +2017,10 @@ if ($('#invoices-sum-table thead tr.secondrow th').eq($(this).index()).text().tr
             var currentPageIndex = table.page.info().page;
            // alert(vrate);
             //$('#dropDownId').val('harish');
-            
+
 
             $( "#embratedialog" ).dialog({
-               
+
                     title : "Vendor Embroidery Rate",
                     resizable: false,
                     modal: true,
@@ -2036,29 +2036,29 @@ if ($('#invoices-sum-table thead tr.secondrow th').eq($(this).index()).text().tr
                        of: target
                               },
 
-                    
+
                     buttons: [
                                 {
-   
+
                         text: "Submit",
                         title: "Submit",
                         id: 'allocs',
                         // form: "client_form_submit",
                         click: function() {
-     
-                        
+
+
                         var vend_embr_price = $('#embratedialog #vendor_digit_rate').val();
                         var _token   = $("#embratedialog .token").val();
-                       
+
 
                          //alert( newalloc + _token);
 
                         var formData = {
-                            id:  id1, 
+                            id:  id1,
                             vend_embr_price: vend_embr_price,
                             _token: _token
                         }
-                            
+
                          //alert(dataString);
                         $.ajax({
                             type:"POST",
@@ -2067,9 +2067,9 @@ if ($('#invoices-sum-table thead tr.secondrow th').eq($(this).index()).text().tr
                             url:"orders/updateordermisc",
                             data: formData,
                             success: function(result)
-                            { 
-                            console.log(result[0].msg) ; 
-                            // $( "#embratedialog .success" ).html("Data Updated Successfully");  
+                            {
+                            console.log(result[0].msg) ;
+                            // $( "#embratedialog .success" ).html("Data Updated Successfully");
                              //$('.dataTable').each(function() {
                                  // dt = $(this).dataTable();
                                  // dt.fnDraw();
@@ -2082,46 +2082,46 @@ if ($('#invoices-sum-table thead tr.secondrow th').eq($(this).index()).text().tr
                         });
 
                      setTimeout(function(){
-                               $('#embratedialog').dialog('close');                
-                                }, 300); 
+                               $('#embratedialog').dialog('close');
+                                }, 300);
 
-     
+
                      },
- 
-        
+
+
                 },
-            
+
                 ],
 
 
                   close : function() {
-            
-            
+
+
                   },
                   open: function(event, ui) {
-                        
-                  $('#embratedialog #vendor_digit_rate').val(vrate);   
+
+                  $('#embratedialog #vendor_digit_rate').val(vrate);
                   var dialog = $(event.target).parents(".ui-dialog.ui-widget");
                   var buttons = dialog.find(".ui-dialog-buttonpane").find("button");
-            
+
                   var AddButton = buttons[0];
-            
+
                   $(AddButton).addClass("btn btn-small btn-primary");
                   $(AddButton).html("<i class='icon-plus-sign'></i>   Submit");
-                   
+
                   },
 
                 });
 
-           
+
              $( "#embratedialog" ).dialog("open");
-             //table.ajax.reload(); 
+             //table.ajax.reload();
          }
 
 
 
 if ($('#invoices-sum-table thead tr.secondrow th').eq($(this).index()).text().trim() == 'V.File Price') {
-     
+
     var table = $('#invoices-sum-table').DataTable();
     var target = $(this);
     var currentPageIndex = table.page.info().page;
@@ -2129,7 +2129,7 @@ if ($('#invoices-sum-table thead tr.secondrow th').eq($(this).index()).text().tr
     var id1 = $(this).closest('tr').find('td.fooid').text();
     var vrate = $(this).closest('tr').find('td.vdigit_price').text();
     //alert(vrate);
-  
+
     $( "#embratedialog" ).dialog({
             title : "Vendor File Price",
             resizable: false,
@@ -2152,12 +2152,12 @@ if ($('#invoices-sum-table thead tr.secondrow th').eq($(this).index()).text().tr
                   title: "Submit",
                   id: 'allocs',
                   click: function() {
-     
+
                   var vend_file_price = $('#embratedialog #vendor_digit_rate').val();
                   var _token   = $("#embratedialog .token").val();
 
                   var formData = {
-                            id:  id1, 
+                            id:  id1,
                             vend_file_price: vend_file_price,
                             _token: _token
                         }
@@ -2169,8 +2169,8 @@ if ($('#invoices-sum-table thead tr.secondrow th').eq($(this).index()).text().tr
                       url:"orders/updateordermisc",
                       data: formData,
                       success: function(result)
-                            { 
-                            console.log(result[0].msg) ; 
+                            {
+                            console.log(result[0].msg) ;
                                   // table.draw( false );
                                 table.page(currentPageIndex).draw(false);
                                 table.row( $rowid ).scrollTo();
@@ -2178,53 +2178,53 @@ if ($('#invoices-sum-table thead tr.secondrow th').eq($(this).index()).text().tr
                       });
 
                 setTimeout(function(){
-                               $('#embratedialog').dialog('close');                
-                                }, 300); 
-     
+                               $('#embratedialog').dialog('close');
+                                }, 300);
+
                      },
-        
+
                 },
-            
+
                 ],
                 close : function() {
                 },
                 open: function(event, ui) {
-                        
-                $('#embratedialog #vendor_digit_rate').val(vrate);   
+
+                $('#embratedialog #vendor_digit_rate').val(vrate);
                 var dialog = $(event.target).parents(".ui-dialog.ui-widget");
                 var buttons = dialog.find(".ui-dialog-buttonpane").find("button");
-            
+
                 var AddButton = buttons[0];
-            
+
                 $(AddButton).addClass("btn btn-small btn-primary");
                 $(AddButton).html("<i class='icon-plus-sign'></i>   Submit");
-                   
+
                 },
       });
 
       $( "#embratedialog" ).dialog("open");
-           //  table.ajax.reload(); 
+           //  table.ajax.reload();
   }
 
-   
- 
- 
-});
-     
 
-   
+
+
+});
+
+
+
 
 
 $(document).ready(function(){
   // debugger;
-  
-  
+
+
     // $('#invoices-sum-table').DataTable( {
     //      searchHighlight: true
     //  } );
   $(".conv_dt").datepicker();
         $(".paid_dt").datepicker();
-  
+
      $(".amtpaid").change(function(){
                  var amtpaid = this.value;
                  var invamt  =  $(".iamt").val();
@@ -2243,11 +2243,11 @@ $(document).ready(function(){
                  var convrt  =  $(".convrt").val();
              $(".ramt").val( amtpaid*convrt);
      });
-   
-   
-   
 
-   
+
+
+
+
 
     // very important script for trap keypress
   // var inputs = $('input, select, textarea').keypress(function (e) {
@@ -2262,10 +2262,10 @@ $(document).ready(function(){
   //       }
   //   });
 
-     
+
 
   var inputs1 = $('input, select, textarea').keydown(function (e) {
-     
+
     // alert(e.which);
 
     if (e.which == 9 || e.which == 13) {
@@ -2285,12 +2285,12 @@ $(document).ready(function(){
 
     $(document).on("click", ".editsummary", function(e){
        e.preventDefault();
-      
+
 
         var _token = $(this).parents('form:first').find('input[name=_token]').val();
        var url1 = $(this).parents('form:first').attr('action');
        var id1 = $(this).parents('form:first').find('input[name=id]').val();
-   
+
 
       $.ajaxSetup({
              headers: {
@@ -2300,7 +2300,7 @@ $(document).ready(function(){
 
 
       var formData = {
-                        id:  id1                        
+                        id:  id1
                         }
        // alert(url);
          $.ajax({
@@ -2310,7 +2310,7 @@ $(document).ready(function(){
                             url: url1,
                             data: formData,
                             success: function(result)
-                            { 
+                            {
                              // res = result[0].msg ;
                               console.log(result);
                               //oldstatus = result[0].status;
@@ -2323,7 +2323,7 @@ $(document).ready(function(){
                               $("#editmodalinvsummary .yrmn").val(result[0].yr_month);
 
                                $("#editmodalinvsummary .iamt").val(result[0].inv_amount);
-                              
+
                               $("#editmodalinvsummary .bnkchrg").val(result[0].bank_charges);
 
                                $("#editmodalinvsummary .pamt").val(result[0].paid_amt);
@@ -2334,20 +2334,20 @@ $(document).ready(function(){
                                $("#editmodalinvsummary .paiddt").val(result[0].paid_dt);
 
 
-                             
+
                               //$(".delmsg").html(res).fadeOut('slow');
 
-                               
+
                             }
                         });
 
 
            $("#editmodalinvsummary").modal("show");
      });
- 
+
 
   $("#editmodalinvsummary .pamt").change(function(){
-     
+
        $paid_val = parseFloat(this.value);
 
        $inv_val =  $("#editmodalinvsummary .iamt").val();
@@ -2362,36 +2362,36 @@ $(document).ready(function(){
 
        $out_amt =  $inv_val - $paid_val;
        $("#editmodalinvsummary .oamt").val($out_amt);
-       
+
        return true;
 
 
 
 
   });
-  
+
   $("#statusdialog #status").keydown(function(){
-                          // alert("changed");  
+                          // alert("changed");
                        // alert($(this).html());
              // debugger;
               //$(this).closest( ".ui-dialog" ).find(":button").addClass("ui-state-focus");
               //   $(this).closest( ".ui-dialog" ).find(".fmy").addClass("ui-state-focus");
               //   $(this).closest( ".ui-dialog" ).find(".fmy").removeClass("btn-primary");
             //  $("#statusdialog .ui-dialog").find(":button").addClass("blink_me");
-             
+
               //$(".ui-dialog .fmy").css("background", "#584a47");
 
-              //$(".ui-dialog .fmy").addClass("blink_me"); 
+              //$(".ui-dialog .fmy").addClass("blink_me");
               //above jquery was tested successfully on 08/02/17
               $(".ui-dialog .fmy").blur();
               $(".ui-dialog .fmy").focus();
-              
+
     });
 
 
     var previous;
 
-   
+
   $(".fbody").on("change", ".checkclick", function(e){
       //alert('hello');
         var id1 =  this.value ;
@@ -2401,22 +2401,22 @@ $(document).ready(function(){
           var testid = $(this).find("td.fooid").text();
            //alert(testid);
            if (id1 == testid) {
-                //$(this).addClass('selected').siblings().removeClass('selected'); 
-                $(this).removeClass('selected'); 
+                //$(this).addClass('selected').siblings().removeClass('selected');
+                $(this).removeClass('selected');
                 $(this).addClass("selected");
             }
         });
-           
 
-    
+
+
 
     //    $(".fbody").find("tr").each(function(){
 
-    //    if ( $(this).hasClass('selected') ) { 
+    //    if ( $(this).hasClass('selected') ) {
     //         var testid = $(this).find("td.fooid").text();
     //         alert(testid);
     //     }
-       
+
     // });
 
 
@@ -2429,31 +2429,31 @@ $(document).ready(function(){
 
     // added on 07/10/17
    // added on 22/09/17
-   //$(document).on("change", "#dtltable select.childstatus", function(e){  
+   //$(document).on("change", "#dtltable select.childstatus", function(e){
 
-   
+
 
 
    // added on 22/09/17 above
 
    // added on  06/10/17 for editdtl view multiple status assign
 
-  //$(document).on("change", "#dtltable select.childstatus", function(e){  
+  //$(document).on("change", "#dtltable select.childstatus", function(e){
 
-    $(document).on("focusin", "#editdtlmodalwindow select.feditstatus", function(e){  
-   
+    $(document).on("focusin", "#editdtlmodalwindow select.feditstatus", function(e){
+
             // Store the current value on focus and on change
            // alert("hello childstatus");
         previous = this.value;
        // alert(previous);
-    }).on("change", "#editdtlmodalwindow select.feditstatus", function() {    
+    }).on("change", "#editdtlmodalwindow select.feditstatus", function() {
         // Do something with the previous value after the change
         var status2 = $(this).val();
         var  newst = $(this);
         //alert($(newst).val());
-        
+
         @if (Auth::user()->hasRole('Designer') && Auth::user()->level()< 2)
-        
+
             if (status2 !== 'QC Pending') {
                 alert('Only QC Pending allowed for Designer');
                 return false;
@@ -2468,12 +2468,12 @@ $(document).ready(function(){
          //alert(result);
 
         var formData = {
-                        childid:  result, 
+                        childid:  result,
                         status2: status2
                             //_token: _token
-                      
+
                         }
-                           
+
                         $.ajax({
                             type:"POST",
                             async: true,
@@ -2481,13 +2481,13 @@ $(document).ready(function(){
                             url: "{{ URL::to('orders/orderdtlstatusf') }}",
                             data: formData,
                             success: function(result)
-                            { 
+                            {
                               res = result[0].msg ;
                               console.log(result);
                               oldstatus = result[0].status;
                              // alert(oldstatus);
                               if (res == "Updated successfully") {
-                                  console.log(result[0].msg) ; 
+                                  console.log(result[0].msg) ;
                                   $("#editdtlmodalwindow").modal('hide');
                                   $(".delmsg").html("Status Changed Successfully").fadeOut('slow');
                                   table.page(currentPageIndex).draw(false);
@@ -2502,10 +2502,10 @@ $(document).ready(function(){
                               }
                               //$(".delmsg").html(res).fadeOut('slow');
 
-                               
+
                             }
                         });
-        
+
     });
 
 
@@ -2513,8 +2513,8 @@ $(document).ready(function(){
 
 
    // added on 21/09/17
-     $(document).on("change", ".allocshow", function(e){   
-   
+     $(document).on("change", ".allocshow", function(e){
+
        // alert('clicked');
          if ( $('input[name="allocshow"]').is(':checked') ) {
 
@@ -2530,27 +2530,27 @@ $(document).ready(function(){
 
     });
 
-   // added below logic for confusion of submit button on 12/10/17  
+   // added below logic for confusion of submit button on 12/10/17
   // $(document).on("click", ".submitdtl", function(e) {
   //      //e.preventDefault();
   //      if (empty($('.paiddt').val())) {
   //          alert('Paid Date cannot be blank');
   //          return false ;
   //      }
-  // }); 
+  // });
 
   $(document).on("click", ".alert-danger", function(e) {
        $(".alert").fadeOut("slow");
   });
 
-      $(document).on("change", ".statusshow", function(e){   
-   
+      $(document).on("change", ".statusshow", function(e){
+
        // alert('clicked');
          if ( $('input[name="statusshow"]').is(':checked') ) {
 
               $(".finalalloc").hide();
               $(".feditdtlstatus").show();
-             
+
               $(".submitdtl").hide();
             }
             else {
@@ -2560,25 +2560,25 @@ $(document).ready(function(){
 
     });
 
-    $(document).on("focusin", "select.falloc", function(e){  
+    $(document).on("focusin", "select.falloc", function(e){
             $(".feditdtlstatus").hide();
-    });  
+    });
 
    // added above logic for confusion of submit button on 12/10/17
 
 
 // below routine for  both updation of text and id in edit program for allocation
-    $(document).on("change", "#dtltable select.selectalloc", function(e){    
+    $(document).on("change", "#dtltable select.selectalloc", function(e){
       // debugger;
       //var alloc =  this.value ;
       //var alloc = $(this).val();
        //  alert(alloc);
-        var option_all = ''; 
+        var option_all = '';
         var option_all = $(this).closest('tr').find(".selectalloc option:selected").map(function() {     return $(this).text();
-              
+
           }).get().join(',');
 
-      $(this).closest('tr').find('.updatealloc').val(option_all);  
+      $(this).closest('tr').find('.updatealloc').val(option_all);
 
       // allocation validation for not allocated
 
@@ -2613,15 +2613,15 @@ $(document).ready(function(){
     });
 
     // below routine for  both updation of text and id in  edit program for allocationf
-    $(document).on("change", "#editdtlmodalwindow .falloc", function(e){    
+    $(document).on("change", "#editdtlmodalwindow .falloc", function(e){
 
       //var alloc =  this.value ;
       //var alloc = $(this).val();
        //  alert(alloc);
 
-    var option_all = ''; 
+    var option_all = '';
     var option_all = $(this).find("option:selected").map(function() {     return $(this).text();
-              
+
           }).get().join(',');
 
        // alert(option_all);
@@ -2638,9 +2638,9 @@ $(document).ready(function(){
       }
 
       // Blank allocation validation on 04/01/18
- 
 
-      $("#editdtlmodalwindow .fupdateallocid").val(option_all);  
+
+      $("#editdtlmodalwindow .fupdateallocid").val(option_all);
 
       //var result = new Array();
 
@@ -2659,19 +2659,19 @@ $(document).ready(function(){
    // added on 21/09/17 above
 
 
-    
+
     // $("#notedialog .newnotes").keydown(function(){
-          
-              //$(".ui-dialog #notes").addClass("blink_me"); 
+
+              //$(".ui-dialog #notes").addClass("blink_me");
               //above jquery was tested successfully on 08/02/17
             //  alert("new notes changed");
              // $(".ui-dialog #notes").blur();
              // $(".ui-dialog #notes").focus();
-              
+
     //});
 
     $(".clearsession").click(function(event) {
-        
+
       //event.preventDefault ; removed on 20/10/17 as some users have problem in clear search
       var table = $('#invoices-sum-table').DataTable();
       table.state.clear();
@@ -2681,9 +2681,9 @@ $(document).ready(function(){
 
     $(".ocreate").click(function(e){
           e.preventDefault ;
-    // alert("modal clicked"); 
-       
-            
+    // alert("modal clicked");
+
+
 
     $("#OrderCreateModal").modal({
         show: true,
@@ -2691,42 +2691,42 @@ $(document).ready(function(){
         transition: 'slideUp',
         // transitionClose: 'slideBack',
         autofocus: 'input'
-           
+
       });
-    
-   
+
+
 
     $('#OrderCreateModal').on('shown.bs.modal', function () {
         //alert("Modal Open");
-        
+
         $("#OrderCreateModal .addclientinput").focus();
     });
-        
-   
+
+
             //$('input[type=text]').each(function(){
             //      $(this).val('');
             //  });
-       
-        
-            
+
+
+
 
     });
 
-    
-    
+
+
     $("#order_date_time").datetimepicker();
     $("#order_us_date").datetimepicker();
     $("#order_date").datetimepicker();
     $("#ord_comp_date").datetimepicker();
     $("#order_us_dt").datetimepicker();
-    $('#modal-update #order_date_time').datetimepicker(); 
-    $('#modal-update #order_us_date').datetimepicker(); 
+    $('#modal-update #order_date_time').datetimepicker();
+    $('#modal-update #order_us_date').datetimepicker();
     //$("Form").validate();
 
 
     $('.expand').css({ height: '28px' });
-     
-   
+
+
     $('.expand').focusin(function() {
         $( this ).css({ height: '48px' })
     });
@@ -2743,27 +2743,27 @@ $(document).ready(function(){
         $(this).css('background', 'grey');
         $(this).css('cursor','auto');
     });
-     
+
     $(".submitbutton").dblclick(function (e) {
         // e.preventDefault();
        // alert("hello");
-       
+
         //debugger;
-       
+
         var form = $(this).parents('form:first');
         var formid = $(this).parents('form:first').attr('id');
         var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
         var formid1 =  "#" + formid + ' input' ;
 
         // validation routine start
-       
-        
+
+
         var table = $('#invoices-sum-table').DataTable();
         var dataentryerror = 0 ;
        // alert(formid);
 
       var valid = true ;
-     
+
       $(formid1).each(function(){
           //debugger;
       // $("#orderadd input").each(function() {
@@ -2785,18 +2785,18 @@ $(document).ready(function(){
       });
 
      // alert(valid);
-     
+
       //  alert('outerloop' + dataentryerror);
 
        //var aaa = $( "formid #dropDownId1 option:selected" ).text();
        var editallocid = "#" + formid + ' #dropDownId1 option:selected' ;
        var aaa = $( editallocid ).text();
-       
+
        //alert(aaa); Removed below code on 02/05/17 on inital testing  as per kulind sir instruction as digitizing does not require allocation
-       // if($.trim(aaa).length <=0 ) { 
-       //       alert('Select allocation'); 
+       // if($.trim(aaa).length <=0 ) {
+       //       alert('Select allocation');
        //      var $parentTag = $("#dropDownId1").parent();
-           
+
        //      $parentTag.addClass('error').append('<span class="error">Required field</span>');
        //      valid = false  ;
        // }
@@ -2805,20 +2805,20 @@ $(document).ready(function(){
 
 
 if(valid) {
-       
-     
+
+
         if (formid=="orderadd") {
-           
-            
+
+
             //alert(formid);
-            
+
           }
 
         var method = '';
         if (form.has('input[name=_method]')) {
             method = form.find('input[name=_method]').val();
             console.log(method);
-        } 
+        }
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
@@ -2831,9 +2831,9 @@ if(valid) {
             e.preventDefault();
             //var formdata = $('#contactusform').serializeArray();
             var _token = form.find('input[name=_token]').val();
-       
-            e.preventDefault(); 
-         
+
+            e.preventDefault();
+
         var client_creation_id = form.find('input[name=client_creation_id]').val();
         var client_name = form.find('input[name=client_name1]').val();
 
@@ -2858,7 +2858,7 @@ if(valid) {
         var order_us_date = form.find('input[name=order_us_date]').val();
         var allocation = $('#OrderCreateModal #dropDownId1').val();
         var document_type = form.find('.dtype').val();
-       
+
          //alert(note);
         //alert(client_note);
         //var allocation = form.find('input[name=allocation[]]').val();
@@ -2867,12 +2867,12 @@ if(valid) {
            alert('Status Should be QUOTE or Approved');
            //e.stopPropagation();
         }
-        
+
         myList = [];
-            $.each($(".foo option:selected"), function(){ 
+            $.each($(".foo option:selected"), function(){
                 //alert($(this).val());
                 myList.push($(this).val())
-            });  
+            });
 
         var _token = form.find('input[name=_token]').val();
 
@@ -2904,7 +2904,7 @@ if(valid) {
             _token: _token
         }
 
-        
+
         var url = form.attr('action');
         //console.log(url);
         console.log(formData);
@@ -2938,21 +2938,21 @@ if(valid) {
                   //  table.row( 1 ).scrollTo();
 
                 $("#createdrowid").val(data[0].createdrowid);
-               
+
                 target.html("<div class='alert alert-success'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button><p>" + data[0].msg + "</p></div>").fadeOut( 4000 );
                 // $('.submitbutton').html("<i class='fa fa-check'></i>&nbsp;Add More!").attr('disabled', true);
 
                 //console.log(stat);
                 //$( "#success" ).text("Successfully Added");
-                
-                                    
+
+
                  $(form).find('input[name=client_name1]').val("");
                  $(form).find('input[name=client_email_primary]').val("");
                  $(form).find('input[name=client_creation_id]').val("");
                  $(form).find('input[name=client_company]').val("");
                  $(form).find('input[name=client_note]').val("");
                  //$(form).find('input[name=client_]').val("");
-              
+
                  $(form).find('input[name=stiches_count]').val(0);
                  $(form).find('input[name=file_price]').val(0);
                  $(form).find('input[name=digit_rate]').val(0);
@@ -2966,10 +2966,10 @@ if(valid) {
                  $('#OrderCreateModal #note').val("");
                  //$(form).find('input[name=document_type]').val("");
                  $("#OrderCreateModal").modal("hide");
-               
 
-                
-            
+
+
+
             },
 
             error: function (data) {
@@ -2988,7 +2988,7 @@ if(valid) {
                 $('.submitbutton').html("<i class='fa fa-flash'></i>&nbspResend").attr('disabled', false);
                 }
         });
-        
+
     }
     else if(method == 'PATCH') {
         //$(this).html("<i class='fa fa-spinner fa-spin'></i>&nbspWait!").attr('disabled', true); removed on 02/02/17
@@ -3022,7 +3022,7 @@ if(valid) {
        // alert(allocation);
        // alert (status);
        // var client_id = $('.edit').parent('form:first').find('input[name=clientid]').val();
-       
+
         var formData = {
                     id: id,
                     client_id: client_id,
@@ -3059,7 +3059,7 @@ if(valid) {
         //alert(status_normal);
           console.log(url);
         //console.log(json([formData]));
-        
+
         //e.stopPropagation();
         //return false;
 
@@ -3073,7 +3073,7 @@ if(valid) {
                 console.log("hello updated");
                 var success = data.responseJSON;
                 target.html("<div class='alert alert-success'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button><p>" + data[0].msg + "</p></div>").fadeOut( 4000 );
-                 
+
                 //$('.submitbutton').html("<i class='fa fa-check'></i>&nbsp;Done!").attr('disabled', true);
                 //$('.editmodalwindow').modal('hide');
               })
@@ -3090,7 +3090,7 @@ if(valid) {
                  $("#editmodalwindow").modal('hide');
                 console.log("complete");
               });
-              
+
           }
         }
         //debugger;
@@ -3100,7 +3100,7 @@ if(valid) {
         //                      table.row( $rowid ).scrollTo();
         table.ajax.reload();
     });
- 
+
  });
 
 // $(document).ready(function(){
@@ -3108,14 +3108,14 @@ if(valid) {
  $(document).on("keyup", ".clientinput", function(e){
     //alert('mymodal2');
     e.preventDefault();
-    
-    
+
+
     $value = $(this).val();
     alert($value);
     if($value){
         $("#myModal2").modal('show');
         $("#search").val($value);
-    
+
         $.ajax({
             type: "GET",
             cache: false,
@@ -3125,7 +3125,7 @@ if(valid) {
                   {
                     $("#clienthelp tbody").html(data);
                   }
-        
+
         });
     }
     else
@@ -3140,14 +3140,14 @@ if(valid) {
  $(document).on("keyup", ".editclientinput", function(e){
     //alert('mymodal2');
     e.preventDefault();
-    
-    
+
+
     $value = $(this).val();
     //alert($value);
     if($value){
         $("#editmyModal2").modal('show');
         $("#search").val($value);
-    
+
         $.ajax({
             type: "GET",
             cache: false,
@@ -3157,7 +3157,7 @@ if(valid) {
                   {
                     $("#editclienthelp tbody").html(data);
                   }
-        
+
         });
     }
     else
@@ -3171,14 +3171,14 @@ if(valid) {
 $(document).on("keyup", ".searchinput", function(e){
     //alert('mymodal2');
     e.preventDefault();
-    
-    
+
+
     $value = $(this).val();
     // alert($value);
     if($value){
         $("#myModal2").modal('show');
         $("#search").val($value);
-    
+
         $.ajax({
             type: "GET",
             cache: false,
@@ -3188,7 +3188,7 @@ $(document).on("keyup", ".searchinput", function(e){
                   {
                     $("#clienthelp tbody").html(data);
                   }
-        
+
         });
     }
     else
@@ -3197,12 +3197,12 @@ $(document).on("keyup", ".searchinput", function(e){
     }
 
 });
- 
+
 $(document).on("click", ".clienthelp tr", function(e){
 //     e.preventDefault();
     // $("#clienthelp  tr").click(function(){
 
-        $(this).addClass('selected').siblings().removeClass('selected');    
+        $(this).addClass('selected').siblings().removeClass('selected');
         var vclient_creation_id=$(this).find('td:eq(1)').html();
         var vclient_name=$(this).find('td:eq(2)').html();
         var vprimary_email=$(this).find('td:eq(3)').html();
@@ -3211,9 +3211,9 @@ $(document).on("click", ".clienthelp tr", function(e){
         var vclient_note=$(this).find('td:eq(5)').html();
         var vclient_contact_1=$(this).find('td:eq(6)').html();
         var vcompany_id=$(this).find('td:eq(7)').html();
-        
-        
-    $(".clienthelp tr").bind("dblclick", function(){  
+
+
+    $(".clienthelp tr").bind("dblclick", function(){
           //alert(vclient_name);
                 //alert($( "OrderCreateModal input[name='client_name']").val()) ;
         $("#myModal2").modal('hide');
@@ -3235,8 +3235,8 @@ $(document).on("click", ".editclienthelp tr", function(e){
 //     e.preventDefault();
    //debugger
     // $("#clienthelp  tr").click(function(){
-      
-        $(this).addClass('selected').siblings().removeClass('selected');    
+
+        $(this).addClass('selected').siblings().removeClass('selected');
         var vclient_creation_id=$(this).find('td:eq(1)').html();
         var vclient_name=$(this).find('td:eq(2)').html();
         var vprimary_email=$(this).find('td:eq(3)').html();
@@ -3248,7 +3248,7 @@ $(document).on("click", ".editclienthelp tr", function(e){
 
 });
 
- //   $(".editclienthelp tr").bind("dblclick", function(){  
+ //   $(".editclienthelp tr").bind("dblclick", function(){
 $(document).on("dblclick", ".editclienthelp tr", function(e){
 
       //debugger
@@ -3273,9 +3273,9 @@ $(document).on("dblclick", ".editclienthelp tr", function(e){
                 $( "#editmodalwindow .contact1" ).val( vclient_contact_1 );
                  $( "#OrderCreateModal .compid1" ).val( vcompany_id );
 
-       
+
 });
-    
+
 
 
 // new order dtls  modal
@@ -3298,7 +3298,7 @@ $(document).on("dblclick", ".editclienthelp tr", function(e){
 //                 'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
 //             }
 //     });
-   
+
 //      $("#dtltable .dtlbody").empty();
 
 //     var formData =  {
@@ -3367,7 +3367,7 @@ $(document).on("click", ".editinvsummary", function(e){
         var diffcolumns         = response[0].diffcolumns;
         var fcount              = response[0].file_count;
 
- 
+
 
         var host = window.location.host;
         var pathname = window.location.pathname;
@@ -3376,7 +3376,7 @@ $(document).on("click", ".editinvsummary", function(e){
        // var updatedurl = 'http://' + host + pathname + '/' +  client_id;
         console.log("original url" + url + allocation + status);
         //console.log("updated url"+ updatedurl); //for debug
-      
+
 
         // below is correct but as we have to update orders url
         // commented below for testing in local
@@ -3387,16 +3387,16 @@ $(document).on("click", ".editinvsummary", function(e){
            console.log("updated url"+ updatedurl);
         form.find('#form-url').html(updatedurl);
         // var i;
-        $("#modal-update #id").val(id); 
+        $("#modal-update #id").val(id);
         $("#modal-update #client_id").val(client_id);
         $("#modal-update #client_name").val(client_name);
         $("#modal-update #client_email_primary").val(client_email_primary);
         $("#modal-update #client_company").val(client_company);
         $("#modal-update #client_state").val(client_state);
-       
+
         // $('#dropDownId').val(alloc.split(','));
         $("#modal-update #dropDownId1").val(allocation.split(','));
-        
+
         $("#modal-update #status").val(status);
         $("#modal-update #document_type").val(document_type);
         $("#modal-update .editscount").val(stiches_count);
@@ -3414,8 +3414,8 @@ $(document).on("click", ".editinvsummary", function(e){
         $('#modal-update #diffcolumns').val(diffcolumns);
         $('#modal-update #file_count').val(file_count);
 
-        $("#editmodalwindow .hidealloc").prop("disabled", true); 
-        $("#editmodalwindow .hidestatus").prop("disabled", true); 
+        $("#editmodalwindow .hidealloc").prop("disabled", true);
+        $("#editmodalwindow .hidestatus").prop("disabled", true);
         $("#editmodalwindow").modal('show');
 
     }
@@ -3470,7 +3470,7 @@ $(document).on("click", ".editinvsummary", function(e){
              var  fhtml = "<input type='text' name='fcount[]' /><br>";
           }
 
- 
+
 
         var host = window.location.host;
         var pathname = window.location.pathname;
@@ -3479,7 +3479,7 @@ $(document).on("click", ".editinvsummary", function(e){
        // var updatedurl = 'http://' + host + pathname + '/' +  client_id;
         console.log("original url" + url + allocation + status);
         //console.log("updated url"+ updatedurl); //for debug
-      
+
 
         // below is correct but as we have to update orders url
         // commented below for testing in local
@@ -3490,17 +3490,17 @@ $(document).on("click", ".editinvsummary", function(e){
            console.log("updated url"+ updatedurl);
         form.find('#form-url').html(updatedurl);
         // var i;
-        $("#modal-update1 #id").val(id); 
-        $("#modal-update1 .inner p").append(fhtml); 
+        $("#modal-update1 #id").val(id);
+        $("#modal-update1 .inner p").append(fhtml);
         $("#modal-update1 #client_id").val(client_id);
         $("#modal-update1 #client_name").val(client_name);
         $("#modal-update1 #client_email_primary").val(client_email_primary);
         $("#modal-update1 #client_company").val(client_company);
         $("#modal-update1 #client_state").val(client_state);
-       
+
         // $('#dropDownId').val(alloc.split(','));
         $("#modal-update1 #dropDownId1").val(allocation.split(','));
-        
+
         $("#modal-update1 #status").val(status);
         $("#modal-update1 #status2").val(status1.split(','));
         $("#modal-update1 #document_type").val(document_type);
@@ -3519,20 +3519,20 @@ $(document).on("click", ".editinvsummary", function(e){
         $('#modal-update1 #diffcolumns').val(diffcolumns);
         $('#modal-update1 #file_count').val(file_count);
 
-        $("#editmodalwindow1 .hidealloc").prop("disabled", true); 
-        $("#editmodalwindow1 .hidestatus").prop("disabled", true); 
+        $("#editmodalwindow1 .hidealloc").prop("disabled", true);
+        $("#editmodalwindow1 .hidestatus").prop("disabled", true);
         $("#editmodalwindow1").modal('show');
 
     }
 
-    
-      
+
+
 });
 
 
 $("#OrderCreateModal .ftype").on("change", function(){
     var selectedOption = $(this).find("option:selected").text();
-    
+
     if(selectedOption == "Vector" ) {
       //&& $('.valid_file_price').val() == '0' || $('.valid_file_price').val() == ''){
        // alert("You must insert value greater then 0 while you select File Type Vector");
@@ -3540,12 +3540,12 @@ $("#OrderCreateModal .ftype").on("change", function(){
         $('#OrderCreateModal .scount').val(0.00);
         $('#OrderCreateModal .scount').hide();
         $('#OrderCreateModal .slabel').hide();
-        $("#OrderCreateModal .add_vendor_digit_rate").val(0.00); 
-        $("#OrderCreateModal .add_vendor_digit_price").val(0.00); 
+        $("#OrderCreateModal .add_vendor_digit_rate").val(0.00);
+        $("#OrderCreateModal .add_vendor_digit_price").val(0.00);
     }
     else
     {
-      //alert(selectedOption); 
+      //alert(selectedOption);
      // debugger;
       $('#OrderCreateModal .slabel').show();
       $('#OrderCreateModal .scount').show();
@@ -3562,9 +3562,9 @@ $("#editmodalwindow .editftype").on("change", function(){
        // alert("You must insert value greater then 0 while you select File Type Vector");
         $('#editmodalwindow .edit_file_price').val(5.5);
         $('#editmodalwindow .editscount').val(0.00);
-        $("#editmodalwindow .edit_vendor_digit_rate").val(0.00); 
-        $("#editmodalwindow .edit_vendor_digit_price").val(0.00); 
-        
+        $("#editmodalwindow .edit_vendor_digit_rate").val(0.00);
+        $("#editmodalwindow .edit_vendor_digit_price").val(0.00);
+
        }
     else
     {
@@ -3579,13 +3579,13 @@ $("#OrderCreateModal .vend").on("change", function(){
     var stich_count  =   $("#OrderCreateModal .scount").val() ;
     // alert(this.value);
     var filetype = $("#OrderCreateModal .ftype").val() ;
-   
+
     //alert(stich_count);
     //alert(filetype);
     if (filetype == "Digitizing") {
        if(this.value == "VENDOR1"  ) {
         // alert("You must insert value greater then 0 while you select File Type Vector");
-      
+
         //alert(stich_count);
         //#file_price.value =  stitchcount/1000 *1.75
 
@@ -3593,72 +3593,72 @@ $("#OrderCreateModal .vend").on("change", function(){
             var vprice =  stich_count * 1 ;
              $("#OrderCreateModal .add_vendor_digit_rate").val(1);
             }
-        else if( stich_count > 8000 && stich_count <= 10000 ) {  
+        else if( stich_count > 8000 && stich_count <= 10000 ) {
                 var vprice =  stich_count * 0.85 ;
                  $("#OrderCreateModal .add_vendor_digit_rate").val(0.85);
             }
-        else if( (stich_count > 10000) && (stich_count <= 15000) ) {  
+        else if( (stich_count > 10000) && (stich_count <= 15000) ) {
                 var vprice =  stich_count * 0.75 ;
                 $("#OrderCreateModal .add_vendor_digit_rate").val(0.75);
             }
-        else if( (stich_count > 15000) && (stich_count <= 20000) ) {  
+        else if( (stich_count > 15000) && (stich_count <= 20000) ) {
                var vprice =  stich_count *  0.65 ;
                 $("#OrderCreateModal .add_vendor_digit_rate").val(0.65);
             }
-        else if( (stich_count > 20000) && (stich_count <= 30000) ) {  
+        else if( (stich_count > 20000) && (stich_count <= 30000) ) {
                  var vprice =  stich_count * 0.55 ;
                   $("#OrderCreateModal .add_vendor_digit_rate").val(0.55);
             }
-        else if( (stich_count > 30000) && (stich_count <= 60000) ) {  
+        else if( (stich_count > 30000) && (stich_count <= 60000) ) {
                 var vprice =  stich_count * 0.43 ;
                  $("#OrderCreateModal .add_vendor_digit_rate").val(0.43);
             }
-        else if(stich_count > 60000 ) {  
+        else if(stich_count > 60000 ) {
                 var vprice =  stich_count *40 ;
                 $("#OrderCreateModal .add_vendor_digit_rate").val(40);
 
             }
 
-            
+
             var fval = ((stich_count/1000) * 1.75).toFixed(2);
             var vprice1 = (vprice/1000).toFixed(2) ;
             $("#OrderCreateModal .add_vendor_digit_price").val(vprice1);
             $("#OrderCreateModal .valid_file_price").val(fval);
-   
-      } 
+
+      }
     else
     {
        if (stich_count < 8000   ) {
             var vprice =  stich_count * 0.90 ;
             $("#OrderCreateModal .add_vendor_digit_rate").val(0.90);
             }
-        else if( stich_count > 8000 && stich_count <= 10000 ) {  
+        else if( stich_count > 8000 && stich_count <= 10000 ) {
                 var vprice =  stich_count * 0.80 ;
                 $("#OrderCreateModal .add_vendor_digit_rate").val(0.80);
             }
-        else if( (stich_count > 10000) && (stich_count <= 15000) ) {  
+        else if( (stich_count > 10000) && (stich_count <= 15000) ) {
                 var vprice =  stich_count * 0.70 ;
                 $("#OrderCreateModal .add_vendor_digit_rate").val(0.70);
             }
-        else if( (stich_count > 15000) && (stich_count <= 20000) ) {  
+        else if( (stich_count > 15000) && (stich_count <= 20000) ) {
                var vprice =  stich_count *  0.60 ;
                $("#OrderCreateModal .add_vendor_digit_rate").val(0.60);
             }
-        else if( (stich_count > 20000) && (stich_count <= 30000) ) {  
+        else if( (stich_count > 20000) && (stich_count <= 30000) ) {
                  var vprice =  stich_count * 0.50 ;
                  $("#OrderCreateModal .add_vendor_digit_rate").val(0.50);
             }
-        else if( (stich_count > 30000) && (stich_count <= 60000) ) {  
+        else if( (stich_count > 30000) && (stich_count <= 60000) ) {
                 var vprice =  stich_count * 0.40 ;
                 $("#OrderCreateModal .add_vendor_digit_rate").val(0.40);
             }
-        else if(stich_count > 60000 ) {  
+        else if(stich_count > 60000 ) {
                 var vprice =  stich_count *30 ;
                 $("#OrderCreateModal .add_vendor_digit_rate").val(30);
 
             }
 
-             
+
           var fval = ((stich_count/1000) * 1.75).toFixed(2);
           var vprice1 = (vprice/1000).toFixed(2) ;
 
@@ -3679,14 +3679,14 @@ $("#editmodalwindow .editvend").on("change", function(){
 
     //alert(selectedOption);
     var filetype = $("#editmodalwindow .editftype").val() ;
-    
+
    // alert(stich_count);
    // alert(filetype);
 
     if (filetype == "Digitizing") {
        if(selectedOption == "VENDOR1"  ) {
         // alert("You must insert value greater then 0 while you select File Type Vector");
-      
+
         //alert(stich_count);
         //#file_price.value =  stitchcount/1000 *1.75
 
@@ -3694,33 +3694,33 @@ $("#editmodalwindow .editvend").on("change", function(){
             var vprice =  stich_count * 1 ;
              $("#editmodalwindow .edit_vendor_digit_rate").val(1);
             }
-        else if( stich_count > 8000 && stich_count <= 10000 ) {  
+        else if( stich_count > 8000 && stich_count <= 10000 ) {
                 var vprice =  stich_count * 0.85 ;
                  $("#editmodalwindow .edit_vendor_digit_rate").val(0.85);
             }
-        else if( (stich_count > 10000) && (stich_count <= 15000) ) {  
+        else if( (stich_count > 10000) && (stich_count <= 15000) ) {
                 var vprice =  stich_count * 0.75 ;
                 $("#editmodalwindow .edit_vendor_digit_rate").val(0.75);
             }
-        else if( (stich_count > 15000) && (stich_count <= 20000) ) {  
+        else if( (stich_count > 15000) && (stich_count <= 20000) ) {
                var vprice =  stich_count *  0.65 ;
                 $("#editmodalwindow .edit_vendor_digit_rate").val(0.65);
             }
-        else if( (stich_count > 20000) && (stich_count <= 30000) ) {  
+        else if( (stich_count > 20000) && (stich_count <= 30000) ) {
                  var vprice =  stich_count * 0.55 ;
                   $("#editmodalwindow .edit_vendor_digit_rate").val(0.55);
             }
-        else if( (stich_count > 30000) && (stich_count <= 60000) ) {  
+        else if( (stich_count > 30000) && (stich_count <= 60000) ) {
                 var vprice =  stich_count * 0.43 ;
                  $("#editmodalwindow .edit_vendor_digit_rate").val(0.43);
             }
-        else if(stich_count > 60000 ) {  
+        else if(stich_count > 60000 ) {
                 var vprice =  stich_count *40 ;
                 $("#editmodalwindow .edit_vendor_digit_rate").val(40);
 
             }
 
-            
+
             //var fval = ((stich_count/1000) * 1.75).toFixed(2);
             var fval = ((stich_count/1000) * 1.75).toFixed(2);
             var vprice1 = (vprice/1000).toFixed(2) ;
@@ -3728,41 +3728,41 @@ $("#editmodalwindow .editvend").on("change", function(){
             //vprice1 = (vprice/1000).toFixed(2) ;
             $("#editmodalwindow .edit_vendor_digit_price").val(vprice1);
             $("#editmodalwindow .edit_file_price").val(fval);
-   
-      } 
+
+      }
     else
     {
        if (stich_count < 8000   ) {
             var vprice =  stich_count * 0.90 ;
             $("#editmodalwindow .edit_vendor_digit_rate").val(0.90);
             }
-        else if( stich_count > 8000 && stich_count <= 10000 ) {  
+        else if( stich_count > 8000 && stich_count <= 10000 ) {
                 var vprice =  stich_count * 0.80 ;
                 $("#editmodalwindow .edit_vendor_digit_rate").val(0.80);
             }
-        else if( (stich_count > 10000) && (stich_count <= 15000) ) {  
+        else if( (stich_count > 10000) && (stich_count <= 15000) ) {
                 var vprice =  stich_count * 0.70 ;
                 $("#editmodalwindow .edit_vendor_digit_rate").val(0.70);
             }
-        else if( (stich_count > 15000) && (stich_count <= 20000) ) {  
+        else if( (stich_count > 15000) && (stich_count <= 20000) ) {
                var vprice =  stich_count *  0.60 ;
                $("#editmodalwindow .edit_vendor_digit_rate").val(0.60);
             }
-        else if( (stich_count > 20000) && (stich_count <= 30000) ) {  
+        else if( (stich_count > 20000) && (stich_count <= 30000) ) {
                  var vprice =  stich_count * 0.50 ;
                  $("#editmodalwindow .edit_vendor_digit_rate").val(0.50);
             }
-        else if( (stich_count > 30000) && (stich_count <= 60000) ) {  
+        else if( (stich_count > 30000) && (stich_count <= 60000) ) {
                 var vprice =  stich_count * 0.40 ;
                 $("#editmodalwindow .edit_vendor_digit_rate").val(0.40);
             }
-        else if(stich_count > 60000 ) {  
+        else if(stich_count > 60000 ) {
                 var vprice =  stich_count *30 ;
                 $("#editmodalwindow .edit_vendor_digit_rate").val(30);
 
             }
 
-             
+
           var fval = ((stich_count/1000) * 1.75).toFixed(2);
           var vprice1 = (vprice/1000).toFixed(2) ;
           //alert(vprice1);
@@ -3781,13 +3781,13 @@ function calc_astitch_count() {
     var stich_count  =   $("#OrderCreateModal .scount").val() ;
     //alert(selectedOption);
     var filetype = $("#OrderCreateModal .ftype").val() ;
-  
+
    // alert(stich_count);
    // alert(filetype);
     if (filetype == "Digitizing") {
        if(selectedOption == "VENDOR1"  ) {
         // alert("You must insert value greater then 0 while you select File Type Vector");
-      
+
         //alert(stich_count);
         //#file_price.value =  stitchcount/1000 *1.75
 
@@ -3795,33 +3795,33 @@ function calc_astitch_count() {
             var vprice =  stich_count * 1 ;
              $("#OrderCreateModal .add_vendor_digit_rate").val(1);
             }
-        else if( stich_count > 8000 && stich_count <= 10000 ) {  
+        else if( stich_count > 8000 && stich_count <= 10000 ) {
                 var vprice =  stich_count * 0.85 ;
                  $("#OrderCreateModal .add_vendor_digit_rate").val(0.85);
             }
-        else if( (stich_count > 10000) && (stich_count <= 15000) ) {  
+        else if( (stich_count > 10000) && (stich_count <= 15000) ) {
                 var vprice =  stich_count * 0.75 ;
                 $("#OrderCreateModal.add_vendor_digit_rate").val(0.75);
             }
-        else if( (stich_count > 15000) && (stich_count <= 20000) ) {  
+        else if( (stich_count > 15000) && (stich_count <= 20000) ) {
                var vprice =  stich_count *  0.65 ;
                 $("#OrderCreateModal.add_vendor_digit_rate").val(0.65);
             }
-        else if( (stich_count > 20000) && (stich_count <= 30000) ) {  
+        else if( (stich_count > 20000) && (stich_count <= 30000) ) {
                  var vprice =  stich_count * 0.55 ;
                   $("#OrderCreateModal .add_vendor_digit_rate").val(0.55);
             }
-        else if( (stich_count > 30000) && (stich_count <= 60000) ) {  
+        else if( (stich_count > 30000) && (stich_count <= 60000) ) {
                 var vprice =  stich_count * 0.43 ;
                  $("#OrderCreateModal .add_vendor_digit_rate").val(0.43);
             }
-        else if(stich_count > 60000 ) {  
+        else if(stich_count > 60000 ) {
                 var vprice =  stich_count *40 ;
                 $("#OrderCreateModal .add_vendor_digit_rate").val(40);
 
             }
 
-            
+
             //var fval = ((stich_count/1000) * 1.75).toFixed(2);
             var fval = ((stich_count/1000) * 1.75).toFixed(2);
             var vprice1 = (vprice/1000).toFixed(2) ;
@@ -3829,42 +3829,42 @@ function calc_astitch_count() {
             //vprice1 = (vprice/1000).toFixed(2) ;
             $("#OrderCreateModal .add_vendor_digit_price").val(vprice1);
             $("#OrderCreateModal .valid_file_price").val(fval);
-   
-      } 
+
+      }
     else
-    {  
+    {
       // alert("hello");
        if (stich_count < 8000   ) {
             var vprice =  stich_count * 0.90 ;
             $("#OrderCreateModal .add_vendor_digit_rate").val(0.90);
             }
-        else if( stich_count > 8000 && stich_count <= 10000 ) {  
+        else if( stich_count > 8000 && stich_count <= 10000 ) {
                 var vprice =  stich_count * 0.80 ;
                 $("#OrderCreateModal .add_vendor_digit_rate").val(0.80);
             }
-        else if( (stich_count > 10000) && (stich_count <= 15000) ) {  
+        else if( (stich_count > 10000) && (stich_count <= 15000) ) {
                 var vprice =  stich_count * 0.70 ;
                 $("#OrderCreateModal .add_vendor_digit_rate").val(0.70);
             }
-        else if( (stich_count > 15000) && (stich_count <= 20000) ) {  
+        else if( (stich_count > 15000) && (stich_count <= 20000) ) {
                var vprice =  stich_count *  0.60 ;
                $("#OrderCreateModal .add_vendor_digit_rate").val(0.60);
             }
-        else if( (stich_count > 20000) && (stich_count <= 30000) ) {  
+        else if( (stich_count > 20000) && (stich_count <= 30000) ) {
                  var vprice =  stich_count * 0.50 ;
                  $("#OrderCreateModal .add_vendor_digit_rate").val(0.50);
             }
-        else if( (stich_count > 30000) && (stich_count <= 60000) ) {  
+        else if( (stich_count > 30000) && (stich_count <= 60000) ) {
                 var vprice =  stich_count * 0.40 ;
                 $("#OrderCreateModal .add_vendor_digit_rate").val(0.40);
             }
-        else if(stich_count > 60000 ) {  
+        else if(stich_count > 60000 ) {
                 var vprice =  stich_count *30 ;
                 $("#OrderCreateModal .add_vendor_digit_rate").val(30);
 
             }
 
-             
+
           var fval = ((stich_count/1000) * 1.75).toFixed(2);
           var vprice1 = (vprice/1000).toFixed(2) ;
 
@@ -3880,13 +3880,13 @@ function calc_estitch_count() {
     var stich_count  =   $("#editmodalwindow .editscount").val() ;
     //alert(this.value);
     var filetype = $("#editmodalwindow .editftype").val() ;
-   
+
     //alert(stich_count);
     //alert(filetype);
     if (filetype == "Digitizing") {
        if(selectedOption == "VENDOR1"  ) {
         // alert("You must insert value greater then 0 while you select File Type Vector");
-      
+
        // alert(stich_count);
         //#file_price.value =  stitchcount/1000 *1.75
 
@@ -3894,33 +3894,33 @@ function calc_estitch_count() {
             var vprice =  stich_count * 1 ;
              $("#editmodalwindow .edit_vendor_digit_rate").val(1);
             }
-        else if( stich_count > 8000 && stich_count <= 10000 ) {  
+        else if( stich_count > 8000 && stich_count <= 10000 ) {
                 var vprice =  stich_count * 0.85 ;
                  $("#editmodalwindow .edit_vendor_digit_rate").val(0.85);
             }
-        else if( (stich_count > 10000) && (stich_count <= 15000) ) {  
+        else if( (stich_count > 10000) && (stich_count <= 15000) ) {
                 var vprice =  stich_count * 0.75 ;
                 $("#editmodalwindow .edit_vendor_digit_rate").val(0.75);
             }
-        else if( (stich_count > 15000) && (stich_count <= 20000) ) {  
+        else if( (stich_count > 15000) && (stich_count <= 20000) ) {
                var vprice =  stich_count *  0.65 ;
                 $("#editmodalwindow .edit_vendor_digit_rate").val(0.65);
             }
-        else if( (stich_count > 20000) && (stich_count <= 30000) ) {  
+        else if( (stich_count > 20000) && (stich_count <= 30000) ) {
                  var vprice =  stich_count * 0.55 ;
                   $("#editmodalwindow .edit_vendor_digit_rate").val(0.55);
             }
-        else if( (stich_count > 30000) && (stich_count <= 60000) ) {  
+        else if( (stich_count > 30000) && (stich_count <= 60000) ) {
                 var vprice =  stich_count * 0.43 ;
                  $("#editmodalwindow .edit_vendor_digit_rate").val(0.43);
             }
-        else if(stich_count > 60000 ) {  
+        else if(stich_count > 60000 ) {
                 var vprice =  stich_count *40 ;
                 $("#editmodalwindow .edit_vendor_digit_rate").val(40);
 
             }
 
-            
+
             //var fval = ((stich_count/1000) * 1.75).toFixed(2);
             var fval = ((stich_count/1000) * 1.75).toFixed(2);
             var vprice1 = (vprice/1000).toFixed(2) ;
@@ -3928,41 +3928,41 @@ function calc_estitch_count() {
             //vprice1 = (vprice/1000).toFixed(2) ;
             $("#editmodalwindow .edit_vendor_digit_price").val(vprice1);
             $("#editmodalwindow .edit_file_price").val(fval);
-   
-      } 
+
+      }
     else
     {
        if (stich_count < 8000   ) {
             var vprice =  stich_count * 0.90 ;
             $("#editmodalwindow .edit_vendor_digit_rate").val(0.90);
             }
-        else if( stich_count > 8000 && stich_count <= 10000 ) {  
+        else if( stich_count > 8000 && stich_count <= 10000 ) {
                 var vprice =  stich_count * 0.80 ;
                 $("#editmodalwindow .edit_vendor_digit_rate").val(0.80);
             }
-        else if( (stich_count > 10000) && (stich_count <= 15000) ) {  
+        else if( (stich_count > 10000) && (stich_count <= 15000) ) {
                 var vprice =  stich_count * 0.70 ;
                 $("#editmodalwindow .edit_vendor_digit_rate").val(0.70);
             }
-        else if( (stich_count > 15000) && (stich_count <= 20000) ) {  
+        else if( (stich_count > 15000) && (stich_count <= 20000) ) {
                var vprice =  stich_count *  0.60 ;
                $("#editmodalwindow .edit_vendor_digit_rate").val(0.60);
             }
-        else if( (stich_count > 20000) && (stich_count <= 30000) ) {  
+        else if( (stich_count > 20000) && (stich_count <= 30000) ) {
                  var vprice =  stich_count * 0.50 ;
                  $("#editmodalwindow .edit_vendor_digit_rate").val(0.50);
             }
-        else if( (stich_count > 30000) && (stich_count <= 60000) ) {  
+        else if( (stich_count > 30000) && (stich_count <= 60000) ) {
                 var vprice =  stich_count * 0.40 ;
                 $("#editmodalwindow .edit_vendor_digit_rate").val(0.40);
             }
-        else if(stich_count > 60000 ) {  
+        else if(stich_count > 60000 ) {
                 var vprice =  stich_count *30 ;
                 $("#editmodalwindow .edit_vendor_digit_rate").val(30);
 
             }
 
-             
+
           var fval = ((stich_count/1000) * 1.75).toFixed(2);
           var vprice1 = (vprice/1000).toFixed(2) ;
 
@@ -3986,72 +3986,72 @@ $("#OrderCreateModal .scount").on("change", function(){
  if ($("#OrderCreateModal .ftype").val() == "Digitizing") {
        if($("#OrderCreateModal .vend").val() == "VENDOR1"  ) {
         // alert("You must insert value greater then 0 while you select File Type Vector");
-       
+
         //alert(stich_count);
         //#file_price.value =  stitchcount/1000 *1.75
         if (stich_count <= 8000   ) {
             var vprice =  stich_count * 1 ;
             $("#OrderCreateModal .add_vendor_digit_rate").val(1);
             }
-        else if( stich_count > 8000 && stich_count <= 10000 ) {  
+        else if( stich_count > 8000 && stich_count <= 10000 ) {
                 var vprice =  stich_count * 0.85 ;
                 $("#OrderCreateModal .add_vendor_digit_rate").val(0.85);
             }
-        else if( (stich_count > 10000) && (stich_count <= 15000) ) {  
+        else if( (stich_count > 10000) && (stich_count <= 15000) ) {
                 var vprice =  stich_count * 0.75 ;
                 $("#OrderCreateModal .add_vendor_digit_rate").val(0.75);
             }
-        else if( (stich_count > 15000) && (stich_count <= 20000) ) {  
+        else if( (stich_count > 15000) && (stich_count <= 20000) ) {
                var vprice =  stich_count *  0.65 ;
                $("#OrderCreateModal .add_vendor_digit_rate").val(0.65);
             }
-        else if( (stich_count > 20000) && (stich_count <= 30000) ) {  
+        else if( (stich_count > 20000) && (stich_count <= 30000) ) {
                  var vprice =  stich_count * 0.55 ;
                  $("#OrderCreateModal .add_vendor_digit_rate").val(0.55);
             }
-        else if( (stich_count > 30000) && (stich_count <= 60000) ) {  
+        else if( (stich_count > 30000) && (stich_count <= 60000) ) {
                 var vprice =  stich_count * 0.43 ;
                 $("#OrderCreateModal .add_vendor_digit_rate").val(0.43);
             }
-        else if(stich_count > 60000 ) {  
+        else if(stich_count > 60000 ) {
                 var vprice =  stich_count *40 ;
                 $("#OrderCreateModal .add_vendor_digit_rate").val(40);
 
             }
 
-            
+
             var fval = ((stich_count/1000) * 1.75).toFixed(2);
             var vprice1 = (vprice/1000).toFixed(2) ;
 
             $("#OrderCreateModal .add_vendor_digit_price").val(vprice1);
             $("#OrderCreateModal .valid_file_price").val(fval);
-      } 
+      }
     else
     {
        if (stich_count <= 8000   ) {
             var vprice =  stich_count * 0.90 ;
             }
-        else if( stich_count > 8000 && stich_count <= 10000 ) {  
+        else if( stich_count > 8000 && stich_count <= 10000 ) {
                 var vprice =  stich_count * 0.80 ;
             }
-        else if( (stich_count > 10000) && (stich_count <= 15000) ) {  
+        else if( (stich_count > 10000) && (stich_count <= 15000) ) {
                 var vprice =  stich_count * 0.70 ;
             }
-        else if( (stich_count > 15000) && (stich_count <= 20000) ) {  
+        else if( (stich_count > 15000) && (stich_count <= 20000) ) {
                var vprice =  stich_count *  0.60 ;
             }
-        else if( (stich_count > 20000) && (stich_count <= 30000) ) {  
+        else if( (stich_count > 20000) && (stich_count <= 30000) ) {
                  var vprice =  stich_count * 0.50 ;
             }
-        else if( (stich_count > 30000) && (stich_count <= 60000) ) {  
+        else if( (stich_count > 30000) && (stich_count <= 60000) ) {
                 var vprice =  stich_count * 0.40 ;
             }
-        else if(stich_count > 60000 ) {  
+        else if(stich_count > 60000 ) {
                 var vprice =  stich_count *30 ;
 
             }
 
-           
+
             var fval = ((stich_count/1000) * 1.75).toFixed(2);
             var vprice1 =  (vprice/1000).toFixed(2);
 
@@ -4059,8 +4059,8 @@ $("#OrderCreateModal .scount").on("change", function(){
             $("#OrderCreateModal .valid_file_price").val(fval);
          }
 
-      }   
-     
+      }
+
 });
 
 
@@ -4076,73 +4076,73 @@ $(".editscount").on("change", function(){
  if ($(".editftype").val() == "Digitizing") {
        if($(".editvend").val() == "VENDOR1"  ) {
         // alert("You must insert value greater then 0 while you select File Type Vector");
-       
+
         // alert(stich_count);
         //#file_price.value =  stitchcount/1000 *1.75
         if (stich_count <= 8000   ) {
             var vprice =  stich_count * 1 ;
             $(".edit_vendor_digit_rate").val(1);
             }
-        else if( stich_count > 8000 && stich_count <= 10000 ) {  
+        else if( stich_count > 8000 && stich_count <= 10000 ) {
                 var vprice =  stich_count * 0.85 ;
                 $(".edit_vendor_digit_rate").val(0.85);
             }
-        else if( (stich_count > 10000) && (stich_count <= 15000) ) {  
+        else if( (stich_count > 10000) && (stich_count <= 15000) ) {
                 var vprice =  stich_count * 0.75 ;
                 $(".edit_vendor_digit_rate").val(0.75);
             }
-        else if( (stich_count > 15000) && (stich_count <= 20000) ) {  
+        else if( (stich_count > 15000) && (stich_count <= 20000) ) {
                var vprice =  stich_count *  0.65 ;
                $(".edit_vendor_digit_rate").val(0.65);
             }
-        else if( (stich_count > 20000) && (stich_count <= 30000) ) {  
+        else if( (stich_count > 20000) && (stich_count <= 30000) ) {
                  var vprice =  stich_count * 0.55 ;
                  $(".edit_vendor_digit_rate").val(0.55);
             }
-        else if( (stich_count > 30000) && (stich_count <= 60000) ) {  
+        else if( (stich_count > 30000) && (stich_count <= 60000) ) {
                 var vprice =  stich_count * 0.43 ;
                 $(".edit_vendor_digit_rate").val(0.43);
             }
-        else if(stich_count > 60000 ) {  
+        else if(stich_count > 60000 ) {
                 var vprice =  stich_count *40 ;
                 $(".edit_vendor_digit_rate").val(40);
 
             }
 
-            
+
             var fval = ((stich_count/1000) * 1.75).toFixed(2);
             var vprice1 =  (vprice/1000).toFixed(2);
-            
+
             $(".edit_vendor_digit_price").val(vprice1);
             $(".edit_file_price").val(fval);
-      } 
+      }
     else
     {
        if (stich_count <= 8000   ) {
             var vprice =  stich_count * 0.90 ;
             $(".edit_vendor_digit_rate").val(0.90);
             }
-        else if( stich_count > 8000 && stich_count <= 10000 ) {  
+        else if( stich_count > 8000 && stich_count <= 10000 ) {
                 var vprice =  stich_count * 0.80 ;
                 $(".edit_vendor_digit_rate").val(0.80);
             }
-        else if( (stich_count > 10000) && (stich_count <= 15000) ) {  
+        else if( (stich_count > 10000) && (stich_count <= 15000) ) {
                 var vprice =  stich_count * 0.70 ;
                 $(".edit_vendor_digit_rate").val(0.70);
             }
-        else if( (stich_count > 15000) && (stich_count <= 20000) ) {  
+        else if( (stich_count > 15000) && (stich_count <= 20000) ) {
                var vprice =  stich_count *  0.60 ;
                $(".edit_vendor_digit_rate").val(0.60);
             }
-        else if( (stich_count > 20000) && (stich_count <= 30000) ) {  
+        else if( (stich_count > 20000) && (stich_count <= 30000) ) {
                  var vprice =  stich_count * 0.50 ;
                  $(".edit_vendor_digit_rate").val(0.50);
             }
-        else if( (stich_count > 30000) && (stich_count <= 60000) ) {  
+        else if( (stich_count > 30000) && (stich_count <= 60000) ) {
                 var vprice =  stich_count * 0.40 ;
                 $(".edit_vendor_digit_rate").val(0.40);
             }
-        else if(stich_count > 60000 ) {  
+        else if(stich_count > 60000 ) {
                 var vprice =  stich_count *30 ;
                 $(".edit_vendor_digit_rate").val(0.90);
 
@@ -4156,8 +4156,8 @@ $(".editscount").on("change", function(){
 
          }
 
-      }   
-     
+      }
+
 });
 
 
@@ -4183,7 +4183,7 @@ $(".paybutton").click(function(event){
          data: data
       });
    });
-   
+
 
 });
 
@@ -4217,12 +4217,12 @@ $(".orderalloc").click(function(event) {
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
             }
-        });       
- 
-  
+        });
+
+
  var target = $(this);
  $( "#mallocdialog" ).dialog({
-               
+
                     title : "Change Allocation",
                     resizable: false,
                     modal: true,
@@ -4238,30 +4238,30 @@ $(".orderalloc").click(function(event) {
                        of: target
                               },
 
-                    
+
                     buttons: [
                                 {
-   
+
                         text: "Submit",
                         title: "Submit",
                         id: 'allocs',
                         // form: "client_form_submit",
                         click: function() {
-     
-                        
+
+
                         var newalloc = $('#dropDownId2').val();
                         var _token   = $("#mallocdialog .token1").val();
-                       
+
 
                          //alert( newalloc + _token);
 
                         var formData = {
-                            id:  id1, 
+                            id:  id1,
                             newalloc: newalloc,
                             _token: _token
-                            
+
                         }
-                            
+
                          //alert(dataString);
                         $.ajax({
                             type:"POST",
@@ -4270,9 +4270,9 @@ $(".orderalloc").click(function(event) {
                             url:"orders/multipleorderalloc",
                             data: formData,
                             success: function(result)
-                            { 
-                            console.log(result[0].msg) ; 
-                             // $( "#mallocdialog .success" ).html("Data Updated Successfully");  
+                            {
+                            console.log(result[0].msg) ;
+                             // $( "#mallocdialog .success" ).html("Data Updated Successfully");
                              //$('.dataTable').each(function() {
                                  // dt = $(this).dataTable();
                                  // dt.fnDraw();
@@ -4286,42 +4286,42 @@ $(".orderalloc").click(function(event) {
                         });
 
                      setTimeout(function(){
-                               $('#mallocdialog').dialog('close');                
-                                }, 300); 
+                               $('#mallocdialog').dialog('close');
+                                }, 300);
 
-                               
-                   
+
+
                             //return false ;
 
                      },
- 
-        
+
+
                 },
-            
+
                 ],
 
 
                     close : function() {
-            
-            
+
+
                     },
                     open: function(event, ui) {
-                        
+
                         //$('.allocid').val(id1);
                      //  $("#dropDownId  option:selected").text("harish");
-                    // $("#dropDownId").find("option[text='harish']").attr("selected", true); 
+                    // $("#dropDownId").find("option[text='harish']").attr("selected", true);
                     //$('#strings').val(values.split(','));
                     $('#dropDownId').val(alloc.split(','));
                     var dialog = $(event.target).parents(".ui-dialog.ui-widget");
                     var buttons = dialog.find(".ui-dialog-buttonpane").find("button");
-            
+
                     var AddButton = buttons[0];
-            
+
                     $(AddButton).addClass("btn btn-small btn-primary");
                     $(AddButton).html("<i class='icon-plus-sign'></i>   Submit");
-                   
-                   
-            
+
+
+
                     },
 
                 });
@@ -4371,7 +4371,7 @@ var offset = $('#header').outerHeight();
 
 function scrollToAnchor( anchor ) {
     $("html, body").animate({ scrollTop: $(anchor).position() - offset });
-       
+
 }
 
 // When you click on an <a> that has a '#'
@@ -4393,16 +4393,16 @@ $('nav#primary-navwrapper a[href^="#"], #sitemap a[href^="#"], .hireme a[href^="
     event.preventDefault();
     return false;
 
-}); 
+});
 
 /**
  * This part handles the highlighting functionality.
- * We use the scroll functionality again, some array creation and 
+ * We use the scroll functionality again, some array creation and
  * manipulation, class adding and class removing, and conditional testing
  */
 var aChildren = $('#primary-navwrapper li').children(); // find the a children of the list items
 var aArray = []; // create the empty aArray
-for (var i=0; i < aChildren.length; i++) {    
+for (var i=0; i < aChildren.length; i++) {
     var aChild = aChildren[i];
     var ahref = $(aChild).attr('href');
     aArray.push(ahref);
@@ -4528,7 +4528,7 @@ jQuery.fn.unhighlight = function (options) {
 jQuery.fn.highlight = function (words, options) {
     var settings = { className: 'highlight', element: 'span', caseSensitive: false, wordsOnly: false };
     jQuery.extend(settings, options);
-    
+
     if (words.constructor === String) {
         words = [words];
     }
@@ -4546,7 +4546,7 @@ jQuery.fn.highlight = function (words, options) {
         pattern = "\\b" + pattern + "\\b";
     }
     var re = new RegExp(pattern, flag);
-    
+
     return this.each(function () {
         jQuery.highlight(this, re, settings.element, settings.className);
     });
