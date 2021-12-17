@@ -3,14 +3,20 @@
 @section('style')
 <style type="text/css">
 
-/*table {
-  margin: 0 auto;
-    width: 100% !important    clear: both;
-  border-collapse: collapse;
 
-  word-wrap:break-word;
-}
-*/
+
+    table#invoices-sum-table {
+        width: 100% !important;
+    }
+
+    /*table {
+      margin: 0 auto;
+        width: 100% !important    clear: both;
+      border-collapse: collapse;
+
+      word-wrap:break-word;
+    }
+    */
 
 
 #pay_channel {

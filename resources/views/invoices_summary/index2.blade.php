@@ -5,6 +5,11 @@
 
 
 
+
+    table#invoices-sum-table {
+        width: 100% !important;
+    }
+
 #pay_channel {
   background-color: transparent;
   color:#b2c831;
@@ -420,21 +425,25 @@ table#invoices-sum-table tbody  tr {
 }
 
 table#invoices-sum-table td, th {
-  position: relative;
-  background: transparent ;
-  vertical-align: middle;
+    position: relative;
+    vertical-align: middle;
 
-  font-size: 14px;
-  clear: both;
-  border-collapse: collapse;
-  padding: 10px 10px;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    clear: both;
+    border-collapse: collapse;
+    word-wrap: break-word;
+    max-width: 130px  !important;
 
-  white-space: nowrap !important;
+    height: 100% !important;
+    white-space: nowrap ;
 
 
 }
 
-h1, h2, h3 ,h4 {
+
+
+    h1, h2, h3 ,h4 {
 /*  color: black !important;*/
   font-weight: bold ;
 }
@@ -682,12 +691,15 @@ select.editvend {
 div.dataTables_wrapper {
   width: 100% !important;
 }
-
+    .dataTables_scroll
+    {
+        overflow:auto;
+    }
 /* added above code for full size  on 02/11/18 */
 
-/*element.style {
-  height: 1px !important;
-}*/
+element.style {
+ height: 1px !important;
+}
 
 /*table.dataTable span.highlight {   changed on 20/10/17 as new theme is bootswatch
   background-color: #e8f8f5;
@@ -790,8 +802,7 @@ select[name='invoices-sum-table_length'] {
 
 </div>
 
-<div class="row table-responsive">
-<table class="table table-responsive table-striped table-hover  table-bordered" id="invoices-sum-table">
+<table  class="table table-responsive table-striped table-hover  table-bordered" id="invoices-sum-table">
 
     <thead class = "fhead">
         <tr class="firstrow">
@@ -833,8 +844,6 @@ select[name='invoices-sum-table_length'] {
         </tfoot>
 </table>
 
-</div>
-
 
 
 @endsection
@@ -869,7 +878,7 @@ var tot2 = 0 ;
         processing: true,
         serverSide: true,
         async: true,
-        //scrollX: true,
+       // scrollX: true,
         //scrollY: ($(window).height() - 280),
         scrollCollapse: true,
         stateSave: true,
@@ -877,9 +886,7 @@ var tot2 = 0 ;
         bStateSave: true,
         fixedColumns:   false,
         select:         true,
-        autowidth: false,
-
-
+       // autowidth: false,
         scroller: {
            rowHeight: 1
         },
@@ -899,28 +906,28 @@ var tot2 = 0 ;
 
         columns: [
 
-             { data: 'yrmon', name: 'yrmon', class: 'dt-center '
+             { data: 'yrmon', name: 'yrmon', class: 'dt-center ' , width: '100px'
 
              },
-            { data: 'tot_inv', name: 'tot_inv', class: 'dt-body-right ', width: '50px'
+            { data: 'tot_inv', name: 'tot_inv', class: 'dt-body-right ', width: '100px'
              },
 
 
-            { data: 'tot_inv_amt', name: 'tot_inv_amt' ,  class: 'dt-body-right ',width: '40px'
+            { data: 'tot_inv_amt', name: 'tot_inv_amt' ,  class: 'dt-body-right ',width: '100px'
 
 
              },
 
-            { data: 'tot_rec', name: 'tot_rec' , class: 'dt-body-right ',width: '40px'
+            { data: 'tot_rec', name: 'tot_rec' , class: 'dt-body-right ',width: '100px'
 
             },
-                { data: 'pend_amt', name: 'pend_amt' ,  class: 'dt-body-right ',width: '40px'
+                { data: 'pend_amt', name: 'pend_amt' ,  class: 'dt-body-right ',width: '100px'
 
              },
-                  { data: 'pend_amt', name: 'pend_amt' ,  class: 'dt-body-right ',width: '40px'
+                  { data: 'pend_amt', name: 'pend_amt' ,  class: 'dt-body-right ',width: '100px'
 
              },
-                { data: 'pend_amt', name: 'pend_amt' ,  class: 'dt-body-right ',width: '40px'
+                { data: 'pend_amt', name: 'pend_amt' ,  class: 'dt-body-right ',width: '100px'
 
              },
 
