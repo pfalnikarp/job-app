@@ -144,6 +144,8 @@ Route::get('invoice-summary/{yr_month}', array('middleware' => 'auth', 'uses' =>
 
 Route::post('invoice-summary/{id}/editdtl',  'InvoiceSummaryController@editdtl')->name('invoices-summary.editdtl');
 
+Route::post('invoice-summary',  'InvoiceSummaryController@SavePay')->name('invoices-summary.savepay');
+
 
 Route::get('invoice-summary/{id}/addpay',  'InvoiceSummaryController@InvoiceAddPay')->name('invoices-summary.addpay');
 

@@ -741,6 +741,153 @@ public function UpdateDtls(Request $request, $id)
 
 
 
+public function UpdatePay(Request $request, $id)
+{
+
+  $input = $request->all();
+
+  //dd($input);
+
+  $invoice =  InvoiceSummary::where('id', $input['id'])->get();
+
+  foreach ($invoice as $key ) {
+       $invoice_no = $key->invoice_no;
+       $company_id = $key->company_id;
+
+  }
+   // dd($invoice_no);
+
+  $maxorderid = DB::table('company_paid')->max('tran_id');
+
+       if( is_null($maxorderid)) {
+          $max_id = 0;
+
+         }
+        else
+            {
+                    $max_id = $maxorderid;
+                    $max_id = substr($max_id, -4);
+            }
+
+      $max_id = (int)($max_id + 1) ;
+      //$new_dt  = $us_time2 ;
+
+      $input['tran_id'] = 'PY' .  str_pad($max_id, 4, "0", STR_PAD_LEFT);
+
+      $ord_id1 =  'PY'  . str_pad($max_id, 4, "0", STR_PAD_LEFT);
+
+      // if(is_array($input['allocation'])) {
+      //       $input['allocation'] =  join(',', $input['allocation']);
+      //     }
+         $input['payment_date'] = Carbon::parse($input['payment_date'])->format('Y-m-d');
+
+        $invoices='';
+
+        // if ($input['pay_option']<>'Direct')
+        // {
+
+        //            $invoices = $input['invoices'];
+
+
+        // if (is_array($invoices)) {
+        //      $input['invoices']= implode(',', $invoices);
+        // }
+
+
+        // }
+
+
+
+
+         //dd($input);()
+        $amt_paid_usd = 0;
+
+            $amt_paid =  CompanyPaid::where('company_id', '=',  $company_id)->select('amt_paid_usd')->get();
+
+            foreach ($amt_paid as $key ) {
+             $amt_paid_usd = $key->amt_paid_usd;
+            }
+
+          if ($amt_paid_usd == 0){
+                   //   CompanyPaid::where('company_id', '=',  $company_id)->where('invoice_no', '=', $invoice_no)->create([$input]);
+          }
+          else {
+              CompanyPaid::where('company_id', '=',  $company_id)->where('invoice_no', '=', $invoice_no)
+           ->update([$input]);
+
+          }
+
+
+          // DB::table('invoices_summary')->where('id', $request->id)->update([$input]);
+      return redirect()->action('InvoiceSummaryController@SummarygetIndex', ['newid'=>$id]);
+
+
+
+}
+
+public function SavePay(Request $request, $id)
+{
+   //dd($request->all());
+  $updated_val =  $request->all();
+
+  $remain_amt = $request->net_amt;
+
+ // dd($remain_amt);
+
+  $this->validate($request, [
+          //'client_company' => 'bail|alpha_spaces|required|max:255',
+
+          // 'amt_received_inr'    => 'required',
+          // 'paid_dt'  => 'required'
+
+    ]);
+
+  //$id = $request->id ;
+
+  // $paid_dt  =  $request->paid_dt;
+
+  // $paid_dt  = date('Y-m-d', strtotime($paid_dt));
+
+  $discount =  $request->discount;
+
+
+  if ($discount >0 ){
+     $netamt  =   ($request->inv_amount - $discount);
+  }
+  else
+  {
+    $netamt = $request->inv_amount;
+  }
+
+
+
+  $updated = array('discount'=> $discount, 'discount_reason'=> $request->discount_reason,
+                     'net_amt'=>$netamt);
+
+
+  // $updated = array('pay_channel'=> $request->pay_channel,'amt_received_inr'=> $request->amt_received_inr,am
+  //        'net_amt'=> $remain_amt,'amt_paid_usd'=> $request->amt_paid_usd, 'bank_charges'=>$request->bank_charges,
+  //    'conv_rate'=> $request->conv_rate,  'paid_dt'=> $paid_dt, 'tran_id' => $request->tran_id,
+  //     'remarks' => $request->remarks);
+
+  DB::table('invoice_summary')->where('id', $id)->update($updated);
+
+
+  //  PAYMENT SECTION  *************
+
+  $input = $request->all();
+
+
+
+
+  // return view('invoice_summary.index');
+  return redirect()->action('InvoiceSummaryController@SummarygetIndex', ['newid'=>$id]);
+
+
+}
+
+
+
 
 public function CreateInvoice()
 {

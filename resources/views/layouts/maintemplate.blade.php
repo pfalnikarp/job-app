@@ -532,7 +532,7 @@
             url: url1,
             message: mess1 + '\n' + footer1,
             // icon: 'https://randomuser.me/api/portraits/med/men/77.jpg'
-            icon: 'http://127.0.0.1:8000/img/logo-dark.png'
+            icon: 'http://job-app.com/img/logo-dark.png'
         }, {
             // settings
             element: 'body',
