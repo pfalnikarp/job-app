@@ -49,7 +49,7 @@
 
 
     <!-- <form method="POST"  action="../updatedtls" accept-charset="UTF-8"> -->
-    {!! Form::model($invoicesummary,['method' => 'PATCH',  'route'=>['invoices-summary.addpay', $invoicesummary->id]]) !!}
+    {!! Form::model($invoicesummary,['method' => 'POST',  'route'=>['invoices-summary.savepay', $invoicesummary->id]]) !!}
 
 
     <input name="_method" type="hidden" value="PATCH">
