@@ -4980,6 +4980,8 @@ if($newstatusid <= 8) {
                   $qcpend = DB::table('user_logs')->where('status','=' , 'QC Pending')
                          ->where('order_id','=', $orderid->order_id)->count();
 
+                    //     dd($qcpend);
+
                   $qcok = DB::table('user_logs')->where('status','=' , 'QC OK')
                          ->where('order_id','=', $orderid->order_id)->count();
 

@@ -450,8 +450,11 @@
     function showNotification() {
         const notification = new Notification('NEW MESSAGE INCOMING', {
             body: 'hi, how you are doing',
-            url: 'https://codeseven.github.io/toastr/demo.html',
-            icon: 'https://randomuser.me/api/portraits/med/men/77.jpg'
+            url:  '{{  url()->current() }}' ,
+            //url: 'https://codeseven.github.io/toastr/demo.html',
+            //icon: 'https://randomuser.me/api/portraits/med/men/77.jpg'
+            //http://job-app.com/img/logo-dark.png
+            icon: 'http://127.0.0.1:8000/img/logo-dark.png'
         })
     }
 
@@ -460,18 +463,19 @@
         const notification = new Notification(title1, {
             body: mess1,
             url: url1,
-            icon: 'https://randomuser.me/api/portraits/med/men/77.jpg'
+            //icon: 'https://randomuser.me/api/portraits/med/men/77.jpg'
+             icon: 'http://127.0.0.1:8000/img/logo-dark.png'
         })
     }
 
     console.log(Notification.permission);
 
     if (Notification.permission === 'granted') {
-        showNotification();
+        //showNotification();
     } else if (Notification.permission !== 'denied') {
         Notification.requestPermission().then(permission => {
             if (permission == 'granted') {
-                showNotification();
+               // showNotification();
             }
         })
     }

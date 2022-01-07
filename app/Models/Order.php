@@ -102,7 +102,7 @@ class Order extends Model
                              $order_id =  $key->order_id ;
                              $company  =  'Company:' . $key->client_company ;
                              $client  =  'Client:' . $key->client_name ;
-                             $filename = 'Filename:' . $key->file_name;
+                             $filename = 'Filename:' . substr(trim($key->file_name),0,20);
                              $newstatus =  $key->status;
                              $oldstatus = $key->old_status;
                     }
@@ -111,7 +111,7 @@ class Order extends Model
                       $string = 'Order iD: ' . $order_id;
                       $string = array();
 
-                    $url = 'http://127.0.0.1:8000/orders/'. $activity->subject_id .'/edit';
+                    $url = 'http://job-app.com/orders/'. $activity->subject_id .'/edit';
 
                     $cdt =  Carbon::now('Asia/Kolkata');
                     $cdt =  date_format($cdt, 'd-m-Y H:i:s');
@@ -160,10 +160,17 @@ class Order extends Model
 
                foreach ($old  as $key=>$value) {
                      //$string  .=  $value . $new[$key];
-                     $string   =  [ 'title' => 'Order Id: '. $order_id, 'url' =>$url, 'detail'=> $value . 'Changed to' . $new[$key], 'footer' => '<br>'. 'Modify by:'. $done_by .
+                    
+                     if(str_contains($value, 'status')){
+
+                     $string   =  [ 'title' => 'Order Id: '. $order_id, 'url' =>$url, 'detail'=> $value . 'Changed to' . $new[$key] . '<br>'. $filename, 'footer' => '<br>'. 'Modify by:'. $done_by .
                      '<br>' .'at:' . $cdt];
 
+                         // $string   =  [ 'title' => 'Revision QC OK:' , 'url' => "",
+                          //                    'detail'=> $filename .'of' . $order_id . 'is marked Revision QC OK by'. $done_by , 'footer' => '' ];
+
                     //dd($value);
+                   }
                       
              }
 
@@ -183,20 +190,25 @@ class Order extends Model
                    Notification::send($user, new OrderStatusNotification($string));
            }
              $x= 1;
-            if (!empty($old)){
+            if (!empty($new)){
 
-              foreach ($old as $key=>$value ) {
+              foreach ($new as $key=>$value ) {
                 $x++;
-                //dd($value);
+                
               
                       //dd($value);    
                       // $result =  strpos($value, 'status');
-                    if(str_contains($value, 'status')){
-                                                       // dd('hello');
+                foreach ($old  as $key1=>$value1) {
+                    if(str_contains($value1, 'status')){
+                                                     // dd($value);
+                          // $string   =  [ 'title' => 'QC OK:' , 'url' => "",
+                                       //      'detail'=> $filename .'of' . $order_id . '<br>'. 'is marked QC OK by'. $done_by , 'footer' => '' ];
+
                       $this->CompareStatus($value, $string, $filename, $order_id, $done_by);
                       }  
+                    }
                                              
-                    elseif (str_contains($value, 'file_type'))
+                  if(str_contains($value, 'file_type'))
                      {
                         $groupid =  $this->GetNotifyGroup('notify.Misc.Edit.Order.File.Type');
                         $userid1 =  $this->getuser($groupid);
@@ -426,6 +438,7 @@ class Order extends Model
 
                         $user = User::wherein('id', $userid2)->get();
 
+                      
                         Notification::send($user, new OrderStatusNotification($string));
                   }
                   elseif (str_contains($result, 'Completed')) {  
@@ -441,6 +454,9 @@ class Order extends Model
 
                           $user = User::wherein('id', $userid2)->get();
 
+                          // $string   =  [ 'title' => 'Completed:' , 'url' => "",
+                          //                    'detail'=> $filename .'of' . $order_id . 'is marked Completed by'. $done_by , 'footer' => '' ];
+
                              Notification::send($user, new OrderStatusNotification($string));
                  }
                    elseif (str_contains($result, 'Revision')) {  
@@ -450,8 +466,8 @@ class Order extends Model
                           //dd($userid1);
                          
 
-                            $string   =  [ 'title' => 'Revision:' , 'url' => "",
-                                             'detail'=> $filename .'of' . $order_id . 'is marked Revision by'. $done_by , 'footer' => '' ];
+                            // $string   =  [ 'title' => 'Revision:' , 'url' => "",
+                            //                  'detail'=> $filename .'of' . $order_id . 'is marked Revision by'. $done_by , 'footer' => '' ];
 
                            $userid  =  $this->GetPermissionUsers('notify.Order.Status.Revision');
 
@@ -475,6 +491,10 @@ class Order extends Model
                           $userid2 = array_merge($userid,$userid1);  
 
                              $user = User::wherein('id', $userid2)->get();
+
+                       // $string   =  [ 'title' => 'Revision Alloted:' , 'url' => "",
+                       //                       'detail'=> $filename .'of' . $order_id . 'is marked Revision Alloted by'. $done_by , 'footer' => '' ];
+                                                    
                           Notification::send($user, new OrderStatusNotification($string));
                 }
                 elseif (str_contains($result, 'Rev-QC Pending')) {  
@@ -490,6 +510,8 @@ class Order extends Model
                            array_push($userid, 1);
 
                           $user = User::wherein('id', $userid2)->get();
+                           // $string   =  [ 'title' => 'Revision QC Pending:' , 'url' => "",
+                           //                   'detail'=> $filename .'of' . $order_id . 'is marked Revision Alloted by'. $done_by , 'footer' => '' ];
 
                           Notification::send($user, new OrderStatusNotification($string));
                  }
@@ -507,6 +529,9 @@ class Order extends Model
                           $userid2 = array_merge($userid,$userid1);  
 
                           $user = User::wherein('id', $userid2)->get();
+
+                          // $string   =  [ 'title' => 'Revision QC OK:' , 'url' => "",
+                          //                    'detail'=> $filename .'of' . $order_id . 'is marked Revision QC OK by'. $done_by , 'footer' => '' ];
 
                            Notification::send($user, new OrderStatusNotification($string));
                    }

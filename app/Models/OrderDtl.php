@@ -92,7 +92,7 @@ class OrderDtl extends Model
                           $order_id =  $key->order_id ;
                           $company  =  'Company:' . $key->client_company ;
                           $client_name   =  'Client:' . $key->client_name ;
-                          $filename = 'Filename:' . trim($key->file_name);
+                          $filename = 'File:' . trim($key->file_name);
                           $filename =  substr($filename, 0,30);
                          
                     }
@@ -102,7 +102,7 @@ class OrderDtl extends Model
                   
                     $string = array();
 
-                    $url = 'http://127.0.0.1:8000/orders/'. $activity->subject_id .'/edit?'.'id='.  $activity->subject_id;
+                    $url = 'http://job-app.com/orders/'. $activity->subject_id .'/edit?'.'id='.  $activity->subject_id;
                    
 
                     $cdt =  Carbon::now('Asia/Kolkata');
@@ -152,18 +152,18 @@ class OrderDtl extends Model
                foreach ($old  as $key=>$value) {
                      //   dd($value);
                      //$string  .=  $value . $new[$key];
-                     $string   =  [ 'title' =>  'Order Lines modified: '. $order_id, 'url' =>$url, 'detail'=> $value . '<br>' . $new[$key], 'footer' => '<br>' . ' modified by: '.$done_by.' at:' . $cdt];
+                     $string   =  [ 'title' =>  'Order Lines modified: '. $order_id, 'url' =>$url, 'detail'=> $value . '<br>' . $new[$key], 'footer' => $filename. '<br>' . ' modified by: '.$done_by.' at:' . $cdt];
 
                     // dd($string);
                        if(str_contains($value, 'status')){
                                                        // dd('hello');
-                             $string   =  [ 'title' => 'Order Lines modified: '. $order_id, 'url' =>$url, 'detail'=> $value . 'Changed to' . $new[$key], 'footer' => '<br>'. 'Modify by:'. $done_by . '<br>' .'at:' . $cdt];
+                             $string   =  [ 'title' => 'Order Lines modified: '. $order_id, 'url' =>$url, 'detail'=> $value . 'Changed to' . $new[$key], 'footer' => $filename. '<br>'. 'Modify by:'. $done_by . '<br>' .'at:' . $cdt];
 
                             $this->CompareStatus($value, $string, $filename, $order_id, $done_by);
                       } 
                       elseif (str_contains($value, 'file_price')) {
 
-                              $string   =  [ 'title' => 'Order Lines modified: '. $order_id, 'url' =>$url, 'detail'=> $value . 'Changed to' . $new[$key], 'footer' => '<br>'. 'Modify by:'. $done_by . '<br>' .'at:' . $cdt];
+                              $string   =  [ 'title' => 'Order Lines modified: '. $order_id, 'url' =>$url, 'detail'=> $value . 'Changed to' . $new[$key], 'footer' => $filename. '<br>'. 'Modify by:'. $done_by . '<br>' .'at:' . $cdt];
                          
                             Notification::send($user, new OrderStatusNotification($string));
                        }
@@ -197,7 +197,7 @@ class OrderDtl extends Model
                       // dd($userid2);
                         $user = User::wherein('id', $userid2)->get();
 
-                         $string   =  [ 'title' =>  'Order Lines Deleted: '. $order_id, 'url' =>$url, 'detail'=> $filename, 'footer' => '<br>' . 'Deleted by: '.$done_by.' at:' . $cdt];
+                         $string   =  [ 'title' =>  'Order Lines Deleted: '. $order_id, 'url' =>$url, 'detail'=> $filename, 'footer' => $filename. '<br>' . 'Deleted by: '.$done_by.' at:' . $cdt];
 
                         Notification::send($user, new OrderStatusNotification($string));
 
@@ -291,7 +291,7 @@ class OrderDtl extends Model
            } else {
                      
                    $string   =  [ 'title' => 'Order Lines Added: '. $order_id  , 'url' =>$url,
-                          'detail'=>'Company: ' . $company ,  'footer' => '<br>' .'created by:' . $done_by .'  at:' . $cdt ];
+                          'detail'=> $filename ,  'footer' => '<br>' .'created by:' . $done_by .'  at:' . $cdt ];
 
                     // dd($string);
                           Notification::send($user, new OrderStatusNotification($string));
