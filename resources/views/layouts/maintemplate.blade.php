@@ -524,6 +524,9 @@
             var title1 = notification.title;
             var footer1 = notification.footer;
             dangerClick(mess1, url1, title1, footer1);
+            //debugger;
+        
+           
             // showNotification1( title1, mess1, url1);
 
         });
