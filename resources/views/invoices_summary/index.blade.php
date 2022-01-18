@@ -794,7 +794,7 @@ select[name='invoices-sum-table_length'] {
             <th><b>Inv-Amount</b></th>
             <th><b>Discount</b> </th>
             <th><b>Net-Amount</b></th>
-            <th><b>Currency</b></th>
+           <!--  <th><b>Currency</b></th> -->
              <th><b>Amt Paid</b></th>
               <th><b>File</b></th>
                   <th><b>Gen.PDF</b></th>
@@ -943,9 +943,9 @@ var tot2 = 0 ;
             { data: 'net_amt', name: 'net_amt' , class: 'dt-body-right'
 
             },
-              { data: 'currency', name: 'currency' , class: 'dt-body-right'
+            //   { data: 'currency', name: 'currency' , class: 'dt-body-right'
 
-            },
+            // },
                { data: 'amt_paid_usd', name: 'amt_paid_usd' , class: 'dt-body-right'
 
             },

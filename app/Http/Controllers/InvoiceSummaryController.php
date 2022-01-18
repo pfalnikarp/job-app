@@ -191,8 +191,17 @@ public function SummarygetIndex(Request $request, $yr_month=null)
 
 
       $roleid = [] ;
+                        if(is_null($yr_month))
+                        {
+                            $query = InvoiceSummary::all();
+                             
+                        } 
+                        else 
+                        {
+                            $query = InvoiceSummary::where('yr_month', $yr_month);   
+                        }
 
-                    $query = InvoiceSummary::where('yr_month', $yr_month);
+                    
         if ($request->ajax()) {
                   return Datatables::of($query)
            ->addColumn('action', function ($user) {
@@ -594,7 +603,7 @@ public function AddPay(Request $request, $id)
 }
 
 
-public function UpdatePay(Request $request, $id)
+public function UpdatePay_old(Request $request, $id)
 {
 
   $input = $request->all();

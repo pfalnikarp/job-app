@@ -1,4 +1,4 @@
-@extends('layouts.newdashbord')
+@extends('layouts.maintemplate')
 
 
 @section('style')

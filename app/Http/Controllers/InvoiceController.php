@@ -1838,9 +1838,9 @@ $company_fired = explode(',', $company_fired);
            
                  //date creation above;
 
-             $path = public_path() .'/' . $yearmonth;
+             $path = public_path() .'/files/1/' . $yearmonth;
              if (!file_exists($path)) {
-                  mkdir(public_path() .'/' .$yearmonth);
+                  mkdir(public_path() .'/files/1/' .$yearmonth);
               }
             //FILE LOGIC CREATION
 
@@ -1995,19 +1995,22 @@ $company_fired = explode(',', $company_fired);
          
   //$pdf = app('dompdf.wrapper');
   //$invoice = new Dompdf();
+            $userid = Auth()->user()->id ;
+            $username = Auth()->user()->name ;
+            $user_dtl = "userid=".$userid;
  
 
-                $delay = \DB::table('jobs')->count()*40;
+                $delay = \DB::table('jobs')->count()*10;
               // CreateInvoiceJob::dispatch($pyear, $pmonth, $pbutton, $orderzones)->delay(now()->addMinutes(1));
 
                if ($count < 200 ||  $count > 400) {
                     CreateInvoiceJob::dispatch( $dcount, $orderlist , $invoiceInfo, $clientinfo, 
-                  $ordersum, $pfr_dt, $pto_dt, $due_dt, $output, $path)->delay($delay);
+                  $ordersum, $pfr_dt, $pto_dt, $due_dt, $output, $path,$userid, $user_dtl, $username,$selectall, $yearmonth, $comp_name)->delay($delay);
                }
                else {
                      
                        CreateInvoiceJobSecond::dispatch( $dcount, $orderlist , $invoiceInfo, $clientinfo, 
-                  $ordersum, $pfr_dt, $pto_dt, $due_dt, $output, $path)->delay($delay);
+                  $ordersum, $pfr_dt, $pto_dt, $due_dt, $output, $path,$userid, $user_dtl, $username,$selectall, $yearmonth, $comp_name)->delay($delay);
                }
                
              $count++;
@@ -2155,7 +2158,7 @@ $company_fired = explode(',', $company_fired);
                      $username = Auth()->user()->name ;
         $user_dtl = "userid=".$userid;
 
-                $delay = \DB::table('jobs')->count()*30;
+                $delay = \DB::table('jobs')->count()*10;
               // CreateInvoiceJob::dispatch($pyear, $pmonth, $pbutton, $orderzones)->delay(now()->addMinutes(1));
              CreateInvoiceJob::dispatch($dcount, $orderlist , $invoiceInfo, $clientinfo, 
                   $ordersum,  $pfr_dt, $pto_dt, $due_dt, $output, $path, $userid, $user_dtl, $username,$selectall, $yearmonth, $comp_name)->delay($delay);
@@ -2408,6 +2411,7 @@ $_dompdf_show_warnings = false;
    //PDF::setOptions(['dpi' => 150, 'defaultFont' => 'sans-serif']);
   $invoice->setPaper('A4', 'portrait');
 
+  
   libxml_use_internal_errors(false);
 
   foreach ($clientinfo as $key ) {
@@ -2426,9 +2430,9 @@ $_dompdf_show_warnings = false;
 
                  $output =   $newcl . $month . $year . '.pdf' ;
 
-  $path = public_path() .'/' . $yrmonth;
+  $path = public_path() .'/files/1/' . $yrmonth;
   if (!file_exists($path)) {
-    mkdir(public_path() .'/' . $yrmonth);
+    mkdir(public_path() .'/files/1/' . $yrmonth);
 }
 
     $fileName =  $output ;

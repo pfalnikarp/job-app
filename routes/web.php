@@ -26,7 +26,31 @@ Route::get('/t', function () {
 //     return view('app');
 //   });
 
-  Route::get('groupmenu', function(){
+Route::resource('groups', 'GroupController');
+
+// dashboard routes included on 21-01-2021 by prashant
+
+Route::get('totalall', 'CreateChartController@TotalAll');
+Route::get('dailytotal', 'CreateChartController@DailyTotal');
+
+Route::get('monthlytotal', 'PrvMonthController@MonthlyTotal');
+
+Route::get('dailytotaltoday', 'CreateChartController@DailyTotal_Today');
+
+Route::get('dailytotaltoday_d', 'CreateChartController@DailyTotal_Today_D');
+
+Route::get('dailytotal_d', 'CreateChartController@DailyTotal_D');
+
+Route::get('dailydash', 'JasperInvoiceController@accountadmin');
+
+//monthly dashboard controller
+Route::get('monthdashboard',['uses'=>'DashboardController@monthdashboard','as'=>'monthdashboard.monthdashboard'])->middleware('permission:monthly.dashboard');
+Route::get('ajaxmonthdashboard',['uses'=>'DashboardController@ajaxmonthdashboard','as'=>'monthdashboard.ajaxmonthdashboard']);
+Route::get('graphmonthdashboard',['uses'=>'DashboardController@graphmonthdashboard','as'=>'monthdashboard.graphmonthdashboard']);
+Route::get('ajaxweekdashboard',['uses'=>'DashboardController@ajaxweekdashboard','as'=>'monthdashboard.ajaxweekdashboard']);
+//  dashboard routes
+
+Route::get('groupmenu', function(){
            return view('groups.index');
     });
 
@@ -138,13 +162,15 @@ Route::post('postinvyrmonth', 'InvoiceController@GenInvoice_new');
 //  invoice summary
 
 Route::get('invoice-summary/{yr_month}', array('middleware' => 'auth', 'uses' => 'InvoiceSummaryController@SummarygetIndex'))->name('invoice-summary.summarygetindex');
+// ADDED INVOICES SUMMARY OPTION  
+Route::get('invoice-summary', array('middleware' => 'auth', 'uses' => 'InvoiceSummaryController@SummarygetIndex'))->name('invoice-summary.summarygetindex');
 
 // new route for testing direct editing
 // added on 12-11-18
 
 Route::post('invoice-summary/{id}/editdtl',  'InvoiceSummaryController@editdtl')->name('invoices-summary.editdtl');
 
-Route::post('invoice-summary',  'InvoiceSummaryController@SavePay')->name('invoices-summary.savepay');
+//Route::post('invoice-summary',  'InvoiceSummaryController@SavePay')->name('invoices-summary.savepay');
 
 
 Route::get('invoice-summary/{id}/addpay',  'InvoiceSummaryController@InvoiceAddPay')->name('invoices-summary.addpay');
@@ -253,6 +279,7 @@ Route::get('editclient/{id}', ['uses'=>'ClientController@editclient', 'as'=>'cli
 
 Route::post('updateclient', ['uses'=>'ClientController@updateclient', 'as'=>'clientdtl.updateclient']);
 //workseat route
+
 Route::get('createworkseat/{id}',['uses'=>'ClientController@createworkseat','as'=>'workseat.createworkseat']);
 Route::post('workseatstore', ['uses'=>'ClientController@workseatstore', 'as'=>'workseat.workseatstore']);
 Route::get('editworkseat/{id}',['uses'=>'ClientController@editworkseat','as'=>'workseat.editworkseat']);
@@ -260,6 +287,19 @@ Route::get('showworkseat/{id}',['uses'=>'ClientController@showworkseat','as'=>'w
 Route::post('updateworkseat', ['uses'=>'ClientController@updateworkseat', 'as'=>'workseat.updateworkseat']);
 Route::post('deleteworkseat', ['uses'=>'ClientController@deleteworkseat', 'as'=>'workseat.deleteworkseat']);
 
+Route::get('viewworkseats', ['uses'=>'WorkseatController@viewworkseat', 'as'=>'workseat.viewworkseat']);
+Route::get('viewworkseatuser/{id}', ['uses'=>'WorkseatController@viewworkseatuser', 'as'=>'workseat.viewworkseatuser']);
+Route::get('viewworkseatuserajax/{id}', ['uses'=>'WorkseatController@viewworkseatuserajax', 'as'=>'workseat.viewworkseatuserajax']);
+
+Route::get('viewworkseatscompany/{id}', ['uses'=>'WorkseatController@viewworkseatcompany', 'as'=>'workseat.viewworkseatcompany']);
+Route::get('showworkseatoperations/{id}', ['uses'=>'WorkseatController@showworkseatoperations', 'as'=>'workseat.showworkseatoperations']);
+Route::get('showclientdtloperations/{id}', ['uses'=>'WorkseatController@showclientdtloperations', 'as'=>'workseat.showclientdtloperations']);
+Route::get('workseatgraphics', ['uses'=>'WorkseatController@workseatgraphics', 'as'=>'workseatgraphics']);
+//user summary 
+Route::get('userworkseatsummary', ['uses'=>'WorkseatController@userworkseatsummary', 'as'=>'workseat.userworkseatsummary']);
+
+
+//workseat route
 
 // company clients routes
 

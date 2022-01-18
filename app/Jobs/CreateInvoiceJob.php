@@ -133,7 +133,7 @@ class CreateInvoiceJob implements ShouldQueue
        
           JobInvoice::create(['userid'=>$userid, 'username'=>$username, 'company_fired'=>$company_fired,'selectall'=>$selectall ,'year_month' =>$yearmonth, 'jobid'=>$jobid, 'status'=>'Under Process']);
 
-        sleep(2);
+         sleep(10);
 
         libxml_use_internal_errors(true);
 
@@ -164,12 +164,15 @@ class CreateInvoiceJob implements ShouldQueue
            unset($invoice);
            unset($pdf);
             
+           \Artisan::call('cache:clear');
+       \Artisan::call('view:clear');
+            
             if ($totrecords > 30)
             {
-               sleep(90);
+               sleep(10);
             }
            
-            sleep(10);
+            sleep(5);
    
       }
 

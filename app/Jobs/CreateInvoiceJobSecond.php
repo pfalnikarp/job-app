@@ -123,12 +123,15 @@ class CreateInvoiceJobSecond implements ShouldQueue
            unset($invoice);
            unset($pdf);
             
+         \Artisan::call('cache:clear');
+       \Artisan::call('view:clear');
+            
             if ($totrecords > 30)
             {
-               sleep(90);
+               sleep(10);
             }
            
-            sleep(10);
+            sleep(5);
    
       }
 

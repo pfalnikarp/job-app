@@ -150,9 +150,9 @@ class OrderDtl extends Model
 
 
                foreach ($old  as $key=>$value) {
-                     //   dd($value);
+                     //  dd($value);
                      //$string  .=  $value . $new[$key];
-                     $string   =  [ 'title' =>  'Order Lines modified: '. $order_id, 'url' =>$url, 'detail'=> $value . '<br>' . $new[$key], 'footer' => $filename. '<br>' . ' modified by: '.$done_by.' at:' . $cdt];
+                     $string   =  [ 'title' =>  'Order Lines modified: '. $order_id, 'url' =>$url, 'detail'=> $value . 'Changed to' . $new[$key], 'footer' => $filename. '<br>' . ' modified by: '.$done_by.' at:' . $cdt];
 
                     // dd($string);
                        if(str_contains($value, 'status')){
@@ -161,6 +161,22 @@ class OrderDtl extends Model
 
                             $this->CompareStatus($value, $string, $filename, $order_id, $done_by);
                       } 
+                       if(str_contains($value, 'file_type'))
+                     {
+                        $groupid =  $this->GetNotifyGroup('notify.Misc.Edit.Order.File.Type');
+                        $userid1 =  $this->getuser($groupid);
+                                    
+                        $userid  =  $this->GetPermissionUsers('notify.Misc.Edit.Order.File.Type');
+                
+                        array_push($userid, 1);
+                        //dd($userid);
+
+                        $userid2 = array_merge($userid,$userid1);
+                      // dd($userid2);
+                        $user = User::wherein('id', $userid2)->get();
+                        Notification::send($user, new OrderStatusNotification($string));
+
+                     }  
                       elseif (str_contains($value, 'file_price')) {
 
                               $string   =  [ 'title' => 'Order Lines modified: '. $order_id, 'url' =>$url, 'detail'=> $value . 'Changed to' . $new[$key], 'footer' => $filename. '<br>'. 'Modify by:'. $done_by . '<br>' .'at:' . $cdt];

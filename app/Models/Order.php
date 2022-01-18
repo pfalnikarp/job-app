@@ -95,6 +95,10 @@ class Order extends Model
              {
                     $Order =DB::table('orders')->where('id','=', $activity->subject_id)->get();  
 
+                    $dtlcount = DB::table('order_dtls')->where('master_id','=', $activity->subject_id)->count();
+
+                   // dd($dtlcount);
+
                     //dd($Order); //working on debug on update order entry
 
 
@@ -183,13 +187,14 @@ class Order extends Model
                 $user = User::wherein('id', $userid)->get();
 
                 
-                $string   =  [ 'title' => 'Order Created by:' . $done_by , 'url' =>$url,
-                           'detail'=>'Order iD: ' . $order_id . '<br>' .$company . '<br>'. $client, 'footer' => '<br>' .  'Created at:' . $cdt ];
+                $string   =  [ 'title' => 'Order Id: '. $order_id,  'url' =>$url,
+                           'detail'=> $company . '<br>'. $client, 'footer' => '<br>' .  'Created at:' . $cdt ];
 
-                    // dd($string);
+                  // dd($string);
                    Notification::send($user, new OrderStatusNotification($string));
            }
              $x= 1;
+             
             if (!empty($new)){
 
               foreach ($new as $key=>$value ) {
@@ -199,6 +204,10 @@ class Order extends Model
                       //dd($value);    
                       // $result =  strpos($value, 'status');
                 foreach ($old  as $key1=>$value1) {
+                     //dd($value1);
+                       $string   =  [ 'title' => 'Order Id: '. $order_id, 'url' =>$url, 'detail'=> $value1 . 'Changed to' . $new[$key1] . '<br>'. $filename, 'footer' => '<br>'. 'Modify by:'. $done_by .
+                     '<br>' .'at:' . $cdt];
+
                     if(str_contains($value1, 'status')){
                                                      // dd($value);
                           // $string   =  [ 'title' => 'QC OK:' , 'url' => "",
@@ -206,9 +215,12 @@ class Order extends Model
 
                       $this->CompareStatus($value, $string, $filename, $order_id, $done_by);
                       }  
-                    }
-                                             
-                  if(str_contains($value, 'file_type'))
+                 
+                        if ($dtlcount == 1)                     
+                        {
+
+                      
+                  if(str_contains($value1, 'file_type'))
                      {
                         $groupid =  $this->GetNotifyGroup('notify.Misc.Edit.Order.File.Type');
                         $userid1 =  $this->getuser($groupid);
@@ -224,7 +236,7 @@ class Order extends Model
                         Notification::send($user, new OrderStatusNotification($string));
 
                      }  
-                      elseif (str_contains($value, 'file_price'))
+                      elseif (str_contains($value1, 'file_price'))
                      {
                         $groupid =  $this->GetNotifyGroup('notify.Misc.Edit.Order.File.Price');
                         $userid1 =  $this->getuser($groupid);
@@ -240,7 +252,7 @@ class Order extends Model
                         Notification::send($user, new OrderStatusNotification($string));
 
                      }  
-                       elseif (str_contains($value, 'bill_dt'))
+                       elseif (str_contains($value1, 'bill_dt'))
                      {
                         $groupid =  $this->GetNotifyGroup('notify.Misc.Edit.Order.Bill.Date');
                         $userid1 =  $this->getuser($groupid);
@@ -256,7 +268,7 @@ class Order extends Model
                         Notification::send($user, new OrderStatusNotification($string));
 
                      } 
-                       elseif (str_contains($value, 'document_type'))
+                       elseif (str_contains($value1, 'document_type'))
                      {
                         $groupid =  $this->GetNotifyGroup('notify.Misc.Order.Doc.Type');
                         $userid1 =  $this->getuser($groupid);
@@ -272,7 +284,7 @@ class Order extends Model
                         Notification::send($user, new OrderStatusNotification($string));
 
                      } 
-                       elseif (str_contains($value, 'file_name'))
+                       elseif (str_contains($value1, 'file_name'))
                      {
                         $groupid =  $this->GetNotifyGroup('notify.Misc.Edit.Order.File.Name');
                         $userid1 =  $this->getuser($groupid);
@@ -288,7 +300,7 @@ class Order extends Model
                         Notification::send($user, new OrderStatusNotification($string));
 
                      } 
-                      elseif (str_contains($value, 'note'))
+                      elseif (str_contains($value1, 'note'))
                      {
                         $groupid =  $this->GetNotifyGroup('notify.Misc.Edit.Order.File.Notes');
                         $userid1 =  $this->getuser($groupid);
@@ -305,7 +317,7 @@ class Order extends Model
 
                      } 
                     
-                      elseif (str_contains($value, 'target_completion_time'))
+                      elseif (str_contains($value1, 'target_completion_time'))
                      {
                         $groupid =  $this->GetNotifyGroup('notify.Misc.Edit.Order.Target.Time');
                         $userid1 =  $this->getuser($groupid);
@@ -321,9 +333,10 @@ class Order extends Model
                         Notification::send($user, new OrderStatusNotification($string));
 
                      } 
-              
+                    } //  if count > 1
                                                                             
                 }
+              } //  foreach  $old
             }  // if $new is not empty
            
              }

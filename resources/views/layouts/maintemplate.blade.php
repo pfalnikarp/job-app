@@ -515,7 +515,7 @@
 
     // Echo.channel('private-users.' +   window.Laravel.user)
     window.Echo.private('App.Models.User.' + window.Laravel.user)
-        .notification((notification) => {
+        .notification((notification,table) => {
             console.log('hello');
             console.log(notification);
             //var mess1 = notification.order_id + window.Laravel.username;
@@ -525,7 +525,8 @@
             var footer1 = notification.footer;
             dangerClick(mess1, url1, title1, footer1);
             //debugger;
-        
+            orders_ajax();
+           
            
             // showNotification1( title1, mess1, url1);
 
@@ -605,6 +606,238 @@
 
     });
 
+
+function  orders_ajax(){
+
+
+    var xyz = $('.data-table').DataTable({
+        processing: true,
+        serverSide: true,
+        deferRender: true, 
+        async: true,
+        responsive: true,
+        scrollX: true,
+        scrollY: ($(window).height() - 260), 
+        scrollCollapse: true, 
+        stateSave: true,
+        stateDuration: -1,
+        pagingType: "input",
+        bStateSave: true,
+        destroy:true,
+      
+        dom: "Rlfrtip",
+        autowidth: true,
+        columnDefs: [ {
+            orderable: false,
+            className: 'select-checkbox',
+            targets:   0
+        } ],
+        select: {
+            style:    'os',
+            selector: 'td:first-child'
+        },
+        fixedColumns: true,
+         fixedColumns:   {
+           
+              leftColumns: 1,
+
+            rightColumns: 1,
+          
+
+        },
+
+        select: {
+          style: 'multi'
+        },
+        lengthMenu: [[50,-1], [50,"All"]],
+        "language": {
+                    "lengthMenu": 'Display <select class="form-control-sm">'+
+                      '<option value="20" selected>20</option>'+
+                      '<option value="50">50</option>'+
+                    '<option value="100">100</option>'+
+                    '</select> Orders'
+
+                    },
+        colReorder: true,
+        
+        scroller: {
+           rowHeight: 1
+        }, 
+        
+        ajax: '{!!  route('orders.index') !!}',
+         "preDrawCallback": function (settings) {
+            pageScrollPos = $('div.dataTables_scrollBody').scrollTop();
+         },
+         "drawCallback": function (settings) {
+             $('div.dataTables_scrollBody').scrollTop(pageScrollPos);
+        },
+          createdRow: function ( row, data, index ) {
+                 
+                  
+                  var todaydt =  new Date() ;
+                  var targetdt =  new Date(data.target_completion_time);
+                 
+                   //under half  red color
+                   if (( targetdt.getTime() - todaydt.getTime()  > 0 && targetdt.getTime() - todaydt.getTime()  < 30*60*1000 ) &&  (data.status !== 'Completed')  &&  (data.status !== 'Rev-Completed') &&  (data.status !== 'Ch-Completed')  && (data.status !== 'Approved') &&  (data.status !== 'No Response')   && (data.status !== 'Quote') &&  (data.status !== 'Cancel')  && (data.status !== 'Duplicate Entry'))  {
+                         
+                              $(row).css('background-color', '#f2e461');
+                   }
+                   //between half hour to two hour light brown color
+                   else if (( targetdt.getTime() - todaydt.getTime()  > 0) && ( targetdt.getTime() - todaydt.getTime() > 30*60*1000 && targetdt.getTime() - todaydt.getTime() <= 120*60*1000) &&  (data.status !== 'Completed')  &&  (data.status !== 'Rev-Completed') &&  (data.status !== 'Ch-Completed')  && (data.status !== 'Approved') &&  (data.status !== 'No Response')  && (data.status !== 'Quote') &&  (data.status !== 'Cancel')  && (data.status !== 'Duplicate Entry'))  {
+                          
+                            $(row).css('background-color', '#a9f299');
+                   }
+                   //after time go pista color
+                   else if (( targetdt.getTime() < todaydt.getTime() )  && (data.status !== 'Approved') && (data.status !== 'Quote')   &&  (data.status !== 'No Response')  &&  (data.status !== 'Completed')  &&  (data.status !== 'Rev-Completed') &&  (data.status !== 'Ch-Completed') && (data.status !== 'Cancel')  && (data.status !== 'Duplicate Entry'))  {
+                                 $(row).addClass( 'blink_me' );
+                             //$(row).css('background-color', '#FE5A4C');
+                         
+                   }
+                   
+                              
+          },
+        columns: [
+        
+          
+          { data: 'action', name: 'action', width: '2px', class: 'dt-center fstat', orderable: false, searchable: false},
+           // { data: 'chbox', name: 'chbox', width: '2px', class: 'dt-center fstat chboxs', orderable: false, searchable: false},
+           { data: 'order_id', name: 'order_id', width: '10px', class: 'dt-center',searchable: true
+          //           "render": function (data, type, full, meta) {
+          //                   return '<span class="test" data-toggle="tooltip" title="' + data + '">' + data + '</span>';
+          //                   }
+           },
+            { data: 'bill_dt', name: 'bill_dt' , width: '50px' , class: 'dt-center',
+                 
+             },
+               @permission('show.client-name') 
+                 { data: 'client_name', name: 'client_name',  class: 'dt-center',
+                                              
+
+             },
+           
+             @endpermission
+            @permission('show.company') 
+              { data: 'client_company', name: 'client_company' , class: 'dt-center',
+                
+
+              },
+            @endpermission
+            @permission('show.primary-email') 
+               { data: 'client_email_primary', name: 'client_email_primary' , class: 'dt-center',
+                
+
+            },
+   
+
+   @endpermission
+ 
+            
+          
+           
+            { data: 'file_type', name: 'file_type' , class: 'dt-center ftype',
+             "render": function (data, type, full, meta)
+            {
+                            return '<span data-toggle="tooltip" title="' + data + '">' + data + '</span>';
+                            }
+
+            },
+            { data: 'files', name: 'files', width: '200px', class: 'dt-center'
+            // ,
+            //             "render": function (data, type, full, meta) {
+            //                 return '<span class="filename" data-toggle="tooltip" title="' + data + '">' + data + '</span>';
+            //                 }
+
+            },
+            { data: 'note', name: 'note',    searchable: false,
+              defaultContent: "",  class: 'not dt-center',
+                        "render": function (data, type, full, meta) {
+                                  var re = /<br *\/?>/gi;
+              
+                         return '<span class="notemodify" data-toggle="tooltip" title="' + data.replace(re, "\n") + '">' + data.substring(0,10) + '</span>';
+                       }
+
+
+            },
+            
+            { data: 'document_type', name: 'document_type' , class: 'dt-center' },
+           
+            { data: 'target_completion_time', name: 'target_completion_time' 
+                       , width: '130px', class: 'ord-comp-dt-tm dt-center'
+                       
+                         },
+            { data: 'alloc_to_person', name: 'alloc_to_person'  , width: '130px',
+                     class: 'dt-center donothing' ,
+                      
+                        @permission('allowchange.allocation')
+                              class: 'editalloc dt-center' 
+                              
+                         @endpermission
+                      
+            
+
+             },
+        @permission('stitch.view')
+          { data: 'stiches_count', name: 'stiches_count', class: 'dt-center' },
+        @endpermission
+          { data: 'id', name: 'id' , class: 'fooid idRow dt-center',  width: '2px'},    
+          {data: 'child_status', name: 'child_status', class: 'dt-center' ,visible: false },
+          @permission('file-price.show')
+            { data: 'file_price', name: 'file_price' , width: '50px' , class: 'dt-center'},
+          @endpermission
+            { data: 'file_count', name: 'file_count' , width: '50px' , class: 'cfilecount dt-center'},
+          @permission('contact1.show')
+            { data: 'client_contact_1', name: 'client_contact_1' , width: '50px' , class: 'dt-center'},
+          @endpermission
+          @permission('client.address.show')
+            { data: 'client_address1', name: 'client_address1' , width: '50px' , class: 'dt-center'},
+          @endpermission
+          @permission('client.state.show')
+            { data: 'client_state', name: 'client_state' , width: '50px' , class: 'dt-center'},
+          @endpermission
+          @permission('vendor.show')
+            { data: 'vendor', name: 'vendor' , width: '50px' , class: 'dt-center'},
+          @endpermission  
+          @permission('digit.rate.show') 
+            { data: 'digit_rate', name: 'digit_rate' , width: '50px' , class: 'dt-center'},
+          @endpermission 
+          @permission('v_emb_rate.show')
+            { data: 'vendor_digit_rate', name: 'vendor_digit_rate' , width: '50px' , class: 'dt-center'},
+          @endpermission  
+          @permission('vend-file-price.show')
+            { data: 'vendor_digit_price', name: 'vendor_digit_price' , width: '50px' , class: 'dt-center'},
+          @endpermission  
+            { data: 'order_date_time', name: 'order_date_time' , width: '50px' , class: 'dt-center'},
+          @permission('order.us.date.show')
+            { data: 'order_us_date', name: 'order_us_date' , width: '50px' , class: 'dt-center'},
+          @endpermission  
+            { data: 'created_at', name: 'created_at' , width: '50px' , class: 'dt-center'},
+            { data: 'updated_at', name: 'updated_at' , width: '50px' , class: 'dt-center'},
+            { data: 'creatusername', name: 'creatusername' , width: '50px' , class: 'dt-center'},
+            { data: 'updateusername', name: 'updateusername' , width: '50px' , class: 'dt-center'},
+          @permission('order.completion.time.show') 
+            { data: 'order_completion_time', name: 'order_completion_time' , width: '50px' , class: 'dt-center'},
+          @endpermission  
+            { data: 'approval_time', name: 'approval_time' , width: '50px' , class: 'dt-center'},
+          @permission('company.id.show')
+            { data: 'company_id', name: 'company_id' , width: '50px' , class: 'dt-center'},
+          @endpermission    
+            { data: 'action1', name: 'status' , class: 'dt-center fstat',  width: '2px', sortOrder: 'desc , orderable: false, searchable: false'},
+                            ],
+                         pageLength: 20,
+              pagination: true,
+            
+           order: [ [ $('th.defaultSort').index(),  'desc' ] ]
+
+          
+         });   
+
+
+      xyz.ajax.reload();
+          
+
+  
+
+}
 
 </script>
 

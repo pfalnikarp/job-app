@@ -1014,7 +1014,11 @@ $('#laraorder  .fhead .firstrow th').each( function (i) {
         //var table sir code
       
     //callback function for direct editing 
-       
+//        setInterval(function () {
+//     console.log('reload');
+//     table.ajax.reload();
+ 
+// }, 30000);
 
   });
 
@@ -1026,6 +1030,9 @@ function blinker() {
   
     
 }
+
+
+
 setInterval(blinker, 1000);
   //get digit vector photoshoop and todaycompany count value for upper button Divyaraj
    countValue();
