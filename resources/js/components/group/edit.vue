@@ -27,7 +27,10 @@
                             </div>
                               <div class="col-2 mb-2 overflow-auto">
                                    <label>Name</label>
-                                  <p>{{  group.names }}</p>  
+                                   <li v-for="grp in group.names" >
+                                            {{ grp }}
+                                  </li>
+                                  
                               </div>
                           
           <div class="col-3 mb-2 form-group select2-container select2-container-multi full-width">
@@ -130,7 +133,9 @@ export default {
                 //  const { id } = response.data.groupmaster
                 this.group.name =  response.data.groupmaster[0].groupname
                 this.group.id  =   response.data.groupmaster[0].groupid
-                this.group.names = response.data.groupmaster[0].names
+                let names  =         response.data.groupmaster[0].names
+                this.group.names =  names.split(",")
+                 //this.group.names =   response.data.groupmaster[0].names
                 console.log(response.data.groupmaster)
                
           

@@ -10,6 +10,7 @@ window.Vue = require('vue').default;
 //import App from './components/App.vue';
 import Bell from './components/Bell.vue';
 import Vmenu from './components/Vmenu.vue';
+import Groupmenu from './components/Groupmenu.vue';
 import Note from './components/NotificationMessage.vue';
 
 import VueRouter from 'vue-router';
@@ -18,7 +19,8 @@ import axios from 'axios';
 import {routes} from './routes';
 import JobInvoiceList from './components/jobinvoice/list.vue';
 import VueSweetalert2 from 'vue-sweetalert2';
-import BootstrapVue from 'bootstrap-vue' //Importing
+import BootstrapVue from 'bootstrap-vue'; //Importing
+import GroupList from './components/group/list.vue';
 
 
 import 'sweetalert2/dist/sweetalert2.min.css';
@@ -49,7 +51,7 @@ Vue.component('JobInvoiceList', require('./components/jobinvoice/list.vue'));
  
 const app = new Vue({
     el: '#app',
-    components: { JobInvoiceList, Bell, Note, Vmenu },
+    components: { JobInvoiceList, Bell, Note, Vmenu , Groupmenu, GroupList},
     router: router,
     //  render: h => h(App),
 });

@@ -104,6 +104,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
 //import Select2 from 'v-select2-component';  
 //import Select2MultipleControl from 'v-select2-multiple-component';
 
@@ -155,7 +158,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   //  const { id } = response.data.groupmaster
                   _this.group.name = response.data.groupmaster[0].groupname;
                   _this.group.id = response.data.groupmaster[0].groupid;
-                  _this.group.names = response.data.groupmaster[0].names;
+                  var names = response.data.groupmaster[0].names;
+                  _this.group.names = names.split(","); //this.group.names =   response.data.groupmaster[0].names
+
+                  //this.group.names =   response.data.groupmaster[0].names
                   console.log(response.data.groupmaster); // for (const [key, value] of Object.entries(response.data.users)) {
                   //            console.log(key, value)
                   //              this.list.push({id: key.id,text:value.name})
@@ -410,11 +416,24 @@ var render = function() {
                   ])
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-2 mb-2 overflow-auto" }, [
-                  _c("label", [_vm._v("Name")]),
-                  _vm._v(" "),
-                  _c("p", [_vm._v(_vm._s(_vm.group.names))])
-                ]),
+                _c(
+                  "div",
+                  { staticClass: "col-2 mb-2 overflow-auto" },
+                  [
+                    _c("label", [_vm._v("Name")]),
+                    _vm._v(" "),
+                    _vm._l(_vm.group.names, function(grp) {
+                      return _c("li", [
+                        _vm._v(
+                          "\n                                          " +
+                            _vm._s(grp) +
+                            "\n                                "
+                        )
+                      ])
+                    })
+                  ],
+                  2
+                ),
                 _vm._v(" "),
                 _c(
                   "div",

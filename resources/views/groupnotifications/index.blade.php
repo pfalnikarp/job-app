@@ -18,11 +18,19 @@ li {
     @endphp
 
 <div class="container">
-                       <div class="row"><h2>Group Notification</h2></div>
+          <div class="row">
+                      <div class="col-md-8">
+                          <h2>Group Notification</h2> 
+                      </div>
+                <div class="col-md-4">
+                    
+                  <a href="/groupmenu" class="btn btn-primary btn-outline mt-1 mb-1 rightdiv">Manage Groups</a>
+                </div>
+          </div>
                        <hr>
-  <div class="row">
+ <!--  <div class="row"> -->
   <table  style="width:100%;" id="notificatonrecords" class="table table-bordered table-responsive">
-   <thead>
+   <thead >
       <tr>
        <th scope="col">Group ID</th>
        <th scope="col">Name </th>
@@ -34,7 +42,7 @@ li {
    <tbody></tbody>
 
 </table>
-</div>
+<!-- </div> -->
 
 </div>
 
@@ -112,8 +120,8 @@ li {
           columns: [
                // {data: null, name: null,width:'5%'},
                {data: 'groupid', name: 'groupid', class:"fooid dt-center"},
-               {data:'groupname', name:'groupname',width:'150px', class:"username dt-left"},
-                {data:'names',name:'names',width:'220px',  class: 'dt-left', "render": function (data, type, full, meta){
+               {data:'groupname', name:'groupname',width:'200px', class:"username dt-left"},
+                {data:'names',name:'names',width:'270px',  class: 'dt-left', "render": function (data, type, full, meta){
                           if(data != null){
                               data=data.replace(/,/g, '<br>');
                             return "<span class='btn btn-sm bg-dark rounded text-white'>"+data+"</span>";
@@ -137,7 +145,7 @@ li {
                   }
 
                },
-               { data:'edit',name:'edit'}
+               { data:'edit',name:'edit',  width:'100px'}
 
 
            ],

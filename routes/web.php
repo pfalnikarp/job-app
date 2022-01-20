@@ -26,7 +26,7 @@ Route::get('/t', function () {
 //     return view('app');
 //   });
 
-Route::resource('groups', 'GroupController');
+
 
 // dashboard routes included on 21-01-2021 by prashant
 

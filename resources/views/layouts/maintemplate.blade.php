@@ -253,7 +253,7 @@
 
                 @if(isset($grouppage))
 
-                        <a href="/groupmenu">Groups</a>
+                       
                         <a href="javascript:void(0);" class="btn btn-sm btn-outline btn-danger mr-4 ml-5" id="delsession"
                            data-toggle="tooltip" data-placement="top" title="Refresh Table"><i class="fa fa-refresh"
                                                                                                aria-hidden="true"></i></a>

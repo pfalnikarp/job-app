@@ -296,7 +296,7 @@ class GroupNotificationController extends Controller
          
         $selected_notify =  $request->sel ;
 
-        GroupNotification::where('group_id' , $id)->delete();
+       // GroupNotification::where('group_id' , $id)->delete();
 
         foreach ($selected_notify as $key ) {
                

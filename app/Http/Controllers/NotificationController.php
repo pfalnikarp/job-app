@@ -51,15 +51,19 @@ class NotificationController extends Controller
 
         $notifications= array();
 
-      
+        $unread_count =  DB::table('notifications')->where('notifiable_id', $id)->whereNull('read_at')->count();
 
-          foreach ($user->unreadNotifications as $notification) {
+         if($unread_count > 0) 
+         {
+                 foreach ($user->unreadNotifications as $notification) {
                   // echo $notification->type;
                        $breaks = array("<br />","<br>","<br/>");  
                        $data1 =  str_ireplace($breaks, "\r\n", $notification->data);
                    array_push($notifications,  $data1 );
                  }
-          // dd($notifications);
+          // dd($notifications);   
+         }
+         
 
         return response()->json($notifications);
     }

@@ -21,7 +21,7 @@ class GroupMasterController extends Controller
     {
          //$groupmaster = GroupMaster::all(['id','name']);
 
-         $groupmaster = DB::table('group_master')->leftjoin('group_user', 'group_user.group_id','=', 'group_master.id')->leftjoin('users', 'users.id', '=', 'group_user.user_id')->select('group_master.id as groupid', 'group_master.name as groupname', DB::raw('group_concat(users.name) as names'))->groupBy('group_master.id', 'group_master.name')->get();
+         $groupmaster = DB::table('group_master')->leftjoin('group_user', 'group_user.group_id','=', 'group_master.id')->leftjoin('users', 'users.id', '=', 'group_user.user_id')->select('group_master.id as groupid', 'group_master.name as groupname',  DB::raw('count(group_user.user_id) as totuser'), DB::raw('group_concat(users.name) as names'))->groupBy('group_master.id', 'group_master.name')->get();
 
          //dd($groupmaster);
         return response()->json($groupmaster);
@@ -35,7 +35,7 @@ class GroupMasterController extends Controller
     {
          //$groupmaster = GroupMaster::all(['id','name']);
 
-        $groupmaster = DB::table('group_master')->leftjoin('group_user', 'group_user.group_id','=', 'group_master.id')->leftjoin('users', 'users.id', '=', 'group_user.user_id')->select('group_master.id as groupid', 'group_master.name as groupname', DB::raw('group_concat(users.name) as names'))->groupBy('group_master.id', 'group_master.name')->get();
+        $groupmaster = DB::table('group_master')->leftjoin('group_user', 'group_user.group_id','=', 'group_master.id')->leftjoin('users', 'users.id', '=', 'group_user.user_id')->select('group_master.id as groupid', 'group_master.name as groupname',  DB::raw('count(group_user.user_id) as totuser'), DB::raw('group_concat(users.name) as names'))->groupBy('group_master.id', 'group_master.name')->get();
 
          //dd($groupmaster);
         return response()->json($groupmaster);
@@ -59,6 +59,7 @@ class GroupMasterController extends Controller
      */
     public function store(Request $request)
     {
+       // dd('hello');
         $groupmaster = GroupMaster::create($request->post());
         return response()->json([
             'message'=>'Group Created Successfully!!',
@@ -75,7 +76,7 @@ class GroupMasterController extends Controller
     public function show($id)
     {
          //$groupMaster = GroupMaster::find($id);  old logic
-         $groupMaster = DB::table('group_master')->leftjoin('group_user', 'group_user.group_id','=', 'group_master.id')->leftjoin('users', 'users.id', '=', 'group_user.user_id')->select('group_master.id as groupid', 'group_master.name as groupname', DB::raw('group_concat(users.name) as names'))->groupBy('group_master.id', 'group_master.name')->where('group_master.id', '=', $id)->get();
+         $groupMaster = DB::table('group_master')->leftjoin('group_user', 'group_user.group_id','=', 'group_master.id')->leftjoin('users', 'users.id', '=', 'group_user.user_id')->select('group_master.id as groupid', 'group_master.name as groupname', DB::raw('count(group_user.user_id) as totuser'), DB::raw('group_concat(users.name) as names'))->groupBy('group_master.id', 'group_master.name')->where('group_master.id', '=', $id)->get();
       //  $users   = User::select('id', 'name')->get();
        //return response()->json($groupMaster);
         // dd($groupMaster);
@@ -150,10 +151,10 @@ class GroupMasterController extends Controller
         $groupMaster->update(['name'=>$group['name']]);
        
         
-        DB::table('group_user')->where('group_id', $id)->delete();
+        //DB::table('group_user')->where('group_id', $id)->delete();
 
         foreach ($users as $key ) {
-             GroupUser::create(['group_id'=>$id, 'user_id'=>$key['id']]);
+             GroupUser::updateorCreate(['group_id'=>$id, 'user_id'=>$key['id']]);
         }
 
 

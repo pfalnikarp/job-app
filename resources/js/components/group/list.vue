@@ -15,6 +15,7 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Name</th>
+                                    <th>Total</th>
                                     <th>List of Users</th>
                                   
                                 </tr>
@@ -23,7 +24,8 @@
                                 <tr v-for="(group,key) in grouplist" :key="key">
                                     <td>{{ group.groupid }}</td>
                                     <td>{{ group.groupname }}</td>
-                                    <td> {{ group.names }}</td>
+                                    <td>{{ group.totuser }}</td>
+                                    <td>{{ group.names }}</td>
 
                                   
                                     <td>
