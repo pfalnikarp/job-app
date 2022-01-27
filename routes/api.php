@@ -24,6 +24,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::middleware('api')->get('/jobinvoice', 'GroupMasterController@jobinvoice');
 
+
+
 Route::middleware('api')->group(function () {
     Route::resource('group', GroupMasterController::class);
      Route::get('user/{query}', 'GroupMasterController@SearchUser');

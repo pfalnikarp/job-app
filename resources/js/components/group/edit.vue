@@ -27,10 +27,15 @@
                             </div>
                               <div class="col-2 mb-2 overflow-auto">
                                    <label>Name</label>
-                                   <li v-for="grp in group.names" >
-                                            {{ grp }}
-                                  </li>
                                   
+                                <li v-for="(item, index) in groupuser.name" :key="index">
+                                    
+                                        {{ item }} <a href="#"
+                                         v-on:click="DelUser()">{{ groupuser.id[index] }}</a>
+                                    
+                                        
+                                </li>
+                                
                               </div>
                           
           <div class="col-3 mb-2 form-group select2-container select2-container-multi full-width">
@@ -106,6 +111,10 @@ export default {
                 names:"",
                 _method:"PATCH"
             },
+            groupuser: {
+                 id:0,
+                 name:""
+            },
             listusers:{},
             myValue: "",
            value: [],
@@ -131,12 +140,17 @@ export default {
                 // const { name } = response.data.groupmaster
                 // const { names } = response.data.groupmaster
                 //  const { id } = response.data.groupmaster
+
                 this.group.name =  response.data.groupmaster[0].groupname
                 this.group.id  =   response.data.groupmaster[0].groupid
                 let names  =         response.data.groupmaster[0].names
-                this.group.names =  names.split(",")
+                let userids  =      response.data.groupmaster[0].userids
+                this.groupuser.name =  names.split(",")
+                //console.log(names);
+                this.groupuser.id = userids.split(",")
                  //this.group.names =   response.data.groupmaster[0].names
-                console.log(response.data.groupmaster)
+                //console.log(response.data.groupmaster)
+                console.log(userids)
                
           
                  // for (const [key, value] of Object.entries(response.data.users)) {
@@ -180,6 +194,10 @@ export default {
             }).catch(error=>{
                 console.log(error)
             })
+        },
+
+        async  DelUser(){
+                         console.log();
         },
         myChangeEvent(val){
              this.myValue= val

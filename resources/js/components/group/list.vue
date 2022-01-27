@@ -55,6 +55,9 @@ export default {
             grouplist:[]
         }
     },
+    created(){
+         this.getgrouplist()
+    },
     mounted(){
         this.getgrouplist()
     },

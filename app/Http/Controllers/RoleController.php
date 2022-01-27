@@ -93,7 +93,8 @@ class RoleController extends Controller
 
         $selected_permissions = [];
 
-        $role = Role::where('id', '=', $id)->first();
+        //$role = Role::where('id', '=', $id)->first();
+        $role = Role::with('permissions')->whereId($id)->first();
 
         $rolePermissions = DB::table("permission_role")->select('permission_id',
             'permission_id')->where("role_id", $id)->get();

@@ -77,7 +77,7 @@
                         @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['List of ROLES'] ))
                                    
-                                      @if($role->hasPermission($permission->id))
+                                      @if($role->permission->contains('id',$permission->id))
 
                                       <td> 
                                         <div class="form-check">
@@ -105,7 +105,7 @@
                         @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['Creation of ROle'] ))
                                    
-                                      @if($role->hasPermission($permission->id))
+                                      @if($role->permission->contains('id',$permission->id))
 
                                       <td> 
                                         <div class="form-check">
@@ -133,7 +133,7 @@
                          @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['Edit Role'] ))
                                    
-                                      @if($role->hasPermission($permission->id))
+                                      @if($role->permission->contains('id',$permission->id))
 
                                       <td> 
                                         <div class="form-check">
@@ -161,7 +161,7 @@
                          @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['Delete Role'] ))
                                    
-                                      @if($role->hasPermission($permission->id))
+                                      @if($role->permission->contains('id',$permission->id))
 
                                       <td> 
                                         <div class="form-check">
@@ -193,7 +193,7 @@
                         
                             @if(in_array($permission->description,['Show User'] ))
                                    
-                                      @if($role->hasPermission($permission->id))
+                                      @if($role->permission->contains('id',$permission->id))
 
                                       <td> 
                                         <div class="form-check">
@@ -223,7 +223,7 @@
                         
                             @if(in_array($permission->description,['Create User'] ))
                                    
-                                      @if($role->hasPermission($permission->id))
+                                      @if($role->permission->contains('id',$permission->id))
 
                                       <td> 
                                         <div class="form-check">
@@ -254,7 +254,7 @@
                         @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['Update User'] ))
                                    
-                                      @if($role->hasPermission($permission->id))
+                                      @if($role->permission->contains('id',$permission->id))
 
                                       <td> 
                                         <div class="form-check">
@@ -283,7 +283,7 @@
                         @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['Delete User'] ))
                                    
-                                      @if($role->hasPermission($permission->id))
+                                      @if($role->permission->contains('id',$permission->id))
 
                                       <td> 
                                         <div class="form-check">
@@ -318,7 +318,7 @@
                            @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['Show Client'] ))
                                    
-                                      @if($role->hasPermission($permission->id))
+                                      @if($role->permission->contains('id',$permission->id))
 
                                       <td> 
                                         <div class="form-check">
@@ -346,7 +346,7 @@
                             @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['Creation of Client'] ))
                                    
-                                      @if($role->hasPermission($permission->id))
+                                      @if($role->permission->contains('id',$permission->id))
 
                                       <td> 
                                         <div class="form-check">
@@ -374,7 +374,7 @@
                          @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['Modify Client'] ))
                                    
-                                      @if($role->hasPermission($permission->id))
+                                      @if($role->permission->contains('id',$permission->id))
 
                                       <td> 
                                         <div class="form-check">
@@ -402,7 +402,7 @@
                           @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['Delete of Client'] ))
                                    
-                                      @if($role->hasPermission($permission->id))
+                                      @if($role->permission->contains('id',$permission->id))
 
                                       <td> 
                                         <div class="form-check">
@@ -433,7 +433,7 @@
                         @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['order-view'] ))
                                    
-                                      @if($role->hasPermission($permission->id))
+                                      @if($role->permission->contains('id',$permission->id))
 
                                       <td> 
                                         <div class="form-check">
@@ -461,7 +461,7 @@
                           @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['Create Order'] ))
                                    
-                                      @if($role->hasPermission($permission->id))
+                                      @if($role->permission->contains('id',$permission->id))
 
                                       <td> 
                                         <div class="form-check">
@@ -489,7 +489,7 @@
                             @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['Update of Orders1'] ))
                                    
-                                      @if($role->hasPermission($permission->id))
+                                      @if($role->permission->contains('id',$permission->id))
 
                                       <td> 
                                         <div class="form-check">
@@ -517,7 +517,7 @@
                           @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['Order Delete'] ))
                                    
-                                      @if($role->hasPermission($permission->id))
+                                      @if($role->permission->contains('id',$permission->id))
 
                                       <td> 
                                         <div class="form-check">
@@ -548,7 +548,7 @@
                         @foreach($permissions as $permission) 
                             @if(in_array($permission->slug,['show.virtual.assistant'] ))
                                    
-                                      @if($role->hasPermission($permission->id))
+                                      @if($role->permission->contains('id',$permission->id))
 
                                       <td> 
                                         <div class="form-check">
@@ -576,7 +576,7 @@
                           @foreach($permissions as $permission) 
                             @if(in_array($permission->slug,['create.virtual.assistant'] ))
                                    
-                                      @if($role->hasPermission($permission->id))
+                                      @if($role->permission->contains('id',$permission->id))
 
                                       <td> 
                                         <div class="form-check">
@@ -604,7 +604,7 @@
                             @foreach($permissions as $permission) 
                             @if(in_array($permission->slug,['edit.virtual.assistant'] ))
                                    
-                                      @if($role->hasPermission($permission->id))
+                                      @if($role->permission->contains('id',$permission->id))
 
                                       <td> 
                                         <div class="form-check">
@@ -632,7 +632,7 @@
                           @foreach($permissions as $permission) 
                             @if(in_array($permission->slug,['delete.virtual.assistant'] ))
                                    
-                                      @if($role->hasPermission($permission->id))
+                                      @if($role->permission->contains('id',$permission->id))
 
                                       <td> 
                                         <div class="form-check">
@@ -683,7 +683,7 @@
                           @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['Show Client Name'] ))
                                    
-                                      @if($role->hasPermission($permission->id))
+                                      @if($role->permission->contains('id',$permission->id))
 
                                       <td> 
                                         <div class="form-check">
@@ -711,7 +711,7 @@
                          @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['Hide Client Name'] ))
                                    
-                                      @if($role->hasPermission($permission->id))
+                                      @if($role->permission->contains('id',$permission->id))
 
                                       <td> 
                                         <div class="form-check">
@@ -742,7 +742,7 @@
                       @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['Show Company'] ))
                                    
-                                      @if($role->hasPermission($permission->id))
+                                      @if($role->permission->contains('id',$permission->id))
 
                                       <td> 
                                         <div class="form-check">
@@ -770,7 +770,7 @@
                           @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['Hide Company'] ))
                                    
-                                      @if($role->hasPermission($permission->id))
+                                      @if($role->permission->contains('id',$permission->id))
 
                                       <td> 
                                         <div class="form-check">
@@ -803,7 +803,7 @@
                         @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['SHOW CLIENT PRIMARY EMAIL'] ))
                                    
-                                      @if($role->hasPermission($permission->id))
+                                      @if($role->permission->contains('id',$permission->id))
 
                                       <td> 
                                         <div class="form-check">
@@ -831,7 +831,7 @@
                          @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['RESTRICT PRIMARY EMAIL'] ))
                                    
-                                      @if($role->hasPermission($permission->id))
+                                      @if($role->permission->contains('id',$permission->id))
 
                                       <td> 
                                         <div class="form-check">
@@ -862,7 +862,7 @@
                         @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['allow-change-allocation'] ))
                                    
-                                      @if($role->hasPermission($permission->id))
+                                      @if($role->permission->contains('id',$permission->id))
 
                                       <td> 
                                         <div class="form-check">
@@ -890,7 +890,7 @@
                          @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['allocation-show'] ))
                                    
-                                      @if($role->hasPermission($permission->id))
+                                      @if($role->permission->contains('id',$permission->id))
 
                                       <td> 
                                         <div class="form-check">
@@ -918,7 +918,7 @@
                          @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['allocation-hide'] ))
                                    
-                                      @if($role->hasPermission($permission->id))
+                                      @if($role->permission->contains('id',$permission->id))
 
                                       <td> 
                                         <div class="form-check">
@@ -949,7 +949,7 @@
                     @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['order-date-modify'] ))
                                    
-                                      @if($role->hasPermission($permission->id))
+                                      @if($role->permission->contains('id',$permission->id))
 
                                       <td> 
                                         <div class="form-check">
@@ -976,7 +976,7 @@
                             @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['order-date-show'] ))
                                    
-                                      @if($role->hasPermission($permission->id))
+                                      @if($role->permission->contains('id',$permission->id))
 
                                       <td> 
                                         <div class="form-check">
@@ -1003,7 +1003,7 @@
                                @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['order-date-hide'] ))
                                    
-                                      @if($role->hasPermission($permission->id))
+                                      @if($role->permission->contains('id',$permission->id))
 
                                       <td> 
                                         <div class="form-check">
@@ -1033,7 +1033,7 @@
                          @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['order-completion-date-modify'] ))
                                    
-                                      @if($role->hasPermission($permission->id))
+                                      @if($role->permission->contains('id',$permission->id))
 
                                       <td> 
                                         <div class="form-check">
@@ -1060,7 +1060,7 @@
                           @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['order-completion-date-show'] ))
                                    
-                                      @if($role->hasPermission($permission->id))
+                                      @if($role->permission->contains('id',$permission->id))
 
                                       <td> 
                                         <div class="form-check">
@@ -1087,7 +1087,7 @@
                           @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['order-completion-date-hide'] ))
                                    
-                                      @if($role->hasPermission($permission->id))
+                                      @if($role->permission->contains('id',$permission->id))
 
                                       <td> 
                                         <div class="form-check">
@@ -1118,7 +1118,7 @@
                          @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['contact1_modify'] ))
                                    
-                                      @if($role->hasPermission($permission->id))
+                                      @if($role->permission->contains('id',$permission->id))
 
                                       <td> 
                                         <div class="form-check">
@@ -1145,7 +1145,7 @@
                           @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['contact1_show'] ))
                                    
-                                      @if($role->hasPermission($permission->id))
+                                      @if($role->permission->contains('id',$permission->id))
 
                                       <td> 
                                         <div class="form-check">
@@ -1172,7 +1172,7 @@
                           @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['contact1_hide'] ))
                                    
-                                      @if($role->hasPermission($permission->id))
+                                      @if($role->permission->contains('id',$permission->id))
 
                                       <td> 
                                         <div class="form-check">
@@ -1203,7 +1203,7 @@
                           @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['stitch_view'] ))
                                    
-                                      @if($role->hasPermission($permission->id))
+                                      @if($role->permission->contains('id',$permission->id))
 
                                       <td> 
                                         <div class="form-check">
@@ -1230,7 +1230,7 @@
                            @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['stitch_modify'] ))
                                    
-                                      @if($role->hasPermission($permission->id))
+                                      @if($role->permission->contains('id',$permission->id))
 
                                       <td> 
                                         <div class="form-check">
@@ -1262,7 +1262,7 @@
                           @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['file-count-show'] ))
                                    
-                                      @if($role->hasPermission($permission->id))
+                                      @if($role->permission->contains('id',$permission->id))
 
                                       <td> 
                                         <div class="form-check">
@@ -1290,7 +1290,7 @@
                          @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['file-count-modify'] ))
                                    
-                                      @if($role->hasPermission($permission->id))
+                                      @if($role->permission->contains('id',$permission->id))
 
                                       <td> 
                                         <div class="form-check">
@@ -1322,7 +1322,7 @@
                          @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['file-note-modify'] ))
                                    
-                                      @if($role->hasPermission($permission->id))
+                                      @if($role->permission->contains('id',$permission->id))
 
                                       <td> 
                                         <div class="form-check">
@@ -1349,7 +1349,7 @@
                           @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['file-note-show'] ))
                                    
-                                      @if($role->hasPermission($permission->id))
+                                      @if($role->permission->contains('id',$permission->id))
 
                                       <td> 
                                         <div class="form-check">
@@ -1381,7 +1381,7 @@
                          @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['file-price-modify'] ))
                                    
-                                      @if($role->hasPermission($permission->id))
+                                      @if($role->permission->contains('id',$permission->id))
 
                                       <td> 
                                         <div class="form-check">
@@ -1408,7 +1408,7 @@
                           @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['file-price-show'] ))
                                    
-                                      @if($role->hasPermission($permission->id))
+                                      @if($role->permission->contains('id',$permission->id))
 
                                       <td> 
                                         <div class="form-check">
@@ -1435,7 +1435,7 @@
                        @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['file-price-hide'] ))
                                    
-                                      @if($role->hasPermission($permission->id))
+                                      @if($role->permission->contains('id',$permission->id))
 
                                       <td> 
                                         <div class="form-check">
@@ -1466,7 +1466,7 @@
                          @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['Vendor Emb. Rate Modify'] ))
                                    
-                                      @if($role->hasPermission($permission->id))
+                                      @if($role->permission->contains('id',$permission->id))
 
                                       <td> 
                                         <div class="form-check">
@@ -1493,7 +1493,7 @@
                           @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['v_emb_rate_show'] ))
                                    
-                                      @if($role->hasPermission($permission->id))
+                                      @if($role->permission->contains('id',$permission->id))
 
                                       <td> 
                                         <div class="form-check">
@@ -1520,7 +1520,7 @@
                        @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['Vendor Emb Rate Hide'] ))
                                    
-                                      @if($role->hasPermission($permission->id))
+                                      @if($role->permission->contains('id',$permission->id))
 
                                       <td> 
                                         <div class="form-check">
@@ -1551,7 +1551,7 @@
                          @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['vend-file-price-modify'] ))
                                    
-                                      @if($role->hasPermission($permission->id))
+                                      @if($role->permission->contains('id',$permission->id))
 
                                       <td> 
                                         <div class="form-check">
@@ -1578,7 +1578,7 @@
                           @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['vend-file-price-show'] ))
                                    
-                                      @if($role->hasPermission($permission->id))
+                                      @if($role->permission->contains('id',$permission->id))
 
                                       <td> 
                                         <div class="form-check">
@@ -1605,7 +1605,7 @@
                        @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['vend-file-price-hide'] ))
                                    
-                                      @if($role->hasPermission($permission->id))
+                                      @if($role->permission->contains('id',$permission->id))
 
                                       <td> 
                                         <div class="form-check">
@@ -1637,7 +1637,7 @@
                          @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['Execute of Reports'] ))
                                    
-                                      @if($role->hasPermission($permission->id))
+                                      @if($role->permission->contains('id',$permission->id))
 
                                       <td> 
                                         <div class="form-check">
@@ -1681,7 +1681,7 @@
                         @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['allow modification of order status'] ))
                                    
-                                      @if($role->hasPermission($permission->id))
+                                      @if($role->permission->contains('id',$permission->id))
 
                                       <td> 
                                         <div class="form-check">
@@ -1708,7 +1708,7 @@
                           @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['Only View Order Status'] ))
                                    
-                                      @if($role->hasPermission($permission->id))
+                                      @if($role->permission->contains('id',$permission->id))
 
                                       <td> 
                                         <div class="form-check">
@@ -1736,7 +1736,7 @@
                            @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['order-status-hide'] ))
                                    
-                                      @if($role->hasPermission($permission->id))
+                                      @if($role->permission->contains('id',$permission->id))
 
                                       <td> 
                                         <div class="form-check">
@@ -1766,7 +1766,7 @@
                          @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['QC PENDING TO ALLOCATION'] ))
                                    
-                                      @if($role->hasPermission($permission->id))
+                                      @if($role->permission->contains('id',$permission->id))
 
                                       <td> 
                                         <div class="form-check">
@@ -1794,7 +1794,7 @@
                        @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['QC PENDING TO ALLOCATION HIDE'] ))
                                    
-                                      @if($role->hasPermission($permission->id))
+                                      @if($role->permission->contains('id',$permission->id))
 
                                       <td> 
                                         <div class="form-check">
@@ -1825,7 +1825,7 @@
                          @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['alloc-qcpending'] ))
                                    
-                                      @if($role->hasPermission($permission->id))
+                                      @if($role->permission->contains('id',$permission->id))
 
                                       <td> 
                                         <div class="form-check">
@@ -1874,7 +1874,7 @@
                                         </tr><tr><td>{{$permission->name}}</td>
                                       @endif
                                         <?php $row++; ?>
-                                      @if($role->hasPermission($permission->id))
+                                      @if($role->permission->contains('id',$permission->id))
 
                                       <td> 
                                         <div class="form-check">
@@ -1920,7 +1920,7 @@
                                         </tr><tr><td>{{$permission->name}}</td>
                                       @endif
                                         <?php $row++; ?>
-                                      @if($role->hasPermission($permission->id))
+                                      @if($role->permission->contains('id',$permission->id))
 
                                       <td> 
                                         <div class="form-check">
@@ -1969,7 +1969,7 @@
                                       @endif
                                         <?php $row++; ?>
                                      
-                                        @if($role->hasPermission($permission->id))
+                                        @if($role->permission->contains('id',$permission->id))
 
                                       <td> 
                                         <div class="form-check">
@@ -2016,7 +2016,7 @@
                                       @endif
                                         <?php $row++; ?>
                                      
-                                  @if($role->hasPermission($permission->id))
+                                  @if($role->permission->contains('id',$permission->id))
 
                                       <td> 
                                         <div class="form-check">
@@ -2065,7 +2065,7 @@
                                         </tr><tr><td>{{$permission->description}}</td>
                                       @endif
                                         <?php $row++; ?>
-                                      @if($role->hasPermission($permission->id))
+                                      @if($role->permission->contains('id',$permission->id))
 
                                       <td> 
                                         <div class="form-check">
@@ -2110,7 +2110,7 @@
                                         </tr><tr><td>{{$permission->name}}</td>
                                       @endif
                                         <?php $row++; ?>
-                                      @if($role->hasPermission($permission->id))
+                                      @if($role->permission->contains('id',$permission->id))
 
                                       <td> 
                                         <div class="form-check">
@@ -2154,7 +2154,7 @@
                                         </tr><tr><td>{{$permission->name}}</td>
                                       @endif
                                         <?php $row++; ?>
-                                      @if($role->hasPermission($permission->id))
+                                      @if($role->permission->contains('id',$permission->id))
 
                                       <td> 
                                         <div class="form-check">
@@ -2201,7 +2201,7 @@
                                         </tr><tr><td>{{$permission->description}}</td>
                                       @endif
                                         <?php $row++; ?>
-                                      @if($role->hasPermission($permission->id))
+                                      @if($role->permission->contains('id',$permission->id))
 
                                       <td> 
                                         <div class="form-check">

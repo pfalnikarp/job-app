@@ -76,7 +76,7 @@ class GroupMasterController extends Controller
     public function show($id)
     {
          //$groupMaster = GroupMaster::find($id);  old logic
-         $groupMaster = DB::table('group_master')->leftjoin('group_user', 'group_user.group_id','=', 'group_master.id')->leftjoin('users', 'users.id', '=', 'group_user.user_id')->select('group_master.id as groupid', 'group_master.name as groupname', DB::raw('count(group_user.user_id) as totuser'), DB::raw('group_concat(users.name) as names'))->groupBy('group_master.id', 'group_master.name')->where('group_master.id', '=', $id)->get();
+         $groupMaster = DB::table('group_master')->leftjoin('group_user', 'group_user.group_id','=', 'group_master.id')->leftjoin('users', 'users.id', '=', 'group_user.user_id')->select('group_master.id as groupid', 'group_master.name as groupname', DB::raw('count(group_user.user_id) as totuser'), DB::raw('group_concat(users.id) as userids'),DB::raw('group_concat(users.name) as names'))->groupBy('group_master.id', 'group_master.name')->where('group_master.id', '=', $id)->get();
       //  $users   = User::select('id', 'name')->get();
        //return response()->json($groupMaster);
         // dd($groupMaster);

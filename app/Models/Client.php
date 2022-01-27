@@ -20,13 +20,13 @@ class Client extends Model
 
 	use LogsActivity;
     
-    protected static $logFillable = true;
+   // protected static $logFillable = true;
    protected static $logAttributes = ['*'];
     
 
    protected static $logOnlyDirty = true;
 
-    protected static $ignoreChangedAttributes = ['created_by', 'updated_by','created_at','updated_at', 'status_change_date', 'child_status'];
+    //protected static $ignoreChangedAttributes = ['created_by', 'updated_by','created_at','updated_at', 'status_change_date', 'child_status'];
 
    protected static $logAttributesToIgnore = ['created_by', 'updated_by' ,'created_at','updated_at'];
     
@@ -35,12 +35,13 @@ class Client extends Model
     
     protected $table = 'clients';
 
-    protected $fillable = [  'client_company',  'website', 'phone' , 'client_address1', 'client_state', 'client_country', 'timezone_type', 'unit_price', 'digit_rate', 'store_type' , 'created_by', 'updated_by', 'other_state' , 'client_source', 'csr_person', 'client_specific' , 'csr_personid', 'red_list', 'red_list_details','email','unitno','client_address_line2','city','zipcode','about_company','industry'
+    protected $fillable = [ 'company_id', 'client_company',  'website', 'phone' , 'client_address1', 'client_state', 'client_country', 'timezone_type', 'unit_price', 'digit_rate', 'store_type' , 'created_by', 'updated_by', 'other_state' , 'client_source', 'csr_person', 'client_specific' , 'csr_personid', 'red_list', 'red_list_details','email','unitno','client_address_line2','city','zipcode','about_company','industry'
        ] ;
 
      public function tapActivity(Activity $activity, string $eventName)
              {
                     $Order =DB::table('clients')->where('id','=', $activity->subject_id)->get();  
+                   // dd($Order);
 
                     foreach ($Order as $key ) {
                         $order_id =  $key->client_company ;
@@ -52,7 +53,11 @@ class Client extends Model
                     $url = 'http://127.0.0.1:8000/clients/'. $activity->subject_id .'/show';
 
 
-                     $new= array(); $old=array();
+                    $new= array(); $old=array();
+
+                    $cdt =  Carbon::now('Asia/Kolkata');
+                    $cdt =  date_format($cdt, 'd-m-Y H:i:s');
+
               foreach($activity->properties['attributes'] as $key=>$value)
               {
 
@@ -78,28 +83,38 @@ class Client extends Model
                   }
               }
 
+             $userid = DB::table('role_user')->join('roles', 'roles.id' ,'=',  'role_user.role_id')->where('roles.slug','like','csr%')->pluck('role_user.user_id' , 'role_user.user_id')->toArray();
 
-           $user = User::find(1);
+            
+                // array_push($userid, 1);
+                 //   dd($userid);
+                $userid[1]=1;
+               
+                $user = User::wherein('id', $userid)->get();
+               // dd($user);
+              
+                //$user = User::find(1);
 
             $done_by_id =  User::find($activity->causer_id);
 
            $done_by  = $done_by_id->name;
+          // dd($done_by);
 
               if (!empty($old)) {
 
                        foreach ($old  as $key=>$value) {
                         //$string  .=  $value . $new[$key];
-                            $string   =  [ 'title' => 'Client Modify by:'   . $done_by , 'url' =>$url, 'detail'=> $value . '<br>' . $new[$key]];
+                            $string   =  [ 'title' => 'Client Modify by:'   . $done_by , 'url' =>$url, 'detail'=> $value . '<br>' . $new[$key], 'footer' => '<br>'. 'Modify by:'. $done_by .'<br>' .'at:' . $cdt];
                       
                         }
               }
 
               else {
 
-                      $string   =  [ 'title' => 'Client Created by:'   . $done_by , 'url' =>$url, 'detail'=> 'Company : '. $order_id ];
+                      $string   =  [ 'title' => 'Client Created by:'   . $done_by , 'url' =>$url, 'detail'=> 'Company : '. $order_id, 'footer' => '<br>'. 'Modify by:'. $done_by .  '<br>' .'at:' . $cdt ];
                        
               }
-                     //dd($string);
+                    // dd($string);
                    Notification::send($user, new ClientStatusNotification($string));
 
              }

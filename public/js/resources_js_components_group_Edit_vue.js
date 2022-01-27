@@ -107,6 +107,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
 //import Select2 from 'v-select2-component';  
 //import Select2MultipleControl from 'v-select2-multiple-component';
 
@@ -122,6 +127,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         name: "",
         names: "",
         _method: "PATCH"
+      },
+      groupuser: {
+        id: 0,
+        name: ""
       },
       listusers: {},
       myValue: "",
@@ -159,10 +168,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   _this.group.name = response.data.groupmaster[0].groupname;
                   _this.group.id = response.data.groupmaster[0].groupid;
                   var names = response.data.groupmaster[0].names;
-                  _this.group.names = names.split(","); //this.group.names =   response.data.groupmaster[0].names
+                  var userids = response.data.groupmaster[0].userids;
+                  _this.groupuser.name = names.split(","); //console.log(names);
+
+                  //console.log(names);
+                  _this.groupuser.id = userids.split(","); //this.group.names =   response.data.groupmaster[0].names
+                  //console.log(response.data.groupmaster)
 
                   //this.group.names =   response.data.groupmaster[0].names
-                  console.log(response.data.groupmaster); // for (const [key, value] of Object.entries(response.data.users)) {
+                  //console.log(response.data.groupmaster)
+                  console.log(userids); // for (const [key, value] of Object.entries(response.data.users)) {
                   //            console.log(key, value)
                   //              this.list.push({id: key.id,text:value.name})
                   //        }
@@ -220,6 +235,22 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             }
           }
         }, _callee2);
+      }))();
+    },
+    DelUser: function DelUser() {
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee3() {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                console.log();
+
+              case 1:
+              case "end":
+                return _context3.stop();
+            }
+          }
+        }, _callee3);
       }))();
     },
     myChangeEvent: function myChangeEvent(val) {
@@ -422,12 +453,24 @@ var render = function() {
                   [
                     _c("label", [_vm._v("Name")]),
                     _vm._v(" "),
-                    _vm._l(_vm.group.names, function(grp) {
-                      return _c("li", [
+                    _vm._l(_vm.groupuser.name, function(item, index) {
+                      return _c("li", { key: index }, [
                         _vm._v(
-                          "\n                                          " +
-                            _vm._s(grp) +
-                            "\n                                "
+                          "\n                                  \n                                      " +
+                            _vm._s(item) +
+                            " "
+                        ),
+                        _c(
+                          "a",
+                          {
+                            attrs: { href: "#" },
+                            on: {
+                              click: function($event) {
+                                return _vm.DelUser()
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(_vm.groupuser.id[index]))]
                         )
                       ])
                     })

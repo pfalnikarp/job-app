@@ -91,11 +91,18 @@ class ClientDtl extends Model
 
                          // dd($new);
 
-           $user = User::find(1);
+            $userid = DB::table('role_user')->join('roles', 'roles.id' ,'=',  'role_user.role_id')->where('roles.slug','=','csr')->pluck('role_user.user_id' , 'role_user.user_id');
 
-           $done_by_id =  User::find($activity->causer_id);
+               // dd($userid);
+                 array_push($userid, 1);
 
-           $done_by  = $done_by_id->name;
+                $user = User::wherein('id', $userid)->get();   
+
+           
+
+            $done_by_id =  User::find($activity->causer_id);
+
+            $done_by  = $done_by_id->name;
 
            if (!empty($old)) {
 

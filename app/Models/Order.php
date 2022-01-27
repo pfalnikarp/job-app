@@ -180,14 +180,18 @@ class Order extends Model
 
            } else {
 
-                $userid = DB::table('role_user')->join('roles', 'roles.id' ,'=',  'role_user.role_id')->where('roles.slug','=','csr')->pluck('role_user.user_id' , 'role_user.user_id');
+                $userid = DB::table('role_user')->join('roles', 'roles.id' ,'=',  'role_user.role_id')->where('roles.slug','like','csr%')->pluck('role_user.user_id' , 'role_user.user_id')->toArray();
 
                // dd($userid);
+                 // array_push($userid, 1);
+                 $userid[1]=1;
+                 // dd($userid);
+
 
                 $user = User::wherein('id', $userid)->get();
 
                 
-                $string   =  [ 'title' => 'Order Id: '. $order_id,  'url' =>$url,
+                $string   =  [ 'title' => 'New Order Created:'. $order_id,  'url' =>$url,
                            'detail'=> $company . '<br>'. $client, 'footer' => '<br>' .  'Created at:' . $cdt ];
 
                   // dd($string);

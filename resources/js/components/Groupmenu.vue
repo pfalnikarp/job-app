@@ -11,6 +11,7 @@
                          
                         <router-link exact-active-class="active" to="/group" class="nav-item nav-link"> List Groups</router-link>
                         <router-link exact-active-class="active" to="/group/add" class="nav-item nav-link"> Create Group</router-link>
+
                          <!--  <router-link exact-active-class="active" to="/groupnotification" class="nav-item nav-link"> Group Notification</router-link> -->
                        
                     </div>
@@ -21,6 +22,8 @@
        
         <div class="container mt-5">
             <router-view></router-view>
+            
+
             
         </div> 
     </main> 

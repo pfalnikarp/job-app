@@ -40,13 +40,13 @@ class ClientController extends Controller
         $this->middleware(function ($request, $next) {
              //$this->user = auth()->user();
             //    dd(Auth::user());
-             $this->user =  auth()->user();
+             $this->user =  Auth::user();
              //$username =  auth()->user()->name;
 
              //dd(auth()->user()->name);
 
              $username =  Auth::user()->name;
-            //   dd($username);
+          // dd($username);
              // if( $username  =='prashant' || $username  =='kulind'  )
              // {
              //    return $next($request);
@@ -210,6 +210,7 @@ public function store(Request $request)
 {   
     $request->flash();
     $input = $request->all();
+    //dd($input);
     
     // removed on 14/07/17  as giving duplicate error  |unique:clients
     $this->validate($request, [
@@ -381,13 +382,15 @@ public function store(Request $request)
 
 
               
-                $j = DB::table('clients')->insertGetId($data);
+               // $j = DB::table('clients')->insertGetId($data);removed as logic changed to  eloquent insert on 24-01-22
+              $client =  Client::create($data);
+              $j = $client->id ;
 
                 $j_history = DB::table('clients_history')->insertGetId($data);
               
    
             
-                if($j > 0)
+                if($j > 0) 
                 {
                     for($i=0;$i <count($input['first_name']);$i++)
                     {
@@ -445,10 +448,11 @@ public function store(Request $request)
 
                 }
           //throw new Exception("Some error message");
-        }
+        } 
             Session::flash('flash_message', 'Company and Client successfully added!' );
           if($request->submitbutton == "formsubmit"){
-            return view('clients.index');
+               return redirect()->route('clients.index');
+             //return view('clients.index');
           }
           else{
             return redirect()->action('ClientController@createworkseat', ['id'=> $j]);

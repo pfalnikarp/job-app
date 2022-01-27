@@ -23,7 +23,7 @@ li {
                           <h2>Group Notification</h2> 
                       </div>
                 <div class="col-md-4">
-                    
+                  <a target="_new" href="/docs/Notification-Alloted.html">Notification Help</a> 
                   <a href="/groupmenu" class="btn btn-primary btn-outline mt-1 mb-1 rightdiv">Manage Groups</a>
                 </div>
           </div>

@@ -53,5 +53,5 @@ const app = new Vue({
     el: '#app',
     components: { JobInvoiceList, Bell, Note, Vmenu , Groupmenu, GroupList},
     router: router,
-    //  render: h => h(App),
+     // render: h => h(app),
 });

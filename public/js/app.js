@@ -2039,6 +2039,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
 
 /***/ }),
@@ -2721,6 +2724,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     return {
       grouplist: []
     };
+  },
+  created: function created() {
+    this.getgrouplist();
   },
   mounted: function mounted() {
     this.getgrouplist();
@@ -57445,7 +57451,7 @@ var app = new Vue({
     Groupmenu: _components_Groupmenu_vue__WEBPACK_IMPORTED_MODULE_2__.default,
     GroupList: _components_group_list_vue__WEBPACK_IMPORTED_MODULE_9__.default
   },
-  router: router //  render: h => h(App),
+  router: router // render: h => h(app),
 
 });
 })();
