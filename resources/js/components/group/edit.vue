@@ -25,7 +25,7 @@
                                     <input type="hidden" v-model="group.id">
                                 </div>
                             </div>
-                              <div class="col-2 mb-2 overflow-auto">
+                             <!--  <div class="col-2 mb-2 overflow-auto">
                                    <label>Name</label>
                                   
                                 <li v-for="(item, index) in groupuser.name" :key="index">
@@ -36,9 +36,9 @@
                                         
                                 </li>
                                 
-                              </div>
+                              </div> -->
                           
-          <div class="col-3 mb-2 form-group select2-container select2-container-multi full-width">
+          <div class="col-6 mb-6 form-group select2-container select2-container-multi full-width">
                                         <label>User</label>
   <multiselect 
     v-model="value" 
@@ -48,7 +48,7 @@
     :close-on-select="false"
     :clear-on-select="false"
     :preserve-search="true"
-    :max-height="200"
+    :max-height="50"
     :taggable="true"
     placeholder="Pick some"
     :custom-label="customLabel"
@@ -56,7 +56,7 @@
   </multiselect> 
     </div>
                          
-                         <div class="col-4 mb-2 " ><!-- <pre>{{ value  }}</pre> -->  
+                        <!--  <div class="col-4 mb-2 " >  
                                 <label>New Users Selected</label>
                                        <table id = "grouptable" >
                                   <thead>
@@ -70,7 +70,7 @@
             
                                 </tr>
                                 </table> 
-                           </div>                     
+                           </div> -->                     
              
              <input type="hidden" name="selectedusers"  value=" ">                    
                        
@@ -145,6 +145,7 @@ export default {
                 this.group.id  =   response.data.groupmaster[0].groupid
                 let names  =         response.data.groupmaster[0].names
                 let userids  =      response.data.groupmaster[0].userids
+                this.value   =      response.data.groupuser
                 this.groupuser.name =  names.split(",")
                 //console.log(names);
                 this.groupuser.id = userids.split(",")
@@ -167,7 +168,8 @@ export default {
         },
        
         customLabel (option) {
-                       return `${option.id} - ${option.name}`
+                      // return `${option.id} - ${option.name}`
+                        return `${option.name}`
                        },
 
          asyncFind (query) {

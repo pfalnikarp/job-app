@@ -319,11 +319,14 @@
                     <!-- Menu Footer-->
                     <li class="user-footer">
                         <a href="#" class="btn btn-default btn-flat">Profile</a>
-                        <a href="#" class="btn btn-default btn-flat float-right"
+                        {{-- <a href="#" class="btn btn-default btn-flat float-right"
                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             Sign out
+                        </a> --}}
+                        <a href="/logout" class="btn btn-default btn-flat float-right">
+                            Sign out
                         </a>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        <form id="logout-form" action="{{ route('logout.perform') }}" method="POST" class="d-none">
                             @csrf
                         </form>
                     </li>
@@ -350,7 +353,7 @@
         <div class="float-right d-none d-sm-block">
             <b>Version</b> 3.0.5
         </div>
-        <strong>Copyright &copy; 2014-2020 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights
+        <strong>Copyright &copy; 2014-2022 <a href="https://www.patterns247.com">PATTERNS</a>.</strong> All rights
         reserved.
     </footer>
 </div>

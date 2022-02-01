@@ -77,12 +77,12 @@
                         @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['List of ROLES'] ))
                                    
-                                      @if($role->permission->contains('id',$permission->id))
+                                     @if(in_array($permission->id, $selected_permissions))
 
                                       <td> 
                                         <div class="form-check">
                                         <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
+                                        <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
                                         <span class="form-check-sign"></span>
                                          </label>
 
@@ -93,7 +93,7 @@
                                         <td> 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
+                                                <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
                                                 <span class="form-check-sign"></span>
                                                 </label>
                                             </div></td><!-- <td style="color: white"></td> -->
@@ -105,12 +105,12 @@
                         @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['Creation of ROle'] ))
                                    
-                                      @if($role->permission->contains('id',$permission->id))
+                                      @if(in_array($permission->id, $selected_permissions))
 
                                       <td> 
                                         <div class="form-check">
                                         <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
+                                        <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
                                         <span class="form-check-sign"></span>
                                          </label>
                                         </div></td><!-- <td style="color: white"></td> -->
@@ -120,7 +120,7 @@
                                         <td> 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
+                                                <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
                                                 <span class="form-check-sign"></span>
                                                 </label>
 
@@ -133,12 +133,12 @@
                          @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['Edit Role'] ))
                                    
-                                      @if($role->permission->contains('id',$permission->id))
+                                       @if(in_array($permission->id, $selected_permissions))
 
                                       <td> 
                                         <div class="form-check">
                                         <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
+                                        <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
                                         <span class="form-check-sign"></span>
                                          </label>
                                         </div></td><!-- <td style="color: white"></td> -->
@@ -148,7 +148,7 @@
                                         <td> 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
+                                                <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
                                                 <span class="form-check-sign"></span>
                                                 </label>
 
@@ -161,12 +161,12 @@
                          @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['Delete Role'] ))
                                    
-                                      @if($role->permission->contains('id',$permission->id))
+                                       @if(in_array($permission->id, $selected_permissions))
 
                                       <td> 
                                         <div class="form-check">
                                         <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
+                                        <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
                                         <span class="form-check-sign"></span>
                                          </label>
                                         </div></td><!-- <td style="color: white"></td> -->
@@ -176,7 +176,7 @@
                                         <td> 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
+                                                <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
                                                 <span class="form-check-sign"></span>
                                                 </label>
 
@@ -193,12 +193,12 @@
                         
                             @if(in_array($permission->description,['Show User'] ))
                                    
-                                      @if($role->permission->contains('id',$permission->id))
+                                        @if(in_array($permission->id, $selected_permissions))
 
                                       <td> 
                                         <div class="form-check">
                                         <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
+                                        <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
                                         <span class="form-check-sign"></span>
                                          </label>
                                         </div></td><!-- <td style="color: white"></td> -->
@@ -208,7 +208,7 @@
                                         <td> 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
+                                                <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
                                                 <span class="form-check-sign"></span>
                                                 </label>
 
@@ -223,12 +223,12 @@
                         
                             @if(in_array($permission->description,['Create User'] ))
                                    
-                                      @if($role->permission->contains('id',$permission->id))
+                                        @if(in_array($permission->id, $selected_permissions))
 
                                       <td> 
                                         <div class="form-check">
                                         <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
+                                        <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
                                         <span class="form-check-sign"></span>
                                          </label>
                                         </div></td><!-- <td style="color: white"></td> -->
@@ -238,7 +238,7 @@
                                         <td> 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
+                                                <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
                                                 <span class="form-check-sign"></span>
                                                 </label>
 
@@ -254,12 +254,12 @@
                         @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['Update User'] ))
                                    
-                                      @if($role->permission->contains('id',$permission->id))
+                                       @if(in_array($permission->id, $selected_permissions))
 
                                       <td> 
                                         <div class="form-check">
                                         <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
+                                        <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
                                         <span class="form-check-sign"></span>
                                          </label>
                                         </div></td><!-- <td style="color: white"></td> -->
@@ -269,7 +269,7 @@
                                         <td> 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
+                                                <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
                                                 <span class="form-check-sign"></span>
                                                 </label>
 
@@ -283,12 +283,12 @@
                         @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['Delete User'] ))
                                    
-                                      @if($role->permission->contains('id',$permission->id))
+                                        @if(in_array($permission->id, $selected_permissions))
 
                                       <td> 
                                         <div class="form-check">
                                         <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
+                                        <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
                                         <span class="form-check-sign"></span>
                                          </label>
                                         </div></td><!-- <td style="color: white"></td> -->
@@ -298,7 +298,7 @@
                                         <td> 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
+                                                <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
                                                 <span class="form-check-sign"></span>
                                                 </label>
 
@@ -318,12 +318,12 @@
                            @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['Show Client'] ))
                                    
-                                      @if($role->permission->contains('id',$permission->id))
+                                        @if(in_array($permission->id, $selected_permissions))
 
                                       <td> 
                                         <div class="form-check">
                                         <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
+                                        <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
                                         <span class="form-check-sign"></span>
                                          </label>
                                         </div></td><!-- <td style="color: white"></td> -->
@@ -333,7 +333,7 @@
                                         <td> 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
+                                                <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
                                                 <span class="form-check-sign"></span>
                                                 </label>
                                             </div></td><!-- <td style="color: white"></td> -->
@@ -346,12 +346,12 @@
                             @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['Creation of Client'] ))
                                    
-                                      @if($role->permission->contains('id',$permission->id))
+                                         @if(in_array($permission->id, $selected_permissions))
 
                                       <td> 
                                         <div class="form-check">
                                         <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
+                                        <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
                                         <span class="form-check-sign"></span>
                                          </label>
                                         </div></td><!-- <td style="color: white"></td> -->
@@ -361,7 +361,7 @@
                                         <td> 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
+                                                <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
                                                 <span class="form-check-sign"></span>
                                                 </label>
 
@@ -374,12 +374,12 @@
                          @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['Modify Client'] ))
                                    
-                                      @if($role->permission->contains('id',$permission->id))
+                                         @if(in_array($permission->id, $selected_permissions))
 
                                       <td> 
                                         <div class="form-check">
                                         <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
+                                        <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
                                         <span class="form-check-sign"></span>
                                          </label>
                                         </div></td><!-- <td style="color: white"></td> -->
@@ -389,7 +389,7 @@
                                         <td> 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
+                                                <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
                                                 <span class="form-check-sign"></span>
                                                 </label>
 
@@ -402,12 +402,12 @@
                           @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['Delete of Client'] ))
                                    
-                                      @if($role->permission->contains('id',$permission->id))
+                                        @if(in_array($permission->id, $selected_permissions))
 
                                       <td> 
                                         <div class="form-check">
                                         <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
+                                        <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
                                         <span class="form-check-sign"></span>
                                          </label>
                                         </div></td><!-- <td style="color: white"></td> -->
@@ -417,7 +417,7 @@
                                         <td> 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
+                                                <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
                                                 <span class="form-check-sign"></span>
                                                 </label>
 
@@ -433,12 +433,12 @@
                         @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['order-view'] ))
                                    
-                                      @if($role->permission->contains('id',$permission->id))
+                                         @if(in_array($permission->id, $selected_permissions))
 
                                       <td> 
                                         <div class="form-check">
                                         <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
+                                        <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
                                         <span class="form-check-sign"></span>
                                          </label>
                                         </div></td><!-- <td style="color: white"></td> -->
@@ -448,7 +448,7 @@
                                         <td> 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
+                                                <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
                                                 <span class="form-check-sign"></span>
                                                 </label>
 
@@ -461,12 +461,12 @@
                           @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['Create Order'] ))
                                    
-                                      @if($role->permission->contains('id',$permission->id))
+                                         @if(in_array($permission->id, $selected_permissions))
 
                                       <td> 
                                         <div class="form-check">
                                         <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
+                                        <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
                                         <span class="form-check-sign"></span>
                                          </label>
                                         </div></td><!-- <td style="color: white"></td> -->
@@ -476,7 +476,7 @@
                                         <td> 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
+                                                <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
                                                 <span class="form-check-sign"></span>
                                                 </label>
 
@@ -489,12 +489,12 @@
                             @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['Update of Orders1'] ))
                                    
-                                      @if($role->permission->contains('id',$permission->id))
+                                        @if(in_array($permission->id, $selected_permissions))
 
                                       <td> 
                                         <div class="form-check">
                                         <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
+                                        <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
                                         <span class="form-check-sign"></span>
                                          </label>
                                         </div></td><!-- <td style="color: white"></td> -->
@@ -504,7 +504,7 @@
                                         <td> 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
+                                                <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
                                                 <span class="form-check-sign"></span>
                                                 </label>
 
@@ -517,12 +517,12 @@
                           @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['Order Delete'] ))
                                    
-                                      @if($role->permission->contains('id',$permission->id))
+                                         @if(in_array($permission->id, $selected_permissions))
 
                                       <td> 
                                         <div class="form-check">
                                         <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
+                                        <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
                                         <span class="form-check-sign"></span>
                                          </label>
                                         </div></td><!-- <td style="color: white"></td> -->
@@ -532,7 +532,7 @@
                                         <td> 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
+                                                <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
                                                 <span class="form-check-sign"></span>
                                                 </label>
 
@@ -548,12 +548,12 @@
                         @foreach($permissions as $permission) 
                             @if(in_array($permission->slug,['show.virtual.assistant'] ))
                                    
-                                      @if($role->permission->contains('id',$permission->id))
+                                         @if(in_array($permission->id, $selected_permissions))
 
                                       <td> 
                                         <div class="form-check">
                                         <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
+                                        <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
                                         <span class="form-check-sign"></span>
                                          </label>
                                         </div></td><!-- <td style="color: white"></td> -->
@@ -563,7 +563,7 @@
                                         <td> 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
+                                                <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
                                                 <span class="form-check-sign"></span>
                                                 </label>
 
@@ -576,12 +576,12 @@
                           @foreach($permissions as $permission) 
                             @if(in_array($permission->slug,['create.virtual.assistant'] ))
                                    
-                                      @if($role->permission->contains('id',$permission->id))
+                                        @if(in_array($permission->id, $selected_permissions))
 
                                       <td> 
                                         <div class="form-check">
                                         <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
+                                        <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
                                         <span class="form-check-sign"></span>
                                          </label>
                                         </div></td><!-- <td style="color: white"></td> -->
@@ -591,7 +591,7 @@
                                         <td> 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
+                                                <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
                                                 <span class="form-check-sign"></span>
                                                 </label>
 
@@ -604,12 +604,12 @@
                             @foreach($permissions as $permission) 
                             @if(in_array($permission->slug,['edit.virtual.assistant'] ))
                                    
-                                      @if($role->permission->contains('id',$permission->id))
+                                         @if(in_array($permission->id, $selected_permissions))
 
                                       <td> 
                                         <div class="form-check">
                                         <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
+                                        <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
                                         <span class="form-check-sign"></span>
                                          </label>
                                         </div></td><!-- <td style="color: white"></td> -->
@@ -619,7 +619,7 @@
                                         <td> 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
+                                                <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
                                                 <span class="form-check-sign"></span>
                                                 </label>
 
@@ -632,12 +632,12 @@
                           @foreach($permissions as $permission) 
                             @if(in_array($permission->slug,['delete.virtual.assistant'] ))
                                    
-                                      @if($role->permission->contains('id',$permission->id))
+                                        @if(in_array($permission->id, $selected_permissions))
 
                                       <td> 
                                         <div class="form-check">
                                         <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
+                                        <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
                                         <span class="form-check-sign"></span>
                                          </label>
                                         </div></td><!-- <td style="color: white"></td> -->
@@ -647,7 +647,7 @@
                                         <td> 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
+                                                <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
                                                 <span class="form-check-sign"></span>
                                                 </label>
 
@@ -683,22 +683,22 @@
                           @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['Show Client Name'] ))
                                    
-                                      @if($role->permission->contains('id',$permission->id))
+                                         @if(in_array($permission->id, $selected_permissions))
 
                                       <td> 
                                         <div class="form-check">
                                         <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
+                                        <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
                                         <span class="form-check-sign"></span>
                                          </label>
                                         </div></td><!-- <td style="color: white"></td> -->
                                       @elseif(Auth::user()->levelRolepermission($permission->id,$role->level))
-                                        <td>  <i class="fa fa-check-square ml-1" aria-hidden="true" style="color: green;"></i></td>
+                                        <td>  <i class="fa fa-check-square ml-1" aria-hidden="true" style="color: green;"></i> </td>
                                       @else
                                         <td> 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
+                                                <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
                                                 <span class="form-check-sign"></span>
                                                 </label>
 
@@ -711,12 +711,12 @@
                          @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['Hide Client Name'] ))
                                    
-                                      @if($role->permission->contains('id',$permission->id))
+                                        @if(in_array($permission->id, $selected_permissions))
 
                                       <td> 
                                         <div class="form-check">
                                         <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
+                                        <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
                                         <span class="form-check-sign"></span>
                                          </label>
                                         </div></td><!-- <td style="color: white"></td> -->
@@ -726,7 +726,7 @@
                                         <td> 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
+                                                <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
                                                 <span class="form-check-sign"></span>
                                                 </label>
 
@@ -742,12 +742,12 @@
                       @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['Show Company'] ))
                                    
-                                      @if($role->permission->contains('id',$permission->id))
+                                        @if(in_array($permission->id, $selected_permissions))
 
                                       <td> 
                                         <div class="form-check">
                                         <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
+                                        <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
                                         <span class="form-check-sign"></span>
                                          </label>
                                         </div></td><!-- <td style="color: white"></td> -->
@@ -757,7 +757,7 @@
                                         <td> 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
+                                                <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
                                                 <span class="form-check-sign"></span>
                                                 </label>
 
@@ -770,12 +770,12 @@
                           @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['Hide Company'] ))
                                    
-                                      @if($role->permission->contains('id',$permission->id))
+                                         @if(in_array($permission->id, $selected_permissions))
 
                                       <td> 
                                         <div class="form-check">
                                         <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
+                                        <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
                                         <span class="form-check-sign"></span>
                                          </label>
                                         </div></td><!-- <td style="color: white"></td> -->
@@ -785,7 +785,7 @@
                                         <td> 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
+                                                <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
                                                 <span class="form-check-sign"></span>
                                                 </label>
 
@@ -803,12 +803,12 @@
                         @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['SHOW CLIENT PRIMARY EMAIL'] ))
                                    
-                                      @if($role->permission->contains('id',$permission->id))
+                                         @if(in_array($permission->id, $selected_permissions))
 
                                       <td> 
                                         <div class="form-check">
                                         <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
+                                        <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
                                         <span class="form-check-sign"></span>
                                          </label>
                                         </div></td><!-- <td style="color: white"></td> -->
@@ -818,7 +818,7 @@
                                         <td> 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
+                                                <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
                                                 <span class="form-check-sign"></span>
                                                 </label>
 
@@ -831,12 +831,12 @@
                          @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['RESTRICT PRIMARY EMAIL'] ))
                                    
-                                      @if($role->permission->contains('id',$permission->id))
+                                         @if(in_array($permission->id, $selected_permissions))
 
                                       <td> 
                                         <div class="form-check">
                                         <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
+                                        <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
                                         <span class="form-check-sign"></span>
                                          </label>
                                         </div></td><!-- <td style="color: white"></td> -->
@@ -846,7 +846,7 @@
                                         <td> 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
+                                                <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
                                                 <span class="form-check-sign"></span>
                                                 </label>
 
@@ -862,12 +862,12 @@
                         @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['allow-change-allocation'] ))
                                    
-                                      @if($role->permission->contains('id',$permission->id))
+                                        @if(in_array($permission->id, $selected_permissions))
 
                                       <td> 
                                         <div class="form-check">
                                         <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
+                                        <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
                                         <span class="form-check-sign"></span>
                                          </label>
                                         </div></td><!-- <td style="color: white"></td> -->
@@ -877,7 +877,7 @@
                                         <td> 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
+                                                <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
                                                 <span class="form-check-sign"></span>
                                                 </label>
 
@@ -890,12 +890,12 @@
                          @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['allocation-show'] ))
                                    
-                                      @if($role->permission->contains('id',$permission->id))
+                                        @if(in_array($permission->id, $selected_permissions))
 
                                       <td> 
                                         <div class="form-check">
                                         <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
+                                        <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
                                         <span class="form-check-sign"></span>
                                          </label>
                                         </div></td><!-- <td style="color: white"></td> -->
@@ -905,7 +905,7 @@
                                         <td> 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
+                                                <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
                                                 <span class="form-check-sign"></span>
                                                 </label>
 
@@ -918,12 +918,12 @@
                          @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['allocation-hide'] ))
                                    
-                                      @if($role->permission->contains('id',$permission->id))
+                                         @if(in_array($permission->id, $selected_permissions))
 
                                       <td> 
                                         <div class="form-check">
                                         <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
+                                        <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
                                         <span class="form-check-sign"></span>
                                          </label>
                                         </div></td><!-- <td style="color: white"></td> -->
@@ -933,7 +933,7 @@
                                         <td> 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
+                                                <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
                                                 <span class="form-check-sign"></span>
                                                 </label>
 
@@ -949,12 +949,12 @@
                     @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['order-date-modify'] ))
                                    
-                                      @if($role->permission->contains('id',$permission->id))
+                                        @if(in_array($permission->id, $selected_permissions))
 
                                       <td> 
                                         <div class="form-check">
                                         <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
+                                        <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
                                         <span class="form-check-sign"></span>
                                          </label>
                                         </div></td><!-- <td style="color: white"></td> -->
@@ -964,7 +964,7 @@
                                         <td> 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
+                                                <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
                                                 <span class="form-check-sign"></span>
                                                 </label>
 
@@ -976,12 +976,12 @@
                             @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['order-date-show'] ))
                                    
-                                      @if($role->permission->contains('id',$permission->id))
+                                        @if(in_array($permission->id, $selected_permissions))
 
                                       <td> 
                                         <div class="form-check">
                                         <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
+                                        <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
                                         <span class="form-check-sign"></span>
                                          </label>
                                         </div></td><!-- <td style="color: white"></td> -->
@@ -991,7 +991,7 @@
                                         <td> 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
+                                                <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
                                                 <span class="form-check-sign"></span>
                                                 </label>
 
@@ -1003,12 +1003,12 @@
                                @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['order-date-hide'] ))
                                    
-                                      @if($role->permission->contains('id',$permission->id))
+                                        @if(in_array($permission->id, $selected_permissions))
 
                                       <td> 
                                         <div class="form-check">
                                         <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
+                                        <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
                                         <span class="form-check-sign"></span>
                                          </label>
                                         </div></td><!-- <td style="color: white"></td> -->
@@ -1018,7 +1018,7 @@
                                         <td> 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
+                                                <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
                                                 <span class="form-check-sign"></span>
                                                 </label>
                                             </div></td><!-- <td style="color: white"></td> -->
@@ -1033,12 +1033,12 @@
                          @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['order-completion-date-modify'] ))
                                    
-                                      @if($role->permission->contains('id',$permission->id))
+                                         @if(in_array($permission->id, $selected_permissions))
 
                                       <td> 
                                         <div class="form-check">
                                         <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
+                                        <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
                                         <span class="form-check-sign"></span>
                                          </label>
                                         </div></td><!-- <td style="color: white"></td> -->
@@ -1048,7 +1048,7 @@
                                         <td> 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
+                                                <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
                                                 <span class="form-check-sign"></span>
                                                 </label>
 
@@ -1060,12 +1060,12 @@
                           @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['order-completion-date-show'] ))
                                    
-                                      @if($role->permission->contains('id',$permission->id))
+                                         @if(in_array($permission->id, $selected_permissions))
 
                                       <td> 
                                         <div class="form-check">
                                         <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
+                                        <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
                                         <span class="form-check-sign"></span>
                                          </label>
                                         </div></td><!-- <td style="color: white"></td> -->
@@ -1075,7 +1075,7 @@
                                         <td> 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
+                                                <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
                                                 <span class="form-check-sign"></span>
                                                 </label>
 
@@ -1087,12 +1087,12 @@
                           @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['order-completion-date-hide'] ))
                                    
-                                      @if($role->permission->contains('id',$permission->id))
+                                         @if(in_array($permission->id, $selected_permissions))
 
                                       <td> 
                                         <div class="form-check">
                                         <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
+                                        <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
                                         <span class="form-check-sign"></span>
                                          </label>
                                         </div></td><!-- <td style="color: white"></td> -->
@@ -1102,7 +1102,7 @@
                                         <td> 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
+                                                <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
                                                 <span class="form-check-sign"></span>
                                                 </label>
 
@@ -1118,12 +1118,12 @@
                          @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['contact1_modify'] ))
                                    
-                                      @if($role->permission->contains('id',$permission->id))
+                                         @if(in_array($permission->id, $selected_permissions))
 
                                       <td> 
                                         <div class="form-check">
                                         <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
+                                        <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
                                         <span class="form-check-sign"></span>
                                          </label>
                                         </div></td><!-- <td style="color: white"></td> -->
@@ -1133,7 +1133,7 @@
                                         <td> 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
+                                                <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
                                                 <span class="form-check-sign"></span>
                                                 </label>
 
@@ -1145,12 +1145,12 @@
                           @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['contact1_show'] ))
                                    
-                                      @if($role->permission->contains('id',$permission->id))
+                                         @if(in_array($permission->id, $selected_permissions))
 
                                       <td> 
                                         <div class="form-check">
                                         <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
+                                        <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
                                         <span class="form-check-sign"></span>
                                          </label>
                                         </div></td><!-- <td style="color: white"></td> -->
@@ -1160,7 +1160,7 @@
                                         <td> 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
+                                                <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
                                                 <span class="form-check-sign"></span>
                                                 </label>
 
@@ -1172,12 +1172,12 @@
                           @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['contact1_hide'] ))
                                    
-                                      @if($role->permission->contains('id',$permission->id))
+                                        @if(in_array($permission->id, $selected_permissions))
 
                                       <td> 
                                         <div class="form-check">
                                         <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
+                                        <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
                                         <span class="form-check-sign"></span>
                                          </label>
                                         </div></td><!-- <td style="color: white"></td> -->
@@ -1187,7 +1187,7 @@
                                         <td> 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
+                                                <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
                                                 <span class="form-check-sign"></span>
                                                 </label>
 
@@ -1203,12 +1203,12 @@
                           @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['stitch_view'] ))
                                    
-                                      @if($role->permission->contains('id',$permission->id))
+                                        @if(in_array($permission->id, $selected_permissions))
 
                                       <td> 
                                         <div class="form-check">
                                         <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
+                                        <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
                                         <span class="form-check-sign"></span>
                                          </label>
                                         </div></td><!-- <td style="color: white"></td> -->
@@ -1218,7 +1218,7 @@
                                         <td> 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
+                                                <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
                                                 <span class="form-check-sign"></span>
                                                 </label>
 
@@ -1230,12 +1230,12 @@
                            @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['stitch_modify'] ))
                                    
-                                      @if($role->permission->contains('id',$permission->id))
+                                         @if(in_array($permission->id, $selected_permissions))
 
                                       <td> 
                                         <div class="form-check">
                                         <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
+                                        <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
                                         <span class="form-check-sign"></span>
                                          </label>
                                         </div></td><!-- <td style="color: white"></td> -->
@@ -1245,7 +1245,7 @@
                                         <td> 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
+                                                <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
                                                 <span class="form-check-sign"></span>
                                                 </label>
 
@@ -1262,12 +1262,12 @@
                           @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['file-count-show'] ))
                                    
-                                      @if($role->permission->contains('id',$permission->id))
+                                        @if(in_array($permission->id, $selected_permissions))
 
                                       <td> 
                                         <div class="form-check">
                                         <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
+                                        <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
                                         <span class="form-check-sign"></span>
                                          </label>
                                         </div></td><!-- <td style="color: white"></td> -->
@@ -1277,7 +1277,7 @@
                                         <td> 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
+                                                <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
                                                 <span class="form-check-sign"></span>
                                                 </label>
 
@@ -1290,12 +1290,12 @@
                          @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['file-count-modify'] ))
                                    
-                                      @if($role->permission->contains('id',$permission->id))
+                                        @if(in_array($permission->id, $selected_permissions))
 
                                       <td> 
                                         <div class="form-check">
                                         <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
+                                        <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
                                         <span class="form-check-sign"></span>
                                          </label>
                                         </div></td><!-- <td style="color: white"></td> -->
@@ -1305,7 +1305,7 @@
                                         <td> 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
+                                                <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
                                                 <span class="form-check-sign"></span>
                                                 </label>
 
@@ -1322,12 +1322,12 @@
                          @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['file-note-modify'] ))
                                    
-                                      @if($role->permission->contains('id',$permission->id))
+                                        @if(in_array($permission->id, $selected_permissions))
 
                                       <td> 
                                         <div class="form-check">
                                         <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
+                                        <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
                                         <span class="form-check-sign"></span>
                                          </label>
                                         </div></td><!-- <td style="color: white"></td> -->
@@ -1337,7 +1337,7 @@
                                         <td> 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
+                                                <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
                                                 <span class="form-check-sign"></span>
                                                 </label>
 
@@ -1349,12 +1349,12 @@
                           @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['file-note-show'] ))
                                    
-                                      @if($role->permission->contains('id',$permission->id))
+                                         @if(in_array($permission->id, $selected_permissions))
 
                                       <td> 
                                         <div class="form-check">
                                         <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
+                                        <input type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
                                         <span class="form-check-sign"></span>
                                          </label>
                                         </div></td><!-- <td style="color: white"></td> -->
@@ -1364,7 +1364,7 @@
                                         <td> 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
+                                                <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
                                                 <span class="form-check-sign"></span>
                                                 </label>
 
@@ -1381,12 +1381,12 @@
                          @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['file-price-modify'] ))
                                    
-                                      @if($role->permission->contains('id',$permission->id))
+                                        @if(in_array($permission->id, $selected_permissions))
 
                                       <td> 
                                         <div class="form-check">
                                         <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
+                                        <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
                                         <span class="form-check-sign"></span>
                                          </label>
                                         </div></td><!-- <td style="color: white"></td> -->
@@ -1396,7 +1396,7 @@
                                         <td> 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
+                                                <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
                                                 <span class="form-check-sign"></span>
                                                 </label>
 
@@ -1408,12 +1408,12 @@
                           @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['file-price-show'] ))
                                    
-                                      @if($role->permission->contains('id',$permission->id))
+                                         @if(in_array($permission->id, $selected_permissions))
 
                                       <td> 
                                         <div class="form-check">
                                         <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
+                                        <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
                                         <span class="form-check-sign"></span>
                                          </label>
                                         </div></td><!-- <td style="color: white"></td> -->
@@ -1423,7 +1423,7 @@
                                         <td> 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
+                                                <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
                                                 <span class="form-check-sign"></span>
                                                 </label>
 
@@ -1435,12 +1435,12 @@
                        @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['file-price-hide'] ))
                                    
-                                      @if($role->permission->contains('id',$permission->id))
+                                         @if(in_array($permission->id, $selected_permissions))
 
                                       <td> 
                                         <div class="form-check">
                                         <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
+                                        <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
                                         <span class="form-check-sign"></span>
                                          </label>
                                         </div></td><!-- <td style="color: white"></td> -->
@@ -1450,7 +1450,7 @@
                                         <td> 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
+                                                <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
                                                 <span class="form-check-sign"></span>
                                                 </label>
 
@@ -1466,12 +1466,12 @@
                          @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['Vendor Emb. Rate Modify'] ))
                                    
-                                      @if($role->permission->contains('id',$permission->id))
+                                         @if(in_array($permission->id, $selected_permissions))
 
                                       <td> 
                                         <div class="form-check">
                                         <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
+                                        <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
                                         <span class="form-check-sign"></span>
                                          </label>
                                         </div></td><!-- <td style="color: white"></td> -->
@@ -1481,7 +1481,7 @@
                                         <td> 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
+                                                <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
                                                 <span class="form-check-sign"></span>
                                                 </label>
 
@@ -1493,12 +1493,12 @@
                           @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['v_emb_rate_show'] ))
                                    
-                                      @if($role->permission->contains('id',$permission->id))
+                                        @if(in_array($permission->id, $selected_permissions))
 
                                       <td> 
                                         <div class="form-check">
                                         <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
+                                        <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
                                         <span class="form-check-sign"></span>
                                          </label>
                                         </div></td><!-- <td style="color: white"></td> -->
@@ -1508,7 +1508,7 @@
                                         <td> 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
+                                                <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
                                                 <span class="form-check-sign"></span>
                                                 </label>
 
@@ -1520,12 +1520,12 @@
                        @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['Vendor Emb Rate Hide'] ))
                                    
-                                      @if($role->permission->contains('id',$permission->id))
+                                         @if(in_array($permission->id, $selected_permissions))
 
                                       <td> 
                                         <div class="form-check">
                                         <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
+                                        <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
                                         <span class="form-check-sign"></span>
                                          </label>
                                         </div></td><!-- <td style="color: white"></td> -->
@@ -1535,7 +1535,7 @@
                                         <td> 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
+                                                <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
                                                 <span class="form-check-sign"></span>
                                                 </label>
 
@@ -1551,12 +1551,12 @@
                          @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['vend-file-price-modify'] ))
                                    
-                                      @if($role->permission->contains('id',$permission->id))
+                                        @if(in_array($permission->id, $selected_permissions))
 
                                       <td> 
                                         <div class="form-check">
                                         <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
+                                        <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
                                         <span class="form-check-sign"></span>
                                          </label>
                                         </div></td><!-- <td style="color: white"></td> -->
@@ -1566,7 +1566,7 @@
                                         <td> 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
+                                                <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
                                                 <span class="form-check-sign"></span>
                                                 </label>
 
@@ -1578,12 +1578,12 @@
                           @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['vend-file-price-show'] ))
                                    
-                                      @if($role->permission->contains('id',$permission->id))
+                                        @if(in_array($permission->id, $selected_permissions))
 
                                       <td> 
                                         <div class="form-check">
                                         <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
+                                        <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
                                         <span class="form-check-sign"></span>
                                          </label>
                                         </div></td><!-- <td style="color: white"></td> -->
@@ -1593,7 +1593,7 @@
                                         <td> 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
+                                                <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
                                                 <span class="form-check-sign"></span>
                                                 </label>
 
@@ -1605,12 +1605,12 @@
                        @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['vend-file-price-hide'] ))
                                    
-                                      @if($role->permission->contains('id',$permission->id))
+                                         @if(in_array($permission->id, $selected_permissions))
 
                                       <td> 
                                         <div class="form-check">
                                         <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
+                                        <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
                                         <span class="form-check-sign"></span>
                                          </label>
                                         </div></td><!-- <td style="color: white"></td> -->
@@ -1620,7 +1620,7 @@
                                         <td> 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
+                                                <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
                                                 <span class="form-check-sign"></span>
                                                 </label>
 
@@ -1637,12 +1637,12 @@
                          @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['Execute of Reports'] ))
                                    
-                                      @if($role->permission->contains('id',$permission->id))
+                                         @if(in_array($permission->id, $selected_permissions))
 
                                       <td> 
                                         <div class="form-check">
                                         <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
+                                        <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
                                         <span class="form-check-sign"></span>
                                          </label>
                                         </div></td><!-- <td style="color: white"></td> -->
@@ -1652,7 +1652,7 @@
                                         <td> 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
+                                                <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
                                                 <span class="form-check-sign"></span>
                                                 </label>
 
@@ -1681,12 +1681,12 @@
                         @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['allow modification of order status'] ))
                                    
-                                      @if($role->permission->contains('id',$permission->id))
+                                         @if(in_array($permission->id, $selected_permissions))
 
                                       <td> 
                                         <div class="form-check">
                                         <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
+                                        <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
                                         <span class="form-check-sign"></span>
                                          </label>
                                         </div></td><!-- <td style="color: white"></td> -->
@@ -1696,7 +1696,7 @@
                                         <td> 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
+                                                <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
                                                 <span class="form-check-sign"></span>
                                                 </label>
 
@@ -1708,12 +1708,12 @@
                           @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['Only View Order Status'] ))
                                    
-                                      @if($role->permission->contains('id',$permission->id))
+                                        @if(in_array($permission->id, $selected_permissions))
 
                                       <td> 
                                         <div class="form-check">
                                         <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
+                                        <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
                                         <span class="form-check-sign"></span>
                                          </label>
                                         </div></td><!-- <td style="color: white"></td> -->
@@ -1723,7 +1723,7 @@
                                         <td> 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
+                                                <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
                                                 <span class="form-check-sign"></span>
                                                 </label>
 
@@ -1736,12 +1736,12 @@
                            @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['order-status-hide'] ))
                                    
-                                      @if($role->permission->contains('id',$permission->id))
+                                         @if(in_array($permission->id, $selected_permissions))
 
                                       <td> 
                                         <div class="form-check">
                                         <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
+                                        <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
                                         <span class="form-check-sign"></span>
                                          </label>
                                         </div></td><!-- <td style="color: white"></td> -->
@@ -1751,7 +1751,7 @@
                                         <td> 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
+                                                <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
                                                 <span class="form-check-sign"></span>
                                                 </label>
 
@@ -1766,12 +1766,12 @@
                          @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['QC PENDING TO ALLOCATION'] ))
                                    
-                                      @if($role->permission->contains('id',$permission->id))
+                                         @if(in_array($permission->id, $selected_permissions))
 
                                       <td> 
                                         <div class="form-check">
                                         <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
+                                        <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
                                         <span class="form-check-sign"></span>
                                          </label>
                                         </div></td><!-- <td style="color: white"></td> -->
@@ -1781,7 +1781,7 @@
                                         <td> 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
+                                                <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
                                                 <span class="form-check-sign"></span>
                                                 </label>
 
@@ -1794,12 +1794,12 @@
                        @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['QC PENDING TO ALLOCATION HIDE'] ))
                                    
-                                      @if($role->permission->contains('id',$permission->id))
+                                         @if(in_array($permission->id, $selected_permissions))
 
                                       <td> 
                                         <div class="form-check">
                                         <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
+                                        <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
                                         <span class="form-check-sign"></span>
                                          </label>
                                         </div></td><!-- <td style="color: white"></td> -->
@@ -1809,7 +1809,7 @@
                                         <td> 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
+                                                <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
                                                 <span class="form-check-sign"></span>
                                                 </label>
 
@@ -1825,12 +1825,12 @@
                          @foreach($permissions as $permission) 
                             @if(in_array($permission->description,['alloc-qcpending'] ))
                                    
-                                      @if($role->permission->contains('id',$permission->id))
+                                         @if(in_array($permission->id, $selected_permissions))
 
                                       <td> 
                                         <div class="form-check">
                                         <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
+                                        <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
                                         <span class="form-check-sign"></span>
                                          </label>
                                         </div></td><!-- <td style="color: white"></td> -->
@@ -1840,7 +1840,7 @@
                                         <td> 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
+                                                <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
                                                 <span class="form-check-sign"></span>
                                                 </label>
 
@@ -1874,12 +1874,13 @@
                                         </tr><tr><td>{{$permission->name}}</td>
                                       @endif
                                         <?php $row++; ?>
-                                      @if($role->permission->contains('id',$permission->id))
+
+                                         @if(in_array($permission->id, $selected_permissions))
 
                                       <td> 
                                         <div class="form-check">
                                         <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
+                                        <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
                                         <span class="form-check-sign"></span>
                                          </label>
                                         </div></td><!-- <td style="color: white"></td> -->
@@ -1889,7 +1890,7 @@
                                         <td> 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
+                                                <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
                                                 <span class="form-check-sign"></span>
                                                 </label>
                                             </div></td><!-- <td style="color: white"></td> -->
@@ -1920,12 +1921,13 @@
                                         </tr><tr><td>{{$permission->name}}</td>
                                       @endif
                                         <?php $row++; ?>
-                                      @if($role->permission->contains('id',$permission->id))
+
+                                         @if(in_array($permission->id, $selected_permissions))
 
                                       <td> 
                                         <div class="form-check">
                                         <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
+                                        <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
                                         <span class="form-check-sign"></span>
                                          </label>
                                         </div></td><!-- <td style="color: white"></td> -->
@@ -1935,7 +1937,7 @@
                                         <td> 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
+                                                <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
                                                 <span class="form-check-sign"></span>
                                                 </label>
                                             </div></td><!-- <td style="color: white"></td> -->
@@ -1969,25 +1971,26 @@
                                       @endif
                                         <?php $row++; ?>
                                      
-                                        @if($role->permission->contains('id',$permission->id))
+                                         @if(in_array($permission->id, $selected_permissions))
 
                                       <td> 
                                         <div class="form-check">
                                         <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
+                                        <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
                                         <span class="form-check-sign"></span>
                                          </label>
                                         </div></td><!-- <td style="color: white"></td> -->
                                       @elseif(Auth::user()->levelRolepermission($permission->id,$role->level))
                                         <td>  <i class="fa fa-check-square ml-1" aria-hidden="true" style="color: green;"></i></td>
                                       @else
-                                        <td> 
-                                            <div class="form-check">
+                                        <td>
+                                          {{--   <div class="form-check"> --}}
                                                 <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
+                                                <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
                                                 <span class="form-check-sign"></span>
                                                 </label>
-                                            </div></td><!-- <td style="color: white"></td> -->
+                                        {{--     </div> --}}
+                                          </td><!-- <td style="color: white"></td> -->
                                       @endif
                                      
                              @else
@@ -2016,12 +2019,12 @@
                                       @endif
                                         <?php $row++; ?>
                                      
-                                  @if($role->permission->contains('id',$permission->id))
+                                    @if(in_array($permission->id, $selected_permissions))
 
                                       <td> 
                                         <div class="form-check">
                                         <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
+                                        <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
                                         <span class="form-check-sign"></span>
                                          </label>
                                         </div></td><!-- <td style="color: white"></td> -->
@@ -2031,7 +2034,7 @@
                                         <td> 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
+                                                <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
                                                 <span class="form-check-sign"></span>
                                                 </label>
                                             </div></td><!-- <td style="color: white"></td> -->
@@ -2065,12 +2068,12 @@
                                         </tr><tr><td>{{$permission->description}}</td>
                                       @endif
                                         <?php $row++; ?>
-                                      @if($role->permission->contains('id',$permission->id))
+                                       @if(in_array($permission->id, $selected_permissions))
 
                                       <td> 
                                         <div class="form-check">
                                         <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
+                                        <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
                                         <span class="form-check-sign"></span>
                                          </label>
                                         </div></td><!-- <td style="color: white"></td> -->
@@ -2080,7 +2083,7 @@
                                         <td> 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
+                                                <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
                                                 <span class="form-check-sign"></span>
                                                 </label>
                                             </div></td><!-- <td style="color: white"></td> -->
@@ -2110,12 +2113,12 @@
                                         </tr><tr><td>{{$permission->name}}</td>
                                       @endif
                                         <?php $row++; ?>
-                                      @if($role->permission->contains('id',$permission->id))
+                                        @if(in_array($permission->id, $selected_permissions))
 
                                       <td> 
                                         <div class="form-check">
                                         <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
+                                        <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
                                         <span class="form-check-sign"></span>
                                          </label>
                                         </div></td><!-- <td style="color: white"></td> -->
@@ -2125,7 +2128,7 @@
                                         <td> 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
+                                                <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
                                                 <span class="form-check-sign"></span>
                                                 </label>
                                             </div></td><!-- <td style="color: white"></td> -->
@@ -2154,12 +2157,12 @@
                                         </tr><tr><td>{{$permission->name}}</td>
                                       @endif
                                         <?php $row++; ?>
-                                      @if($role->permission->contains('id',$permission->id))
+                                        @if(in_array($permission->id, $selected_permissions))
 
                                       <td> 
                                         <div class="form-check">
                                         <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
+                                        <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
                                         <span class="form-check-sign"></span>
                                          </label>
                                         </div></td><!-- <td style="color: white"></td> -->
@@ -2169,7 +2172,7 @@
                                         <td> 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
+                                                <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
                                                 <span class="form-check-sign"></span>
                                                 </label>
                                             </div></td><!-- <td style="color: white"></td> -->
@@ -2201,12 +2204,12 @@
                                         </tr><tr><td>{{$permission->description}}</td>
                                       @endif
                                         <?php $row++; ?>
-                                      @if($role->permission->contains('id',$permission->id))
+                                        @if(in_array($permission->id, $selected_permissions))
 
                                       <td> 
                                         <div class="form-check">
                                         <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
+                                        <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}" checked="">
                                         <span class="form-check-sign"></span>
                                          </label>
                                         </div></td><!-- <td style="color: white"></td> -->
@@ -2216,7 +2219,7 @@
                                         <td> 
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
+                                                <input  type="checkbox" name="assignpermissions[]" value="{{$permission->id}}">
                                                 <span class="form-check-sign"></span>
                                                 </label>
                                             </div></td><!-- <td style="color: white"></td> -->

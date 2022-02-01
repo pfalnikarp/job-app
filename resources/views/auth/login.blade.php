@@ -30,7 +30,7 @@
             <form method="post" action="{{ url('/login') }}">
                 @csrf
 
-                <div class="input-group mb-3">
+                {{-- <div class="input-group mb-3">
                     <input type="email"
                            name="email"
                            value="{{ old('email') }}"
@@ -40,6 +40,21 @@
                         <div class="input-group-text"><span class="fas fa-envelope"></span></div>
                     </div>
                     @error('email')
+                    <span class="error invalid-feedback">{{ $message }}</span>
+                    @enderror
+                </div> --}}
+
+
+                <div class="input-group mb-3">
+                    <input type="text"
+                           name="login_name"
+                           value="{{ old('login_name') }}"
+                           placeholder="Login Name"
+                           class="form-control @error('login_name') is-invalid @enderror">
+                    <div class="input-group-append">
+                        <div class="input-group-text"><span class="fa fa-user"></span></div>
+                    </div>
+                    @error('login_name')
                     <span class="error invalid-feedback">{{ $message }}</span>
                     @enderror
                 </div>

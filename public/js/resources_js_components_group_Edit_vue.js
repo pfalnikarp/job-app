@@ -169,6 +169,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   _this.group.id = response.data.groupmaster[0].groupid;
                   var names = response.data.groupmaster[0].names;
                   var userids = response.data.groupmaster[0].userids;
+                  _this.value = response.data.groupuser;
                   _this.groupuser.name = names.split(","); //console.log(names);
 
                   //console.log(names);
@@ -195,7 +196,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }))();
     },
     customLabel: function customLabel(option) {
-      return "".concat(option.id, " - ").concat(option.name);
+      // return `${option.id} - ${option.name}`
+      return "".concat(option.name);
     },
     asyncFind: function asyncFind(query) {
       var _this2 = this;
@@ -449,40 +451,9 @@ var render = function() {
                 _vm._v(" "),
                 _c(
                   "div",
-                  { staticClass: "col-2 mb-2 overflow-auto" },
-                  [
-                    _c("label", [_vm._v("Name")]),
-                    _vm._v(" "),
-                    _vm._l(_vm.groupuser.name, function(item, index) {
-                      return _c("li", { key: index }, [
-                        _vm._v(
-                          "\n                                  \n                                      " +
-                            _vm._s(item) +
-                            " "
-                        ),
-                        _c(
-                          "a",
-                          {
-                            attrs: { href: "#" },
-                            on: {
-                              click: function($event) {
-                                return _vm.DelUser()
-                              }
-                            }
-                          },
-                          [_vm._v(_vm._s(_vm.groupuser.id[index]))]
-                        )
-                      ])
-                    })
-                  ],
-                  2
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
                   {
                     staticClass:
-                      "col-3 mb-2 form-group select2-container select2-container-multi full-width"
+                      "col-6 mb-6 form-group select2-container select2-container-multi full-width"
                   },
                   [
                     _c("label", [_vm._v("User")]),
@@ -511,27 +482,6 @@ var render = function() {
                   ],
                   1
                 ),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-4 mb-2 " }, [
-                  _c("label", [_vm._v("New Users Selected")]),
-                  _vm._v(" "),
-                  _c(
-                    "table",
-                    { attrs: { id: "grouptable" } },
-                    [
-                      _vm._m(2),
-                      _vm._v(" "),
-                      _vm._l(_vm.value, function(Record, index) {
-                        return _c("tr", [
-                          _c("td", [_vm._v(_vm._s(index + 1))]),
-                          _vm._v(" "),
-                          _c("td", [_c("b", [_vm._v(_vm._s(Record.name))])])
-                        ])
-                      })
-                    ],
-                    2
-                  )
-                ]),
                 _vm._v(" "),
                 _c("input", {
                   attrs: { type: "hidden", name: "selectedusers", value: " " }
@@ -568,16 +518,6 @@ var staticRenderFns = [
         )
       ]
     )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("thead", [
-      _c("th", { staticStyle: { width: "8%" } }, [_vm._v("#")]),
-      _vm._v(" "),
-      _c("th", [_vm._v("User Name")])
-    ])
   }
 ]
 render._withStripped = true

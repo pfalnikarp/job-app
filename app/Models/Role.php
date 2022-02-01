@@ -22,5 +22,11 @@ class Role extends Model
             ->belongsToMany('App\User')
             ->withTimestamps();
     }
+
+
+     public function permissions()
+    {
+        return $this->hasMany(Permission::class);
+    }
   
 }

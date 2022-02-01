@@ -80,7 +80,9 @@ class GroupMasterController extends Controller
       //  $users   = User::select('id', 'name')->get();
        //return response()->json($groupMaster);
         // dd($groupMaster);
-       return response()->json(['groupmaster'=>$groupMaster]);
+         $groupusers  = DB::table('group_user')->leftjoin('users', 'users.id', '=', 'group_user.user_id')->select('group_user.user_id as id', 'users.name as name')->where('group_user.group_id', '=', $id)->get();
+
+       return response()->json(['groupmaster'=>$groupMaster, 'groupuser'=>$groupusers]);
     }
 
 
@@ -151,7 +153,7 @@ class GroupMasterController extends Controller
         $groupMaster->update(['name'=>$group['name']]);
        
         
-        //DB::table('group_user')->where('group_id', $id)->delete();
+        DB::table('group_user')->where('group_id', $id)->delete();
 
         foreach ($users as $key ) {
              GroupUser::updateorCreate(['group_id'=>$id, 'user_id'=>$key['id']]);

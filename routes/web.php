@@ -13,9 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/', 'JasperInvoiceController@accountadmin');
 
 Route::get('/t', function () {
     event(new \App\Events\SendMessage());
@@ -41,7 +43,7 @@ Route::get('dailytotaltoday_d', 'CreateChartController@DailyTotal_Today_D');
 
 Route::get('dailytotal_d', 'CreateChartController@DailyTotal_D');
 
-Route::get('dailydash', 'JasperInvoiceController@accountadmin');
+Route::get('dailydash', 'JasperInvoiceController@accountadmin')->name('DailyDash');
 
 //monthly dashboard controller
 Route::get('monthdashboard',['uses'=>'DashboardController@monthdashboard','as'=>'monthdashboard.monthdashboard'])->middleware('permission:monthly.dashboard');
@@ -51,9 +53,10 @@ Route::get('ajaxweekdashboard',['uses'=>'DashboardController@ajaxweekdashboard',
 //  dashboard routes
 
 Route::get('groupmenu', function(){
-           return view('groups.index');
+           return view('groupmaster.index');
     });
 
+Route::resource('groups', 'GroupController');
 // group notification
 
  Route::get('groupnotification', 'GroupNotificationController@index')->name('groupnotification.index');
@@ -84,6 +87,8 @@ Route::post('/save-token', [App\Http\Controllers\Home1Controller::class, 'saveTo
 Route::post('/send-notification', [App\Http\Controllers\Home1Controller::class, 'sendNotification'])->name('send.notification');
 
 Auth::routes();
+
+Route::get('/logout',  [App\Http\Controllers\Auth\LogoutController::class, 'perform'])->name('logout.perform');
 
 
 // Route::get('{any}', function () {

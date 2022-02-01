@@ -91,7 +91,7 @@ class ClientDtl extends Model
 
                          // dd($new);
 
-            $userid = DB::table('role_user')->join('roles', 'roles.id' ,'=',  'role_user.role_id')->where('roles.slug','=','csr')->pluck('role_user.user_id' , 'role_user.user_id');
+            $userid = DB::table('role_user')->join('roles', 'roles.id' ,'=',  'role_user.role_id')->where('roles.slug','=','csr')->pluck('role_user.user_id' , 'role_user.user_id')->toArray();
 
                // dd($userid);
                  array_push($userid, 1);

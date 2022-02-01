@@ -7,6 +7,19 @@ use Illuminate\Support\Facades\DB;
 class DashboardController extends Controller
 {
    public function monthdashboard(){
+
+    $createTempTables = DB::unprepared(
+    DB::raw("
+        CREATE TEMPORARY TABLE table_temp_orders 
+                        AS (
+                            SELECT *
+                            FROM orders
+                                                      
+                            );
+                       
+
+    ")
+);
    
     $date=Carbon::today('America/New_York');
 $now = Carbon::today('America/New_York');
@@ -36,45 +49,45 @@ for($i=0; $i < 7; $i++){
     $weekdate=$weekEndDate->subDays($i);
 
 
-        $weektotvectordata[] = DB::table('orders')
+        $weektotvectordata[] = DB::table('table_temp_orders')
                 ->select(DB::raw('sum(file_count) as totvect, sum(file_price) as totvectprice'))
                 ->whereDate('bill_dt','=',  $weekdate)
                 ->where('file_type', '=', 'Vector')
                 ->wherein('status' , $stat)
                 ->get(); 
 
-        $weektotdigitdata[] = DB::table('orders')
+        $weektotdigitdata[] = DB::table('table_temp_orders')
                 ->select(DB::raw('sum(file_count) as totdigit, sum(file_price) as totdigitprice'))
                  ->whereDate('bill_dt','=',$weekdate)
                 ->where('file_type', '=', 'Digitizing')
                 ->wherein('status' , $stat)
                 ->get();
 
-        $weekphotodata[] = DB::table('orders')
+        $weekphotodata[] = DB::table('table_temp_orders')
                 ->select(DB::raw('sum(file_count) as dtotphoto, sum(file_price) as dtotphotoprice'))
                ->whereDate('bill_dt','=', $weekdate)
                 ->where('file_type', '=', 'Photoshop')
                 ->wherein('status' , $stat)
                 ->get();
          
-        $weektotalloted[] = DB::table('orders')
+        $weektotalloted[] = DB::table('table_temp_orders')
                 ->select(DB::raw('sum(file_count) as totallot, sum(file_price) as totallotedprice'))
                  ->whereDate('bill_dt','=', $weekdate)
                 ->where('status', '=', 'Alloted')
                 ->get();
 
-        $weektotqcpending[] = DB::table('orders')
+        $weektotqcpending[] = DB::table('table_temp_orders')
                 ->select(DB::raw('sum(file_count) as totqcpend, sum(file_price) as totqcpendprice'))
                 ->whereDate('bill_dt','=',$weekdate)
                 ->wherein('status' , $qcpending)
                 ->get();
           
-        $weektotqc[] = DB::table('orders')
+        $weektotqc[] = DB::table('table_temp_orders')
                 ->select(DB::raw('sum(file_count) as totqcok, sum(file_price) as totqcokprice'))
                  ->whereDate('bill_dt','=', $weekdate)
                  ->wherein('status' , $qcok)
                 ->get();
-        $weektotcompl[] = DB::table('orders')
+        $weektotcompl[] = DB::table('table_temp_orders')
                 ->select(DB::raw('sum(file_count) as totcompl, sum(file_price) as totcomplprice'))
                 ->whereDate('bill_dt','=',$weekdate)
                 ->wherein('status' , $completed)
@@ -106,7 +119,7 @@ for($i=0; $i < 7; $i++){
         $totphotodata=[];
         for($i=1;$i<13;$i++){
         	$month=$i;
-        $totvectordata[] = DB::table('orders')
+        $totvectordata[] = DB::table('table_temp_orders')
                 ->select(DB::raw('sum(file_count) as totvect, sum(file_price) as totvectprice'))
                 ->whereYear('bill_dt','=',$year)
                 ->whereMonth('bill_dt','=',$month)
@@ -116,14 +129,14 @@ for($i=0; $i < 7; $i++){
 
        // $totvectordata = collect($totvectordata);
         
-        $totdigitdata[] = DB::table('orders')
+        $totdigitdata[] = DB::table('table_temp_orders')
                 ->select(DB::raw('sum(file_count) as totdigit, sum(file_price) as totdigitprice'))
                 ->whereYear('bill_dt', '=',$year)
                 ->whereMonth('bill_dt', '=', $month)
                 ->wherein('status' , $stat)
                 ->where('file_type', '=', 'Digitizing')
                 ->get();
-        $totphotodata[] = DB::table('orders')
+        $totphotodata[] = DB::table('table_temp_orders')
                 ->select(DB::raw('sum(file_count) as dtotphoto,sum(file_price) as dtotphotoprice'))
                 ->whereYear('bill_dt', '=',$year)
                 ->whereMonth('bill_dt', '=', $month)
@@ -131,28 +144,28 @@ for($i=0; $i < 7; $i++){
                 ->wherein('status' , $stat)
                 ->get();
     
-         $totalloted[] = DB::table('orders')
+         $totalloted[] = DB::table('table_temp_orders')
                 ->select(DB::raw('sum(file_count) as totallot, sum(file_price) as totallotedprice'))
                 ->whereYear('bill_dt', '=',$year)
                 ->whereMonth('bill_dt', '=', $month )
                 ->where('status', '=', 'Alloted')
                 ->get();
          
-          $totqcpending[] = DB::table('orders')
+          $totqcpending[] = DB::table('table_temp_orders')
                 ->select(DB::raw('sum(file_count) as totqcpend, sum(file_price) as totqcpendprice'))
                 ->whereYear('bill_dt', '=',$year)
                 ->whereMonth('bill_dt', '=', $month )
                 ->wherein('status' , $qcpending)
                 ->get();
           
-           $totqc[] = DB::table('orders')
+           $totqc[] = DB::table('table_temp_orders')
                 ->select(DB::raw('sum(file_count) as totqcok, sum(file_price) as totqcokprice'))
                 ->whereYear('bill_dt', '=',$year)
                 ->whereMonth('bill_dt', '=', $month )
                 ->wherein('status' , $qcok)
                 ->get();
             
-             $totcompl[] = DB::table('orders')
+             $totcompl[] = DB::table('table_temp_orders')
                 ->select(DB::raw('sum(file_count) as totcompl, sum(file_price) as totcomplprice'))
                 ->whereYear('bill_dt', '=',$year)
                 ->whereMonth('bill_dt', '=', $month )
