@@ -1,6 +1,10 @@
 <div class="">
     <br>
-    
+    <div class="row">
+       
+         
+      
+    </div>
 <div class="modal fade bd-example-modal-lg" data-backdrop="static" data-keyboard="false" tabindex="-1">
     <div class="modal-dialog modal-sm">
         <div class="modal-content" style="width: 48px">
@@ -8,12 +12,13 @@
         </div>
     </div>
 </div>
+   
     <div class="row">
         <div class="col-md-4">
             <h5>Monthly Dashboard</h5>
 
         </div>
-         <div class="col-md-5"><a href="{{route('monthdashboard.weeklydashboard')}}" class="btn btn-primary btn-outline">Show Weekly Dasboard</a></div>
+         <div class="col-md-5"></div>
         <div class="col-md-3">
            <select class="form-control selectyear mb-2" id='yearid'><option>2021</option><option>2020</option><option>2019</option><option>2018</option></select>
         </div>
@@ -27,13 +32,13 @@
             <b align="center">{{$monthtitle[$i+1]}}  {{$year}}</b>
         @permission('file.price.dashboard')
             <tr><td><td>File</td><td>Revenue</td></tr>
-            <tr><td>Vector<td>{{$vfile_count[$i]}} </td><td> {{$vfile_price[$i]}}</td></tr>
-            <tr><td>Digitize<td>{{$dfile_count[$i]}} </td><td> {{$dfile_price[$i]}}</td></tr>
-            <tr><td>Image Editing<td>{{$pfile_count[$i]}} </td><td> {{$pfile_price[$i]}}</td></tr>
-            <tr><td>Alloted<td>{{$allotedfile_count[$i]}} </td><td> {{$allotedfile_price[$i]}}</td></tr>
-            <tr><td>QC-Pending  <td>{{$qcpendingfile_count[$i]}} </td><td> {{$qcpendingfile_price[$i]}}</td></tr>
-            <tr><td>QC-OK<td>{{$qcokfile_count[$i]}} </td><td> {{$qcokfile_price[$i]}}</td></tr>
-            <tr><td>Completed<td>{{$completedfile_count[$i]}} </td><td> {{$completedfile_price[$i]}}</td></tr>
+            <tr><td>Vector<td>{{$totvectordata[$i][0]->totvect}} </td><td> {{$totvectordata[$i][0]->totvectprice}}</td></tr>
+            <tr><td>Digitize<td>{{$totdigitdata[$i][0]->totdigit}} </td><td> {{$totdigitdata[$i][0]->totdigitprice}}</td></tr>
+            <tr><td>Image Editing<td>{{$totphotodata[$i][0]->dtotphoto}} </td><td> {{$totphotodata[$i][0]->dtotphotoprice}}</td></tr>
+            <tr><td>Alloted<td>{{$totalloted[$i][0]->totallot}} </td><td> {{$totalloted[$i][0]->totallotedprice}}</td></tr>
+            <tr><td>QC-Pending  <td>{{$totqcpending[$i][0]->totqcpend}} </td><td> {{$totqcpending[$i][0]->totqcpendprice}}</td></tr>
+            <tr><td>QC-OK<td>{{$totqc[$i][0]->totqcok}} </td><td> {{$totqc[$i][0]->totqcokprice}}</td></tr>
+            <tr><td>Completed<td>{{$totcompl[$i][0]->totcompl}} </td><td> {{$totcompl[$i][0]->totcomplprice}}</td></tr>
             <tr><td>Revision<td>{{$totalrevesion[$i]}} </td><td> </td></tr>
             <tr><td>Changes<td>{{$totalchange[$i]}} </td><td></td></tr>
         @else

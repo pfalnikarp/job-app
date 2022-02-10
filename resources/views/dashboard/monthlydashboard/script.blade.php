@@ -8,12 +8,12 @@ $(document).ready(function () {
   $("#graphid").on('click',function(){
 
      google.charts.load('current', {'packages':['corechart', 'bar']});
-    // $('.modal').modal('show');
+    $('.modal').modal('show');
     var type=$('#selecttype').val();
     var year=$('#graphyearid').val();
     $.ajax({
                 type: "get",
-                url: "{{route('monthdashboard.graphmonthdashboard')}}",
+                // url: "#",
                 data: {
                             
                              "type":type,
@@ -22,7 +22,7 @@ $(document).ready(function () {
                        },            
                  success: function(data){     
                    
-                      // $('.modal').modal('hide');
+                      $('.modal').modal('hide');
                        var dd=$.parseJSON(data[0]);
                     
                      
@@ -57,7 +57,7 @@ $(document).ready(function () {
  $('.modal').modal('show');
 		 $.ajax({
                 type: "get",
-                url: "{{route('monthdashboard.ajaxmonthdashboard')}}",
+                // url: "#",
                 data: {
                             
                              "year":year,
@@ -67,7 +67,7 @@ $(document).ready(function () {
                        console.log(data);
                        $('.monthlytable').empty()
                        $('.monthlytable').append(data);  
-                       $('.modal').modal('hide');
+                  $('.modal').modal('hide');
                              
                  },
                    
@@ -80,7 +80,7 @@ $(document).ready(function () {
 
      $.ajax({
                 type: "get",
-                url: "{{route('monthdashboard.ajaxweekdashboard')}}",
+                // url: "#",
                 data: {
                             
                              "week":week,

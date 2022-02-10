@@ -7,6 +7,7 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Queue\Events\JobProcessed;
 use Illuminate\Queue\Events\JobProcessing;
 use Illuminate\Queue\Events\JobFailed;
+use DB;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -27,6 +28,18 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+
+        DB::listen(function ($query) {
+            // $query->sql
+            // $query->bindings
+            // $query->time
+            //$sql = $query->sql;
+           // $bindings = $query->bindings;
+           // $time =  $query->time;
+            // \Log::info($sql, $bindings, $time);
+        });
+
+
           Queue::before(function (JobProcessing $event) {
             // $event->connectionName
             // dd($event->job);
@@ -37,7 +50,7 @@ class AppServiceProvider extends ServiceProvider
             // $event->connectionName
             // $event->job
                         // $event->job->payload()
-            dd($event->job->getJobId());
+            //dd($event->job->getJobId());
         });
 
 

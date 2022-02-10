@@ -10,23 +10,22 @@
 </div>
     <div class="row">
         <div class="col-md-4">
-            <h5>Monthly Dashboard</h5>
+            <h5>Weekly Dashboard</h5>
 
         </div>
-         <div class="col-md-5"><a href="{{route('monthdashboard.weeklydashboard')}}" class="btn btn-primary btn-outline">Show Weekly Dasboard</a></div>
+         <div class="col-md-5"><a href="{{route('monthdashboard.monthdashboard')}}" class="btn btn-primary btn-outline">Show Monthly Dasboard</a></div>
         <div class="col-md-3">
-           <select class="form-control selectyear mb-2" id='yearid'><option>2021</option><option>2020</option><option>2019</option><option>2018</option></select>
+            <select class="form-control mb-2" id='weekid'><option>Current Week</option><option>Last Week</option><option>Custom</option></select>
         </div>
     </div>
-
-  <div class="row monthlytable">
-    @for($i=0;$i<12;$i++)
+     <div class="row weeklytable">
+          @for($i=6;$i>=0;$i--)
     <div class="col-md-3">
         <div class="card sr">
            <table id="dashboardtab">
-            <b align="center">{{$monthtitle[$i+1]}}  {{$year}}</b>
-        @permission('file.price.dashboard')
-            <tr><td><td>File</td><td>Revenue</td></tr>
+            <b align="center">{{$showdate[$i]}} ({{$showdatename[$i]}})</b>
+     @permission('file.price.dashboard')
+             <tr><td><td>File</td><td>Revenue</td></tr>
             <tr><td>Vector<td>{{$vfile_count[$i]}} </td><td> {{$vfile_price[$i]}}</td></tr>
             <tr><td>Digitize<td>{{$dfile_count[$i]}} </td><td> {{$dfile_price[$i]}}</td></tr>
             <tr><td>Image Editing<td>{{$pfile_count[$i]}} </td><td> {{$pfile_price[$i]}}</td></tr>
@@ -36,8 +35,8 @@
             <tr><td>Completed<td>{{$completedfile_count[$i]}} </td><td> {{$completedfile_price[$i]}}</td></tr>
             <tr><td>Revision<td>{{$totalrevesion[$i]}} </td><td> </td></tr>
             <tr><td>Changes<td>{{$totalchange[$i]}} </td><td></td></tr>
-        @else
-            <tr><td></td><td>File</td></tr>
+    @else
+      <tr><td></td><td>File</td></tr>
             <tr><td>Vector<td>{{$totvectordata[$i][0]->totvect}} </td></tr>
             <tr><td>Digitize<td>{{$totdigitdata[$i][0]->totdigit}} </td></tr>
             <tr><td>Image Editing<td>{{$totphotodata[$i][0]->dtotphoto}} </td></tr>
@@ -47,13 +46,11 @@
             <tr><td>Completed<td>{{$totcompl[$i][0]->totcompl}} </td></tr>
             <tr><td>Revision<td>{{$totalrevesion[$i]}} </td></tr>
             <tr><td>Changes<td>{{$totalchange[$i]}} </td></tr>
-        @endpermission
-            
+    @endpermission     
            </table>       
         </div>   
     </div>
     @endfor
-    
     </div>
     <div class="row">
          <div class="col-md-4"></div>
@@ -71,7 +68,7 @@
             </select>
         </div>
         <div class="col-md-3">
-           <select class="form-control mb-2" id='graphyearid'><option>2021</option><option>2020</option><option>2019</option><option>2018</option></select>
+           <select class="form-control mb-2" id='graphyearid'><option>Current Week</option><option>Last Week</option><option>Custom</option></select>
         </div>
          <div class="col-md-1"><a href="javascript:void(0)" class="btn btn-primary" id="graphid">Graph</a></div>
     </div>

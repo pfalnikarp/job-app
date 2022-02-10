@@ -47,9 +47,12 @@ Route::get('dailydash', 'JasperInvoiceController@accountadmin')->name('DailyDash
 
 //monthly dashboard controller
 Route::get('monthdashboard',['uses'=>'DashboardController@monthdashboard','as'=>'monthdashboard.monthdashboard'])->middleware('permission:monthly.dashboard');
+Route::get('weeklydashboard',['uses'=>'DashboardController@weeklydashboard','as'=>'monthdashboard.weeklydashboard'])->middleware('permission:monthly.dashboard');
+
 Route::get('ajaxmonthdashboard',['uses'=>'DashboardController@ajaxmonthdashboard','as'=>'monthdashboard.ajaxmonthdashboard']);
 Route::get('graphmonthdashboard',['uses'=>'DashboardController@graphmonthdashboard','as'=>'monthdashboard.graphmonthdashboard']);
 Route::get('ajaxweekdashboard',['uses'=>'DashboardController@ajaxweekdashboard','as'=>'monthdashboard.ajaxweekdashboard']);
+Route::get('graphweeklydashboard',['uses'=>'DashboardController@graphweeklydashboard','as'=>'monthdashboard.graphweeklydashboard']);
 //  dashboard routes
 
 Route::get('groupmenu', function(){

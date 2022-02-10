@@ -10,14 +10,14 @@ $(document).ready(function () {
      google.charts.load('current', {'packages':['corechart', 'bar']});
     // $('.modal').modal('show');
     var type=$('#selecttype').val();
-    var year=$('#graphyearid').val();
+    var week=$('#graphyearid').val();
     $.ajax({
                 type: "get",
-                url: "{{route('monthdashboard.graphmonthdashboard')}}",
+                url: "{{route('monthdashboard.graphweeklydashboard')}}",
                 data: {
                             
                              "type":type,
-                             "year":year
+                             "week":week
                          
                        },            
                  success: function(data){     
@@ -27,13 +27,13 @@ $(document).ready(function () {
                     
                      
                         var datadv= google.visualization.arrayToDataTable(dd);
-                         console.log(data);
+                        
       
                        // Optional; add a title and set the width and height of the chart
                        var options = {
       chart: {
         title: 'Company Performance',
-        subtitle: ''+data[1]+', and Year:'+data[2]+'',
+        subtitle: 'Type : '+data[1]+', and Week : '+data[2]+'',
       },
       bars: 'vertical', // Required for Material Bar Charts.
         vAxis: {minValue: 0},
